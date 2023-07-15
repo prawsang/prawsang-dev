@@ -1,9 +1,7 @@
-import Hero from "@/components/Hero";
+import Homepage from "@/components/pages/Homepage";
 
 export default function Home() {
   return (
-      <div className="text-base-400">
-        <Hero />
-      </div>
+    <Homepage />
   )
 }

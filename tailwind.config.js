@@ -20,7 +20,7 @@ module.exports = {
           300: '#A8AAC1',
           400: '#4F5370',
           800: '#32344A',
-          900: '#222224',
+          900: '#181819',
         },
         primary: {
           DEFAULT: '#9E6DDD',
@@ -31,7 +31,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace']
+        mono: ['var(--font-roboto-mono)']
       }
     },
   },

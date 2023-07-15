@@ -1,0 +1,29 @@
+@import './colors';
+
+.hero {
+  background-color: $base-color-900;
+  background-image: url('../../public/hero_background.png');
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor {
+  height: 84px;
+  width: 16px;
+  background-color: $base-color-300;
+  transform: translateY(10px)
+}
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
+}

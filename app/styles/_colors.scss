@@ -1,0 +1,25 @@
+$base-color-100: #E9E9E9;
+$base-color-200: #DBDBE0;
+$base-color-300: #A8AAC1;
+$base-color-400: #4F5370;
+$base-color-800: #32344A;
+$base-color-900: #222224;
+
+$primary-color-500: #9E6DDD;
+$primary-color-300: #9E6DDD99;
+
+$header-color: $base-color-800;
+$text-color: $base-color-400;
+
+$accent-1: #D0820D;
+$accent-2: #60D9A8;
+
+.color-header { color: $header-color; }
+.color-text { color: $text-color; }
+.color-base-100 { color: $base-color-100; }
+.color-base-200 { color: $base-color-200; }
+.color-base-300 { color: $base-color-300; }
+.color-base-400 { color: $base-color-400; }
+.color-base-800 { color: $base-color-800; }
+.color-base-900 { color: $base-color-900; }
+.color-base-100 { color: $base-color-100; }

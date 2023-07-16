@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Mono from "../Mono";
+import Image from "next/image";
 
 export default function Hero() {
   const [animationSeq, setAnimationSeq] = useState<number>(0);
@@ -32,7 +33,10 @@ export default function Hero() {
     }, 2000)
     setTimeout(() => {
       setAnimationSeq(6)
-    }, 3500)
+    }, 4000)
+    setTimeout(() => {
+      setAnimationSeq(7)
+    }, 4400)
   }
 
   const animateName = () => {
@@ -70,39 +74,49 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="hero font-bold text-7xl leading-tight">
-      <div className="container relative">
-        <div>
-          <div className={`cursor ${animationSeq === 0 ? 'inline-block' : 'hidden'}`} />
-          <Mono className={`text-primary opacity-50 ${animationSeq > 0 || 'invisible'}`}>.</Mono>
+    <>
+      <div className="hero font-bold text-7xl leading-tight">
+        <div className="container relative">
+          <div>
+            <div className={`cursor ${animationSeq === 0 ? 'inline-block' : 'hidden'}`} />
+            <Mono className={`text-primary opacity-50 ${animationSeq > 0 || 'invisible'}`}>.</Mono>
 
-          <div className={`cursor ${animationSeq === 1 ? 'inline-block' : 'hidden'}`} />
-          <Mono className={`text-primary ${animationSeq > 1 || 'invisible'}`}>{name}</Mono>
-          <div className={`cursor ${animationSeq === 2 ? 'inline-block' : 'hidden'}`} />
+            <div className={`cursor ${animationSeq === 1 ? 'inline-block' : 'hidden'}`} />
+            <Mono className={`text-primary ${animationSeq > 1 || 'invisible'}`}>{name}</Mono>
+            <div className={`cursor ${animationSeq === 2 ? 'inline-block' : 'hidden'}`} />
 
-          <Mono className={`text-orange opacity-50 ${animationSeq === 3 ? 'inline-block' : 'hidden'}`}>
-            {`{`}<div className={`cursor ${animationSeq === 3 ? 'inline-block' : 'hidden'}`} />{`}`}
-          </Mono>
-          <Mono className={`text-orange opacity-50 ${animationSeq > 3 ? 'inline-block' : 'hidden'}`}>
-            {`{`}
-          </Mono>
-          <br />
-          <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq === 4 ? 'inline-block' : 'hidden'}`}>
-            <div className={`cursor ${animationSeq === 4 ? 'inline-block' : 'hidden'}`} />
-          </div>
-          <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq > 4 || 'invisible'}`}>
-            <div>
-            <Mono className="text-base-400 font-normal">
-              {description}
+            <Mono className={`text-orange ${animationSeq === 3 ? 'inline-block' : 'hidden'}`}>
+              <span className="opacity-50">{`{`}</span>
+              <div className={`cursor ${animationSeq === 3 ? 'inline-block' : 'hidden'}`} />
+              <span className="opacity-50">{`}`}</span>
             </Mono>
-            <div className={`cursor ${animationSeq === 5 ? 'inline-block' : 'hidden'}`} />
-            <div className={`cursor blink ${animationSeq === 6 ? 'inline-block' : 'hidden'}`} />
-
+            <Mono className={`text-orange opacity-50 ${animationSeq > 3 ? 'inline-block' : 'hidden'}`}>
+              {`{`}
+            </Mono>
+            <br />
+            <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq === 4 ? 'inline-block' : 'hidden'}`}>
+              <div className={`cursor ${animationSeq === 4 ? 'inline-block' : 'hidden'}`} />
             </div>
+            <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq > 4 || 'invisible'}`}>
+              <div>
+              <Mono className="text-base-400 font-normal">
+                {description}
+              </Mono>
+              <div className={`cursor ${animationSeq === 5 ? 'inline-block' : 'hidden'}`} />
+              <div className={`cursor blink ${animationSeq >= 6 ? 'inline-block' : 'hidden'}`} />
+
+              </div>
+            </div>
+            <Mono className={`text-orange opacity-50 ${animationSeq > 3 || 'invisible'}`}>{`}`}</Mono>
           </div>
-          <Mono className={`text-orange opacity-50 ${animationSeq > 3 || 'invisible'}`}>{`}`}</Mono>
         </div>
       </div>
-    </div>
+      <div className={`scroll-label-container ${animationSeq === 7 && 'visible'}`}>
+        <div>
+          <Image src="/caret-up.svg" alt="caret up" width="48" height="48" className="mb-4 scroll-icon" />
+          <Mono className="text-base-300">Scroll Down</Mono>
+        </div>
+      </div>
+    </>
   );
 }

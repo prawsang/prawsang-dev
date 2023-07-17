@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/home';
+@import "./styles/home";
+@import "./styles/colors";
 
 body {
   font-size: 18px;
@@ -37,7 +38,7 @@ ul li {
   display: flex;
   align-items: center;
   &::before {
-    content: '';
+    content: "";
     width: 1.5rem;
     height: 2px;
     background-color: $base-color-300;
@@ -46,4 +47,28 @@ ul li {
     margin-right: 1.5rem;
     display: inline-block;
   }
+}
+
+.timeline-container {
+  position: absolute;
+  top: 0;
+  left: -3rem;
+  bottom: 0;
+}
+.timeline-mark {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  position: absolute;
+  top: 0.25rem;
+  background-color: $primary-color-500;
+}
+.timeline-line {
+  position: absolute;
+  top: 0.5rem;
+  bottom: -16px;
+  left: 0.5rem;
+  width: 4px;
+  transform: translateX(-50%);
+  background-color: $primary-color-300
 }

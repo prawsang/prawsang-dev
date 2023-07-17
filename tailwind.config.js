@@ -24,7 +24,9 @@ module.exports = {
         },
         primary: {
           DEFAULT: '#9E6DDD',
-          light: '#9E6DDD99'
+          500: '#9E6DDD',
+          300: '#9E6DDD99',
+          100: '#DBDBE0',
         },
         orange: '#D0820D',
         turquiose: '#60D9A8',

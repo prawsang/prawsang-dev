@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export default function Skills() {
 
   const { ref, inView } = useInView({
-    threshold: 1
+    threshold: 0.5
   })
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Skills() {
             <Image src="./logo-line-3.svg" alt="Wordpress, JavaScript, CSS" width="240" height="470" />
           </div>
         </div>
-        <div className="basis-3/4">
+        <div className={`basis-3/4 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           <Header className="mb-8">Skills</Header>
           <div className="flex gap-x-8">
             <div className="basis-1/2">

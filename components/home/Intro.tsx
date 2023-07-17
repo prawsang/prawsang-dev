@@ -21,19 +21,22 @@ export default function Intro() {
     if (!isLoaded) return
     setTimeout(() => {
       setAnimationSeq(1)
-    }, 1200)
+    }, 1000)
     setTimeout(() => {
       setAnimationSeq(2)
-    }, 2000)
+    }, 1700)
     setTimeout(() => {
       setAnimationSeq(3)
-    }, 2200)
+    }, 2700)
+    setTimeout(() => {
+      setAnimationSeq(4)
+    }, 3500)
   },[isLoaded])
 
   const getFrameImageName = () => {
     switch (animationSeq) {
-      case 0: return '/frame1.svg';
-      case 1: return '/frame2.svg';
+      case 0: return '/frame3.svg';
+      case 1: return '/frame1.svg';
       case 2: return '/frame3.svg';
       default: return '/frame2.svg';
     }
@@ -41,7 +44,7 @@ export default function Intro() {
 
   return (
     <div className="bg-base-100 pt-40 pb-40">
-      <div className="container flex justify-start align-start gap-x-8" ref={ref}>
+      <div className="container flex justify-start items-start gap-x-8" ref={ref}>
         <div className={`basis-3/5 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           <Mono className="font-bold text-6xl text-base-900 leading-loose">Hi!</Mono><br/>
           <p>My name is Prawsang. I am a frontend developer based in Bangkok, Thailand. 
@@ -52,7 +55,8 @@ export default function Intro() {
             the user interface and the functionality of the web applications I develop.</p>
         </div>
         <div className={`basis-2/5 relative fade-in-and-slide-up ${isLoaded && 'visible'}`}>
-          {animationSeq === 0 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}
+          {animationSeq === 1 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}
+          <Image src="/heart.svg" alt="Heart" width="139" height="139" className={`heart ${animationSeq === 4 && 'visible'}`} />
           <Image src={getFrameImageName()} alt="Intro avatar" width="246" height="265" className="mx-auto mt-8" />
         </div>
       </div>

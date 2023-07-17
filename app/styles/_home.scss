@@ -76,18 +76,18 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-20%, -50%);
+  transform: translate(0, -40%);
 }
 .heart {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transform: translate(0, 48px);
+  transform: translate(64px, 48px);
   transition: 0.7s all ease-in-out;
   &.visible {
     opacity: 100;
-    transform: translate(0, -40%);
+    transform: translate(64px, -30%);
   }
 }
 

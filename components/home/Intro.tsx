@@ -56,7 +56,7 @@ export default function Intro() {
         </div>
         <div className={`basis-2/5 relative fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           {animationSeq === 1 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}
-          <Image src="/heart.svg" alt="Heart" width="139" height="139" className={`heart ${animationSeq === 4 && 'visible'}`} />
+          <Image src="/heart.svg" alt="Heart" width="80" height="80" className={`heart ${animationSeq === 4 && 'visible'}`} />
           <Image src={getFrameImageName()} alt="Intro avatar" width="246" height="265" className="mx-auto mt-8" />
         </div>
       </div>

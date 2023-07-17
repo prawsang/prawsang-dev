@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Homepage from "@/components/pages/Homepage";
 import { Metadata } from "next";
 
@@ -8,6 +9,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Homepage />
+    <>
+      <Homepage />
+    </>
   )
 }

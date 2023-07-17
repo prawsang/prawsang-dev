@@ -18,7 +18,7 @@
 
   .cursor {
     height: 84px;
-    width: 16px;
+    width: 12px;
     background-color: $base-color-300;
     transform: translateY(10px);
   }
@@ -140,4 +140,9 @@
       animation-delay: 0s;
     }
   }
+}
+
+.contact {
+  background-color: $primary-color-100;
+  background-image: url("../../public/hero_background.png");
 }

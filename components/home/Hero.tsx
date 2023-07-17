@@ -113,8 +113,10 @@ export default function Hero() {
       </div>
       <div className={`scroll-label-container ${animationSeq === 7 && 'visible'}`}>
         <div>
-          <Image src="/caret-up.svg" alt="caret up" width="48" height="48" className="mb-4 scroll-icon" />
+          <div className="mb-4">
           <Mono className="text-base-300">Scroll Down</Mono>
+          </div>
+          <Image src="/caret-up.svg" alt="caret up" width="48" height="48" className="scroll-icon" />
         </div>
       </div>
     </>

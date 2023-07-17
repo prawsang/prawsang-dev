@@ -1,5 +1,7 @@
 @import "./colors";
 
+// Hero
+
 .hero {
   background-color: $base-color-900;
   background-image: url("../../public/hero_background.png");
@@ -36,6 +38,7 @@
   .scroll-icon {
     margin-left: auto;
     margin-right: auto;
+    transform: rotate(180deg);
   }
   &.visible {
     opacity: 100;
@@ -58,9 +61,71 @@
   -webkit-animation: blink 1s step-start 0s infinite;
 }
 
+@keyframes fadeIn70 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+// Intro
+
 .hi-bubble {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%,-50%)
+  transform: translate(-20%, -50%);
+}
+
+// Skills
+.skills {
+  overflow: hidden;
+}
+.logos-container {
+  position: relative;
+  width: 100%;
+
+  .logos-row-left,
+  .logos-row-right,
+  .logos-row-mid {
+    mix-blend-mode: luminosity;
+    position: absolute;
+    width: 200px;
+    opacity: 0;
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+    }
+  }
+  .logos-row-right {
+    right: 48px;
+    top: -144px;
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+  }
+  .logos-row-mid {
+    right: 256px;
+    top: -196px;
+    width: 140px;
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+    }
+  }
+  .logos-row-left {
+    right: 400px;
+    top: -144px;
+    width: 200px;
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+    }
+  }
 }

@@ -24,13 +24,13 @@ export default function Intro() {
     }, 1000)
     setTimeout(() => {
       setAnimationSeq(2)
-    }, 1700)
+    }, 2300)
     setTimeout(() => {
       setAnimationSeq(3)
-    }, 2700)
+    }, 3100)
     setTimeout(() => {
       setAnimationSeq(4)
-    }, 3500)
+    }, 3900)
   },[isLoaded])
 
   const getFrameImageName = () => {

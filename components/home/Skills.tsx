@@ -52,7 +52,7 @@ export default function Skills() {
                   HTML, CSS/SCSS/Sass, JavaScript, TypeScript, Git
                 </span>
               </div>
-              <div className="mb-8 sm:mb-0">
+              <div className="mb-8">
                 <div className="mb-4">
                   <Mono className="text-base-800 font-bold text-3xl">
                     Frameworks & Libraries
@@ -70,9 +70,24 @@ export default function Skills() {
                   <div className="basis-1/2">
                     <ul>
                       <li>Angular</li>
+                      <li>Vue.js</li>
                     </ul>
                   </div>
                 </div>
+              </div>
+              <div className="mb-8 sm:mb-0">
+                <div className="mb-4">
+                  <Mono className="text-base-800 font-bold text-3xl">
+                    Testing
+                  </Mono>
+                </div>
+                <span className="text-xl">
+                  <ul>
+                    <li>Jest</li>
+                    <li>React Testing Library</li>
+                    <li>Enzyme</li>
+                  </ul>
+                </span>
               </div>
             </div>
             <div className="basis-1/2">

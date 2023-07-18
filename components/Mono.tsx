@@ -1,5 +1,10 @@
 import React from "react";
-import { robotoMono } from "@/app/layout";
+import { Roboto_Mono } from "next/font/google";
+
+export const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+});
 
 export default function Mono({children, className}: {children: React.ReactNode, className?: string}) {
   return (

@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export default function Skills() {
 
   const { ref, inView } = useInView({
-    threshold: 0.5
+    threshold: 0.4
   })
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   useEffect(() => {

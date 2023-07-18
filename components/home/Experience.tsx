@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Experience() {
   const { ref: refExperience, inView: inViewExperience } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
   });
   const [isLoadedExperience, setIsLoadedExperience] = useState<boolean>(false);
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Experience() {
   }, [inViewExperience]);
 
   const { ref: refEducation, inView: inViewEducation } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
   });
   const [isLoadedEducation, setIsLoadedEducation] = useState<boolean>(false);
   useEffect(() => {

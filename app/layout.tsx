@@ -1,11 +1,7 @@
 import "./globals.scss";
-import { Open_Sans, Roboto_Mono } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
-export const openSans = Open_Sans({ subsets: ["latin"] });
-export const robotoMono = Roboto_Mono({
-  subsets: ["latin"],
-  variable: "--font-roboto-mono",
-});
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

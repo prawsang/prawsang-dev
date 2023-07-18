@@ -66,7 +66,7 @@ export default function Experience() {
                   <Mono className="text-xl font-bold text-base-800 mr-4">
                     AI and Robotics Ventures (ARV)
                   </Mono>
-                  <Mono className="text-lg">2019 - 2021</Mono>
+                  <Mono className="text-lg">2020 - 2021</Mono>
                 </div>
                 <div className="mb-3">
                   <Mono>

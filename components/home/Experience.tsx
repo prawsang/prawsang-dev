@@ -25,11 +25,11 @@ export default function Experience() {
 
   return (
     <div className="pt-32 pb-32 md:pt-40 md:pb-40 bg-base-100">
-      <div className="container flex gap-x-8 md:pl-0">
+      <div className="container md:flex md:gap-x-8 md:pl-0">
         <div>
           <div
             ref={refExperience}
-            className={`flex flex-col-reverse md:flex-row gap-x-8 fade-in-and-slide-up ${
+            className={`flex flex-col-reverse md:flex-row md:gap-x-8 fade-in-and-slide-up ${
               isLoadedExperience && "visible"
             }`}
           >

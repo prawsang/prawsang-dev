@@ -19,7 +19,7 @@ export default function Contact() {
             <Image src="/linkedin.png" width="32" height="32" alt="Email" />
             <Mono className="text-lg hover:underline">linkedin.com/in/prawsang</Mono>
           </a>
-          <a href="https://www.github.com/prawsang" className="flex items-center gap-x-4">
+          <a href="https://www.github.com/prawsang" className="flex items-center mb-8 gap-x-4">
             <Image src="/github-mark.svg" width="32" height="32" alt="Email" />
             <Mono className="text-lg hover:underline">github.com/prawsang</Mono>
           </a>

@@ -24,18 +24,18 @@ export default function Experience() {
   }, [inViewEducation]);
 
   return (
-    <div className="pt-40 pb-40 bg-base-100">
-      <div className="container flex gap-x-8">
+    <div className="pt-32 pb-32 md:pt-40 md:pb-40 bg-base-100">
+      <div className="container flex gap-x-8 md:pl-0">
         <div>
           <div
             ref={refExperience}
-            className={`flex fade-in-and-slide-up ${
+            className={`flex flex-col-reverse md:flex-row gap-x-8 fade-in-and-slide-up ${
               isLoadedExperience && "visible"
             }`}
           >
             <div className="basis-3/5">
               <Header className="mb-12">Job Experience</Header>
-              <div className="pb-12 relative">
+              <div className="pb-12 ml-8 md:ml-0 relative">
                 <div className="timeline-container">
                   <div className="timeline-mark" />
                   <div className="timeline-line" />
@@ -57,7 +57,7 @@ export default function Experience() {
                   web administration systems.
                 </p>
               </div>
-              <div className="pb-12 relative">
+              <div className="pb-12 ml-8 md:ml-0 relative">
                 <div className="timeline-container">
                   <div className="timeline-mark" />
                   <div className="timeline-line" />
@@ -79,7 +79,7 @@ export default function Experience() {
                   web file management, and marketing websites.
                 </p>
               </div>
-              <div className="mb-20 relative">
+              <div className="mb-20 ml-8 md:ml-0 relative">
                 <div className="timeline-container">
                   <div className="timeline-mark" />
                 </div>
@@ -101,7 +101,7 @@ export default function Experience() {
                 </p>
               </div>
             </div>
-            <div className="basis-2/5 flex justify-end items-start">
+            <div className="basis-2/5 flex justify-center md:justify-end items-start mb-20">
               <Image
                 src="./wireframe-pixel-alternate.svg"
                 alt="Pixel Wireframe"

@@ -75,7 +75,7 @@ export default function Hero() {
 
   return (
     <>
-      <div className="hero font-bold text-7xl leading-tight">
+      <div className="hero font-bold text-5xl xs:text-6xl sm:text-7xl leading-tight">
         <div className="container relative">
           <div>
             <div className={`cursor ${animationSeq === 0 ? 'inline-block' : 'hidden'}`} />
@@ -94,17 +94,16 @@ export default function Hero() {
               {`{`}
             </Mono>
             <br />
-            <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq === 4 ? 'inline-block' : 'hidden'}`}>
+            <div className={`pl-12 sm:pl-20 mt-4 mb-4 ml-4 border-l-2 border-base-800 border-solid ${animationSeq === 4 ? 'inline-block' : 'hidden'}`}>
               <div className={`cursor ${animationSeq === 4 ? 'inline-block' : 'hidden'}`} />
             </div>
-            <div className={`pl-20 ml-4 border-l-2 border-base-800 border-solid ${animationSeq > 4 || 'invisible'}`}>
+            <div className={`pl-12 sm:pl-20 mt-4 mb-4 ml-4 border-l-2 border-base-800 border-solid ${animationSeq > 4 || 'invisible'}`}>
               <div>
-              <Mono className="text-base-400 font-normal">
-                {description}
-              </Mono>
-              <div className={`cursor ${animationSeq === 5 ? 'inline-block' : 'hidden'}`} />
-              <div className={`cursor blink ${animationSeq >= 6 ? 'inline-block' : 'hidden'}`} />
-
+                <Mono className="text-base-400 font-normal">
+                  {description}
+                </Mono>
+                <div className={`cursor ${animationSeq === 5 ? 'inline-block' : 'hidden'}`} />
+                <div className={`cursor blink ${animationSeq >= 6 ? 'inline-block' : 'hidden'}`} />
               </div>
             </div>
             <Mono className={`text-orange opacity-50 ${animationSeq > 3 || 'invisible'}`}>{`}`}</Mono>

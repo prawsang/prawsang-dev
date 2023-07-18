@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 export default function Intro() {
 
   const { ref, inView } = useInView({
-    threshold: 1
+    threshold: 0.5
   })
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Intro() {
 
   return (
     <div className="bg-base-100 pt-40 pb-40">
-      <div className="container flex justify-start items-start gap-x-8" ref={ref}>
+      <div className="container flex flex-col-reverse sm:flex-row justify-start items-center sm:items-start gap-x-12" ref={ref}>
         <div className={`basis-3/5 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           <Mono className="font-bold text-6xl text-base-900 leading-loose">Hi!</Mono><br/>
           <p>My name is Prawsang. I am a frontend developer based in Bangkok, Thailand. 
@@ -54,10 +54,12 @@ export default function Intro() {
             such as React and Angular. Having a design background, I prioritize both the aesthetics of 
             the user interface and the functionality of the web applications I develop.</p>
         </div>
-        <div className={`basis-2/5 relative fade-in-and-slide-up ${isLoaded && 'visible'}`}>
+        <div className={`basis-2/5 flex justify-center mb-8 sm:mb-0 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           {animationSeq === 1 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}
-          <Image src="/heart.svg" alt="Heart" width="80" height="80" className={`heart ${animationSeq === 4 && 'visible'}`} />
-          <Image src={getFrameImageName()} alt="Intro avatar" width="246" height="265" className="mx-auto mt-8" />
+          <div className="relative">
+            <Image src="/heart.svg" alt="Heart" width="80" height="80" className={`heart ${animationSeq === 4 && 'visible'}`} />
+            <Image src={getFrameImageName()} alt="Intro avatar" width="246" height="265" className="mt-8" />
+          </div>
         </div>
       </div>
     </div>

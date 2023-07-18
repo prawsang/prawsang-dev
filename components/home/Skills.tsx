@@ -17,9 +17,17 @@ export default function Skills() {
   }, [inView])
 
   return (
-    <div className="bg-base-200 pt-36 pb-36 skills" ref={ref}>
-      <div className="container flex gap-x-8">
-        <div className="basis-1/4 logos-container">
+    <div className="bg-base-200 pt:0 md:pt-36 pb-36 skills" ref={ref}>
+      <div className="logos-container-mobile block md:hidden">
+        <div className={`logos-row-top ${isLoaded && 'appear'}`}>
+          <Image src="./logo-line-2-mobile.svg" alt="Gatsby, HTML, Sass, TypeScript" width="960" height="240" className="m-auto" />
+        </div>
+        <div className={`logos-row-bottom ${isLoaded && 'appear'}`}>
+          <Image src="./logo-line-1-mobile.svg" alt="React, Redux, Angular" width="960" height="240" className="m-auto" />
+        </div>
+      </div>
+      <div className="container flex flex-col md:flex-row gap-x-8">
+        <div className="md:basis-1/3 lg:basis-1/4 logos-container hidden md:flex">
           <div className={`logos-row-right ${isLoaded && 'appear'}`}>
             <Image src="./logo-line-1.svg" alt="React, Redux, Angular" width="240" height="470" />
           </div>
@@ -30,9 +38,9 @@ export default function Skills() {
             <Image src="./logo-line-3.svg" alt="Wordpress, JavaScript, CSS" width="240" height="470" />
           </div>
         </div>
-        <div className={`basis-3/4 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
+        <div className={`md:basis-2/3 lg:basis-3/4 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           <Header className="mb-8">Skills</Header>
-          <div className="flex gap-x-8">
+          <div className="flex flex-col sm:flex-row gap-x-8">
             <div className="basis-1/2">
               <div className="mb-8">
                 <div className="mb-4">
@@ -44,13 +52,13 @@ export default function Skills() {
                   HTML, CSS/SCSS/Sass, JavaScript, TypeScript, Git
                 </span>
               </div>
-              <div className="sm:mb-8">
+              <div className="mb-8 sm:mb-0">
                 <div className="mb-4">
                   <Mono className="text-base-800 font-bold text-3xl">
                     Frameworks & Libraries
                   </Mono>
                 </div>
-                <div className="flex text-xl">
+                <div className="flex flex-col sm:flex-row text-xl">
                   <div className="basis-1/2">
                     <ul>
                       <li>React</li>

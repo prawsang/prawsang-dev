@@ -4,7 +4,7 @@
 
 .hero {
   background-color: $base-color-900;
-  background-image: url("../../public/hero_background.png");
+  background-image: url("../../public/hero-background.png");
   background-repeat: repeat;
   width: 100vw;
   height: 100vh;
@@ -17,8 +17,16 @@
   z-index: 1;
 
   .cursor {
-    height: 84px;
-    width: 12px;
+    height: 3.5rem;
+    width: 8px;
+    @media screen and (min-width: 520px) {
+      height: 4rem;
+      width: 8px;
+    }
+    @media screen and (min-width: 760px) {
+      height: 5rem;
+      width: 12px;
+    }
     background-color: $base-color-300;
     transform: translateY(10px);
   }
@@ -75,19 +83,19 @@
 .hi-bubble {
   position: absolute;
   top: 0;
-  left: 0;
-  transform: translate(0, -40%);
+  left: 50%;
+  transform: translate(-232px, -40%);
 }
 .heart {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   opacity: 0;
-  transform: translate(64px, 48px);
+  transform: translate(-168px, 48px);
   transition: 0.7s all ease-in-out;
   &.visible {
     opacity: 100;
-    transform: translate(64px, -30%);
+    transform: translate(-168px, -30%);
   }
 }
 
@@ -141,8 +149,43 @@
     }
   }
 }
+.logos-container-mobile {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logos-row-top,
+  .logos-row-bottom {
+    mix-blend-mode: luminosity;
+    opacity: 0;
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+    }
+  }
+  .logos-row-top {
+    max-width: 95%;
+    transform: translateY(-50%);
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+    }
+  }
+  .logos-row-bottom {
+    max-width: 80%;
+    transform: translateY(-50%);
+    &.appear {
+      animation: fadeIn70 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+    }
+  }
+}
 
 .contact {
   background-color: $primary-color-100;
-  background-image: url("../../public/hero_background.png");
+  background-image: url("../../public/contact-background.png");
 }

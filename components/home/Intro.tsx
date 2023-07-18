@@ -48,11 +48,12 @@ export default function Intro() {
         <div className={`basis-3/5 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           <Mono className="font-bold text-6xl text-base-900 leading-loose">Hi!</Mono><br/>
           <p>My name is Prawsang. I am a frontend developer based in Bangkok, Thailand. 
-            With 3 years of experience in frontend development, I have worked in various organizations, 
+            With 3 years of experience in frontend web development, I have worked in various organizations, 
             focusing on a variety of industries, such as robotics, social media, and consultancy. 
-            Throughout the years, I have experience in a variety of libraries, frameworks, and tools, 
-            such as React and Angular. Having a design background, I prioritize both the aesthetics of 
-            the user interface and the functionality of the web applications I develop.</p>
+            Throughout the years, I have experience in a variety of libraries, frameworks, 
+            such as React and Angular, and testing libraries such as Jest and Enzyme. Also having a heart for 
+            art and design, I prioritize both the aesthetics of the user interface and the functionality of 
+            the web applications I develop.</p>
         </div>
         <div className={`basis-2/5 flex justify-center mb-8 sm:mb-0 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
           {animationSeq === 1 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}

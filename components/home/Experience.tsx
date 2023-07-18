@@ -42,7 +42,7 @@ export default function Experience() {
                 </div>
                 <div className="mb-1">
                   <Mono className="text-xl font-bold text-base-800 mr-4">
-                    IBM Consulting
+                    IBM Consulting (Thailand)
                   </Mono>
                   <Mono className="text-lg">2021 - present</Mono>
                 </div>
@@ -53,8 +53,9 @@ export default function Experience() {
                   </Mono>
                 </div>
                 <p className="text-lg">
-                  Worked with various clients on a number of projects, mainly on
-                  web administration systems.
+                  Worked with various clients on a number of projects, mainly delivering 
+                  solutions such as web applications to the clients, which include banks 
+                  and large organizations in Thailand.
                 </p>
               </div>
               <div className="pb-12 ml-8 md:ml-0 relative">
@@ -75,8 +76,9 @@ export default function Experience() {
                   </Mono>
                 </div>
                 <p className="text-lg">
-                  Worked on a number of projects, including web administration,
-                  web file management, and marketing websites.
+                  Developed various web applications using React for products of various purposes, 
+                  such as data management and geospatial analysis. Apart from that, I have also 
+                  created websites for marketing purposes.
                 </p>
               </div>
               <div className="mb-20 ml-8 md:ml-0 relative">
@@ -96,8 +98,9 @@ export default function Experience() {
                   </Mono>
                 </div>
                 <p className="text-lg">
-                  Assisted the frontend development team on updating certain
-                  pages of the main website.
+                  Worked with React, TypeScript, and various tools to assist the development team 
+                  on enhancing parts of the company&apos;s main web pages and private libraries, 
+                  and also created automated unit tests for the components I worked on.
                 </p>
               </div>
             </div>

@@ -10,6 +10,9 @@ export default function Contact() {
           <Image src="/contact-bubble-2.svg" alt="Text bubble" width="80" height="80" className="mt-8" />
         </div>
         <div className="basis-4/6 flex flex-col items-center">
+          <div className="flex sm:hidden justify-center mb-8">
+            <Image src="/contact-bubble-2.svg" alt="Text bubble" width="80" height="80" />
+          </div>
           <Header className="mb-12">Let&apos;s Connect</Header>
           <a href="mailto:prawsang.c@gmail.com" className="flex items-center mb-8 gap-x-4">
             <Image src="/email.svg" width="32" height="32" alt="Email" />

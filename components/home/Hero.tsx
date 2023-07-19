@@ -14,7 +14,6 @@ export default function Hero() {
   const [description, setDescription] = useState<string>('')
 
   const windowRef = useRef<Window>();
-  const [width, setWidth] = useState<number>(0)
   const [height, setHeight] = useState<number>(0)
 
   const animate = () => {
@@ -75,7 +74,6 @@ export default function Hero() {
 
   useEffect(() => {
     windowRef.current = window
-    setWidth(windowRef.current?.innerWidth || 0)
     setHeight(windowRef.current?.innerHeight || 0)
     animate()
   }, [])
@@ -83,7 +81,7 @@ export default function Hero() {
   return (
     <>
       <div className="hero font-bold text-5xl xs:text-6xl sm:text-7xl leading-tight"
-        style={{ width: width + 'px', height: height + 'px'}}>
+        style={{ height: height + 'px'}}>
         <div className="container relative">
           <div>
             <div className="whitespace-nowrap">

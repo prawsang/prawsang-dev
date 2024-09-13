@@ -1,0 +1,25 @@
+@import "../colors";
+
+.timeline-container {
+  position: absolute;
+  top: 0;
+  left: -3rem;
+  bottom: 0;
+}
+.timeline-mark {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  position: absolute;
+  top: 0.25rem;
+  background-color: $primary-500;
+}
+.timeline-line {
+  position: absolute;
+  top: 0.5rem;
+  bottom: -16px;
+  left: 0.5rem;
+  width: 4px;
+  transform: translateX(-50%);
+  background-color: $primary-300;
+}

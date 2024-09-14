@@ -5,6 +5,12 @@
 @import "./styles/home/index";
 @import "./styles/colors";
 
+.app-container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .fade-in-and-slide-up {
   opacity: 0;
   transform: translateY(96px);

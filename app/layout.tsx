@@ -1,7 +1,7 @@
 import "./globals.scss";
-import { Open_Sans } from "next/font/google";
+import { Syne } from "next/font/google";
 
-const openSans = Open_Sans({ subsets: ["latin"] });
+const syne = Syne({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -10,9 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.className}`}>
-        {children}
-      </body>
+      <body className={`${syne.className}`}>{children}</body>
     </html>
   );
 }

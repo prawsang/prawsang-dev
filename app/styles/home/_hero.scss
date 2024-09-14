@@ -1,25 +1,97 @@
 @import "../colors";
 
-.timeline-container {
-  position: absolute;
-  top: 0;
-  left: -3rem;
-  bottom: 0;
-}
-.timeline-mark {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 999px;
-  position: absolute;
-  top: 0.25rem;
-  background-color: $primary-500;
-}
-.timeline-line {
-  position: absolute;
-  top: 0.5rem;
-  bottom: -16px;
-  left: 0.5rem;
-  width: 4px;
-  transform: translateX(-50%);
-  background-color: $primary-300;
+.hero-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  .gradient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .gradient-1,
+  .gradient-2,
+  .gradient-3,
+  .gradient-4 {
+    position: absolute;
+  }
+
+  .gradient-1,
+  .gradient-2 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .gradient-1 {
+    background: #f5dcdd;
+    background: linear-gradient(180deg, #f5dcdd, #efe3f9, #ffd9ec, #ffefec);
+  }
+
+  .gradient-2 {
+    background: #d6c9e1;
+    background: linear-gradient(-45deg, #d6c9e1, #ffefec, #c4bff1);
+    opacity: 0.5;
+  }
+
+  .gradient-3 {
+    background: transparent;
+    background: radial-gradient(
+      rgba(255, 239, 236, 1),
+      rgba(196, 191, 242, 0.25),
+      transparent,
+      transparent
+    );
+    height: 100%;
+    aspect-ratio: 1;
+    top: -20%;
+    left: 40%;
+    opacity: 0.75;
+  }
+
+  .gradient-4 {
+    background: transparent;
+    background: radial-gradient(
+      rgba(196, 191, 242, 1),
+      rgba(255, 239, 236, 0.25),
+      transparent,
+      transparent
+    );
+    height: 100%;
+    aspect-ratio: 1;
+    top: 20%;
+    left: -20%;
+    opacity: 0.25;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+
+    .hero-text {
+      @apply text-base-800;
+      width: 100%;
+      text-align: center;
+      font-size: 11vw;
+      font-weight: 800;
+    }
+
+    .hero-text-sub {
+      &.hero-text-sub-bold {
+        font-weight: 800;
+      }
+      font-weight: 700;
+      font-size: 32px;
+      @apply text-primary-400;
+      line-height: 32px;
+    }
+  }
 }

@@ -11,12 +11,10 @@
   margin: 0 auto;
 }
 
-.fade-in-and-slide-up {
+.fade-in {
   opacity: 0;
-  transform: translateY(96px);
   transition: 0.7s all ease-in-out;
   &.visible {
     opacity: 100;
-    transform: translateY(0);
   }
 }

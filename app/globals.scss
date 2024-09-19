@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./styles/home/index";
 @import "./styles/colors";
+
+@import "./styles/components/home/index";
+@import "./styles/components/common/index";
+@import "./styles/components/nav/index";
+
+body {
+  @apply text-base-800;
+}
 
 .app-container {
   max-width: 1440px;

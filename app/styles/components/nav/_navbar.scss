@@ -1,0 +1,45 @@
+.nav-bar {
+  z-index: 999;
+  padding: 16px 0;
+  &.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.nav-link-container {
+  position: relative;
+  .nav-link {
+    @apply font-bold;
+    cursor: pointer;
+    transition: 0.2s color ease-in-out;
+  }
+
+  .nav-link-underline {
+    width: 0;
+    height: 2px;
+    transition: 0.2s width ease-in-out;
+    @apply bg-base-800;
+    position: absolute;
+    top: calc(1rem + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:hover .nav-link-underline {
+    width: 100%;
+  }
+}
+
+.dark-mode {
+  .nav-link-container {
+    .nav-link {
+      @apply text-base-100;
+    }
+    .nav-link-underline {
+      @apply bg-base-100;
+    }
+  }
+}

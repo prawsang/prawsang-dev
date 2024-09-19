@@ -29,7 +29,7 @@ export default function Hero() {
             </h2>
           </Trail>
           <div className="text-center">
-            <Trail open={heroOpen}>
+            <Trail open={heroOpen} containerClasses="justify-center">
               <span className="hero-text">P</span>
               <span className="hero-text">r</span>
               <span className="hero-text">a</span>

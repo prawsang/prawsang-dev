@@ -1,0 +1,16 @@
+.chip {
+  background-color: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: 999px;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  font-weight: 700;
+
+  .chip-text {
+    color: var(--chip-text);
+  }
+
+  .chip-sub-text {
+    color: var(--chip-sub-text);
+  }
+}

@@ -5,14 +5,24 @@ export default function Hero() {
   const [heroOpen, setHeroOpen] = useState<boolean>(false)
   const [topOpen, setTopOpen] = useState<boolean>(false)
   const [bottomOpen, setBottomOpen] = useState<boolean>(false)
+
+  const [height, setHeight] = useState<number>(0)
+
   useEffect(() => {
     setTopOpen(true)
     setTimeout(() => setHeroOpen(true), 500)
     setTimeout(() => setBottomOpen(true), 1100)
+
+    setHeight(
+      Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      )
+    )
   }, [])
 
   return (
-    <div className="hero-container">
+    <div className="hero-container" style={{ height: height + 'px' }}>
       <div className="gradient-container">
         <div className="gradient-1" />
         <div className="gradient-2" />
@@ -21,10 +31,10 @@ export default function Hero() {
         <div className="round-3" />
         <div className="round-4" />
       </div>
-      <div className="app-container">
+      <div className="content-container">
         <div className="hero-content flex flex-col py-8 gap-0">
           <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
-            <h2 className="hero-text-sub hero-text-sub-bold whitespace-nowrap">
+            <h2 className="hero-sub-text bold whitespace-nowrap">
               Hi! I&apos;m
             </h2>
           </Trail>
@@ -42,7 +52,7 @@ export default function Hero() {
           </div>
           <div className="flex justify-end">
             <div
-              className={`hero-text-sub flex flex-col gap-1 fade-in ${
+              className={`hero-sub-text flex flex-col gap-1 fade-in ${
                 bottomOpen && 'visible'
               }`}
             >

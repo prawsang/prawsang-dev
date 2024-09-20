@@ -1,0 +1,92 @@
+// FONT SIZES
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+.p-large {
+  font-size: 1.125rem;
+}
+
+// FONT WEIGHTS
+.extra-bold {
+  font-weight: 800;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+// COLORS
+
+.base-text {
+  color: var(--base-text);
+}
+
+.base-sub-text {
+  color: var(--base-sub-text);
+}
+
+.base-header-text {
+  color: var(--base-header-text);
+}
+
+.base-sub-header-text {
+  color: var(--base-sub-header-text);
+}
+
+.primary-header-text {
+  color: var(--primary-header-text);
+}
+
+.primary-sub-header-text {
+  color: var(--primary-sub-header-text);
+}
+
+.primary-text {
+  color: var(--primary-text);
+}
+
+.primary-sub-text {
+  color: var(--primary-sub-text);
+}
+
+.chip-text {
+  color: var(--chip-text);
+}
+
+.chip-sub-text {
+  color: var(--chip-sub-text);
+}
+
+.carousel-panel-header-text {
+  color: var(--carousel-panel-header-text);
+}
+
+.carousel-panel-text {
+  color: var(--carousel-panel-text);
+}
+
+.list-text {
+  color: var(--list-text);
+}

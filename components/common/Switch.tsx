@@ -1,4 +1,4 @@
-import { FC, SVGProps } from "react";
+import { FC, SVGProps } from 'react'
 
 export default function Switch({
   onChange,
@@ -6,14 +6,14 @@ export default function Switch({
   IconOn,
   IconOff,
 }: {
-  onChange: (value: boolean) => void;
-  value: boolean;
-  IconOn?: FC<SVGProps<SVGElement>>;
-  IconOff?: FC<SVGProps<SVGElement>>;
+  onChange: (value: boolean) => void
+  value: boolean
+  IconOn?: FC<SVGProps<SVGElement>>
+  IconOff?: FC<SVGProps<SVGElement>>
 }) {
   return (
     <div
-      className={`switch ${value === true && "on"}`}
+      className={`switch ${value === true && 'on'}`}
       onClick={() => onChange(value)}
     >
       {IconOn && (
@@ -28,5 +28,5 @@ export default function Switch({
         </div>
       )}
     </div>
-  );
+  )
 }

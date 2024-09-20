@@ -1,15 +1,15 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Trail from "../common/Trail";
+'use client'
+import React, { useEffect, useState } from 'react'
+import Trail from '../common/Trail'
 export default function Hero() {
-  const [heroOpen, setHeroOpen] = useState<boolean>(false);
-  const [topOpen, setTopOpen] = useState<boolean>(false);
-  const [bottomOpen, setBottomOpen] = useState<boolean>(false);
+  const [heroOpen, setHeroOpen] = useState<boolean>(false)
+  const [topOpen, setTopOpen] = useState<boolean>(false)
+  const [bottomOpen, setBottomOpen] = useState<boolean>(false)
   useEffect(() => {
-    setTopOpen(true);
-    setTimeout(() => setHeroOpen(true), 500);
-    setTimeout(() => setBottomOpen(true), 1100);
-  }, []);
+    setTopOpen(true)
+    setTimeout(() => setHeroOpen(true), 500)
+    setTimeout(() => setBottomOpen(true), 1100)
+  }, [])
 
   return (
     <div className="hero-container">
@@ -43,7 +43,7 @@ export default function Hero() {
           <div className="flex justify-end">
             <div
               className={`hero-text-sub flex flex-col gap-1 fade-in ${
-                bottomOpen && "visible"
+                bottomOpen && 'visible'
               }`}
             >
               {/* <Trail open={bottomOpen} containerClasses=""> */}
@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <svg style={{ display: "none" }} xmlns="http://www.w3.org/2000/svg">
+      <svg style={{ display: 'none' }} xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="goo">
             <feGaussianBlur
@@ -78,5 +78,5 @@ export default function Hero() {
         </defs>
       </svg>
     </div>
-  );
+  )
 }

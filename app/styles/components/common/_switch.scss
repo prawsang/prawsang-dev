@@ -40,18 +40,18 @@
   }
 }
 
-.dark-mode {
-  .switch {
-    border: 1px solid $base-100;
-    .switch-knob {
-      background-color: $base-100;
-    }
-    &.on {
-      background-color: $base-100;
+// .dark-mode {
+//   .switch {
+//     border: 1px solid $base-100;
+//     .switch-knob {
+//       background-color: $base-100;
+//     }
+//     &.on {
+//       background-color: $base-100;
 
-      .switch-knob {
-        background-color: $base-800;
-      }
-    }
-  }
-}
+//       .switch-knob {
+//         background-color: $base-800;
+//       }
+//     }
+//   }
+// }

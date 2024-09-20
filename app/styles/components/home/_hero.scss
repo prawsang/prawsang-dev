@@ -1,4 +1,4 @@
-@import "../../colors";
+@import '../../colors';
 
 @keyframes moveInCircle {
   0% {
@@ -130,7 +130,7 @@
     opacity: 0.8;
     left: 50%;
     animation: moveInCircle 15s linear infinite;
-    transform-origin: 50%;
+    transform-origin: calc(70vw);
   }
 
   .round-4 {
@@ -176,7 +176,7 @@
       180deg,
       #461f2c 0,
       #361e49 50%,
-      #462032 75%,
+      #311335 75%,
       #38241c 100%
     );
   }

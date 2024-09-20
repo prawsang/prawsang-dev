@@ -1,0 +1,65 @@
+@import './colors';
+
+main {
+  --bg: #{$base-50};
+  --base-text: #{$base-800};
+  --base-sub-text: #{$base-500};
+  --hero-text: #{$base-800};
+  --hero-sub-text: #{$primary-400};
+  --header-text: #{$base-800};
+  --sub-header-text: #{$base-500};
+  --primary-header-text: #{$primary-500};
+  --primary-sub-header-text: #{$primary-400};
+  --primary-text: #{$primary-800};
+  --primary-sub-text: #{$primary-500};
+  --list-text: #{$base-700};
+  --list-bullet-bg: #{$primary-400};
+  --nav-close-bg: #{$primary-200};
+  --nav-close-icon-fill: #{$primary-900};
+  --nav-panel-bg: white;
+  --nav-panel-text: #{$primary-900};
+  --nav-panel-active-bg: #{$primary-100};
+  --chip-bg: #{$primary-100};
+  --chip-border: #{$primary-300};
+  --chip-text: #{primary-800};
+  --chip-sub-text: #{$primary-500};
+  --timeline-bullet-bg: #{$primary-500};
+  --timeline-line-bg: #{$primary-200};
+  --carousel-panel-bg: #{$primary-100};
+  --carousel-panel-header-text: #{$primary-950};
+  --carousel-panel-text: #{$primary-600};
+  --carousel-indicator-active-bg: #{$base-500};
+  --carousel-indicator-inactive-bg: #{$base-200};
+}
+
+main.dark-mode {
+  --bg: #{$base-950};
+  --base-text: #{$base-100};
+  --base-sub-text: #{$base-400};
+  --hero-text: #{$base-100};
+  --hero-sub-text: #{$primary-500};
+  --header-text: #{$base-100};
+  --sub-header-text: #{$base-400};
+  --primary-header-text: #{$primary-400};
+  --primary-sub-header-text: #{$primary-500};
+  --primary-text: #{$primary-100};
+  --primary-sub-text: #{$primary-400};
+  --list-text: #{$base-300};
+  --list-bullet-bg: #{$primary-400};
+  --nav-close-bg: #{$primary-900};
+  --nav-close-icon-fill: #{$primary-200};
+  --nav-panel-bg: #{$base-900};
+  --nav-panel-text: #{$primary-200};
+  --nav-panel-active-bg: #{$primary-800};
+  --chip-bg: #{$primary-950};
+  --chip-border: #{$primary-950};
+  --chip-text: #{primary-100};
+  --chip-sub-text: #{$primary-400};
+  --timeline-bullet-bg: #{$primary-500};
+  --timeline-line-bg: #{$primary-900};
+  --carousel-panel-bg: #{$primary-950};
+  --carousel-panel-header-text: #{$primary-100};
+  --carousel-panel-text: #{$primary-300};
+  --carousel-indicator-active-bg: #{$base-200};
+  --carousel-indicator-inactive-bg: #{$base-800};
+}

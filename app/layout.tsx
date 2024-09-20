@@ -1,9 +1,8 @@
-'use client'
-
 import './globals.scss'
 import { Syne } from 'next/font/google'
 import Navbar from '@/components/nav/Navbar'
-import ThemeProvider, { DarkModeContext } from '@/theme-provider'
+import { ThemeContextProvider } from '@/contexts/ThemeContext'
+import ThemeProvider from '@/providers/ThemeProvider'
 
 const syne = Syne({ subsets: ['latin'] })
 
@@ -12,25 +11,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const onNavLinkClick = () => {}
-
   return (
     <html lang="en">
       <body className={`${syne.className}`}>
-        <ThemeProvider>
-          <DarkModeContext.Consumer>
-            {(value) => (
-              <main className={`${value.darkMode && 'dark-mode'}`}>
-                <Navbar
-                  darkMode={value.darkMode}
-                  onDarkModeChange={(v) => value.setDarkMode(!v)}
-                  onNavLinkClick={onNavLinkClick}
-                />
-                {children}
-              </main>
-            )}
-          </DarkModeContext.Consumer>
-        </ThemeProvider>
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <>
+              <Navbar />
+              {children}
+            </>
+          </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   )

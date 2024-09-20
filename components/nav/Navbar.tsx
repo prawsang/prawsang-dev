@@ -1,6 +1,10 @@
+'use client'
+
+import { ThemeContext } from '@/contexts/ThemeContext'
 import Switch from '../common/Switch'
 import MoonStarsFill from '@/public/icons/moon-stars-fill.svg'
 import SunFill from '@/public/icons/sun-fill.svg'
+import { useContext } from 'react'
 
 const NAV_LNKS = [
   {
@@ -25,32 +29,21 @@ const NAV_LNKS = [
   },
 ]
 
-export default function Navbar({
-  darkMode,
-  onDarkModeChange,
-  onNavLinkClick,
-}: {
-  darkMode: boolean
-  onDarkModeChange: (value: boolean) => void
-  onNavLinkClick: (id: string) => void
-}) {
+export default function Navbar() {
+  const { theme, toggle } = useContext(ThemeContext)
   return (
     <nav className="nav-bar absolute">
       <div className="app-container">
         <div className="flex justify-between items-center">
           {NAV_LNKS.map(({ text, id }) => (
-            <div
-              key={'nav-' + id}
-              className="nav-link-container"
-              onClick={() => onNavLinkClick(id)}
-            >
+            <div key={'nav-' + id} className="nav-link-container">
               <a className="nav-link">{text}</a>
               <div className="nav-link-underline" />
             </div>
           ))}
           <Switch
-            onChange={onDarkModeChange}
-            value={darkMode}
+            onChange={toggle}
+            value={theme === 'dark'}
             IconOn={MoonStarsFill}
             IconOff={SunFill}
           />

@@ -15,13 +15,14 @@
     @apply font-bold;
     cursor: pointer;
     transition: 0.2s color ease-in-out;
+    color: var(--base-text);
   }
 
   .nav-link-underline {
     width: 0;
     height: 2px;
     transition: 0.2s width ease-in-out;
-    @apply bg-base-800;
+    background: var(--base-text);
     position: absolute;
     top: calc(1rem + 16px);
     left: 50%;
@@ -30,16 +31,5 @@
 
   &:hover .nav-link-underline {
     width: 100%;
-  }
-}
-
-.dark-mode {
-  .nav-link-container {
-    .nav-link {
-      @apply text-base-100;
-    }
-    .nav-link-underline {
-      @apply bg-base-100;
-    }
   }
 }

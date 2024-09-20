@@ -150,7 +150,7 @@
     z-index: 10;
 
     .hero-text {
-      @apply text-base-800;
+      color: var(--hero-text);
       width: 100%;
       text-align: center;
       font-size: calc(min(100vw * 0.9, 1440px) / 8.25);
@@ -163,7 +163,7 @@
       }
       font-weight: 700;
       font-size: 32px;
-      @apply text-primary-400;
+      color: var(--hero-sub-text);
       line-height: 32px;
     }
   }
@@ -212,14 +212,5 @@
   .round-4 {
     background: transparent;
     background: radial-gradient(rgb(76, 11, 56) 0, rgba(69, 64, 115, 0) 50%);
-  }
-
-  .hero-content {
-    .hero-text {
-      @apply text-base-100;
-    }
-    .hero-text-sub {
-      @apply text-primary-600;
-    }
   }
 }

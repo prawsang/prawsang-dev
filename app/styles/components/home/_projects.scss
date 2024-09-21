@@ -1,33 +1,22 @@
-.carousel-wrapper {
-  position: relative;
-}
-
-.carousel {
-  display: flex;
-  position: relative;
-  top: 0;
-  left: 0;
-
-  .carousel-card {
-    width: 480px;
-    align-self: stretch;
-    margin-right: 48px;
-    background-color: var(--carousel-panel-bg);
-    border-radius: 32px;
-    overflow: hidden;
-    flex-shrink: 0;
-    .carousel-card-content {
-      padding: 32px;
-    }
-    .carousel-card-header {
-      color: var(--carousel-panel-header-text);
-      font-size: 1.5rem;
-    }
-    .carousel-card-text {
-      color: var(--carousel-panel-text);
-    }
-    .carousel-card-image {
-      width: 100%;
-    }
+.project-carousel-card {
+  width: 420px;
+  align-self: stretch;
+  margin-right: 48px;
+  background-color: var(--carousel-panel-bg);
+  border-radius: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  .project-carousel-card-content {
+    padding: 32px;
+  }
+  .project-carousel-card-header {
+    color: var(--carousel-panel-header-text);
+    font-size: 1.5rem;
+  }
+  .project-carousel-card-text {
+    color: var(--carousel-panel-text);
+  }
+  .project-carousel-card-image {
+    width: 100%;
   }
 }

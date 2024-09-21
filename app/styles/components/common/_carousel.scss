@@ -1,0 +1,39 @@
+.carousel {
+  position: relative;
+
+  .carousel-cards-wrapper {
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .carousel-cards-wrapper::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .carousel-pre {
+    width: calc(max(5vw, (100vw - 1440px)/2));
+    flex-shrink: 0;
+  }
+
+  .indicators {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @apply my-6;
+    .indicator {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+      border-radius: 4px;
+      width: 48px;
+      height: 8px;
+      cursor: pointer;
+      background-color: var(--carousel-indicator-inactive-bg);
+      &.active {
+        background-color: var(--carousel-indicator-active-bg);
+      }
+    }
+  }
+}

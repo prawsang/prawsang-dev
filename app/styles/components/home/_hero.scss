@@ -122,14 +122,14 @@
   .round-3 {
     background: transparent;
     background: radial-gradient(
-      rgba(255, 158, 98, 0.8) 0,
+      rgba(255, 158, 98, 1) 0,
       rgba(221, 179, 255, 0) 50%
     );
     height: 100%;
     aspect-ratio: 1;
     opacity: 0.8;
     left: 50%;
-    animation: moveInCircle 15s linear infinite;
+    animation: moveInCircle 40s linear infinite;
     transform-origin: calc(70vw);
   }
 
@@ -206,11 +206,11 @@
 
   .round-3 {
     background: transparent;
-    background: radial-gradient(rgb(49, 23, 63) 0, rgba(69, 64, 115, 0) 50%);
+    background: radial-gradient(rgb(95, 56, 24) 0, rgba(69, 64, 115, 0) 50%);
   }
 
   .round-4 {
     background: transparent;
-    background: radial-gradient(rgb(76, 11, 56) 0, rgba(69, 64, 115, 0) 50%);
+    background: radial-gradient(rgb(99, 12, 73) 0, rgba(69, 64, 115, 0) 50%);
   }
 }

@@ -10,8 +10,9 @@ import DashboardDark from '@/public/images/projects/dashboard-dark.svg'
 import DataManagementDark from '@/public/images/projects/data-management-dark.svg'
 import GeospatialDark from '@/public/images/projects/geospatial-dark.svg'
 import LandingPageDark from '@/public/images/projects/landing-page-dark.svg'
-import { FC, SVGProps, useContext } from 'react'
-import { ThemeContext } from '@/contexts/ThemeContext'
+import { FC, SVGProps } from 'react'
+import ProjectCarouselCard from './ProjectCarouselCard'
+import Carousel from '../common/Carousel'
 
 interface ProjectCarouselCardData {
   svg: FC<SVGProps<SVGElement>>
@@ -54,24 +55,22 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
 ]
 
 export default function Projects() {
-  const { theme } = useContext(ThemeContext)
-
   return (
     <section>
       <div className="content-container">
         <h1 className="bold mb-6">Some projects I have worked on</h1>
-        <div className="carousel">
-          {CAROUSEL_DATA.map((d, i) => (
-            <div key={'carousel' + '-' + i} className="carousel-card">
-              {theme === 'dark' ? <d.svgDark /> : <d.svg />}
-              <div className="carousel-card-content">
-                <h3 className="carousel-card-header mb-1">{d.header}</h3>
-                <p className="carousel-card-text">{d.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
+      <Carousel cardWidth={420} gap={48} totalCards={CAROUSEL_DATA.length}>
+        {CAROUSEL_DATA.map((d, i) => (
+          <ProjectCarouselCard
+            key={'carousel' + '-' + i}
+            SvgLight={d.svg}
+            SvgDark={d.svgDark}
+            text={d.text}
+            header={d.header}
+          />
+        ))}
+      </Carousel>
     </section>
   )
 }

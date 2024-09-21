@@ -30,6 +30,7 @@ export default function Hero() {
         <div className="round-2" />
         <div className="round-3" />
         <div className="round-4" />
+        <div className="round-5" />
       </div>
       <div className="content-container">
         <div className="hero-content flex flex-col py-8 gap-0">

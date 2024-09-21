@@ -18,7 +18,7 @@ export default function Intro() {
           <div className="basis-1/2 flex flex-col gap-5">
             <div>
               <h1 className="primary-header-text mb-3">Hello there!</h1>
-              <p>
+              <p className="p-large">
                 <b>My name is Prawsang. </b>I am a frontend developer based in
                 Bangkok, Thailand. With 4 years of experience in frontend
                 development, I have worked in various organizations, focusing on
@@ -39,7 +39,7 @@ export default function Intro() {
               </p>
             </div>
             <div>
-              <h3 className="primary-header-text mb-3">Languages</h3>
+              <h2 className="primary-header-text mb-3">Languages</h2>
               <div className="flex gap-3">
                 <Chip>
                   English <span className="chip-sub-text">- Fluent</span>

@@ -19,7 +19,7 @@ const getCardsPerPage = (
   cardWidth: number,
   gap: number
 ) => {
-  return Math.floor((windowWidth - getPre(windowWidth)) / (cardWidth + gap))
+  return Math.round((windowWidth - getPre(windowWidth)) / (cardWidth + gap))
 }
 export default function Carousel({
   children,
@@ -45,9 +45,7 @@ export default function Carousel({
   // Calculate indicator count
   useEffect(() => {
     const cardsPerPage = getCardsPerPage(windowWidth, cardWidth, gap)
-    const _indicatorCount = Math.ceil(
-      (scrollContainer.current?.scrollWidth || 0 + gap) / windowWidth
-    )
+    const _indicatorCount = Math.ceil(totalCards / cardsPerPage)
     setIndicatorCount(_indicatorCount)
     const arr = []
     for (let i = 0; i < _indicatorCount; i++) {

@@ -5,8 +5,8 @@ export default function Intro() {
   return (
     <section>
       <div className="content-container">
-        <div className="flex gap-3">
-          <div className="basis-1/4">
+        <div className="flex gap-4">
+          <div className="basis-1/6">
             <Image
               unoptimized
               src="/images/animoji-1.png"
@@ -15,7 +15,7 @@ export default function Intro() {
               height={288}
             ></Image>
           </div>
-          <div className="basis-1/2 flex flex-col gap-5">
+          <div className="basis-2/3 flex flex-col gap-5">
             <div>
               <h1 className="primary-header-text mb-3">Hello there!</h1>
               <p className="p-large">
@@ -50,7 +50,7 @@ export default function Intro() {
               </div>
             </div>
           </div>
-          <div className="basis-1/4"></div>
+          <div className="basis-1/6"></div>
         </div>
       </div>
     </section>

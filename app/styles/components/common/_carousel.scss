@@ -13,7 +13,7 @@
   }
 
   .carousel-pre {
-    width: calc(max(5vw, (100vw - 1440px)/2));
+    width: calc(max(5%, (100% - 1440px)/2));
     flex-shrink: 0;
   }
 

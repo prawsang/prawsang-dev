@@ -12,7 +12,6 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
       'Redux',
       'Gatsby',
       'MobX',
-      'VueX',
       'Storybook',
     ],
   },

@@ -58,7 +58,9 @@ export default function Projects() {
   return (
     <section>
       <div className="content-container">
-        <h1 className="bold mb-6">Some projects I have worked on</h1>
+        <h1 className="base-header-text bold mb-6">
+          Some projects I have worked on
+        </h1>
       </div>
       <Carousel cardWidth={420} gap={48} totalCards={CAROUSEL_DATA.length}>
         {CAROUSEL_DATA.map((d, i) => (

@@ -11,6 +11,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+h4 {
+  font-size: 1.125rem;
+}
+
 h1,
 h2,
 h3,
@@ -25,16 +29,24 @@ h6 {
 }
 
 // FONT WEIGHTS
-.extra-bold {
+.extra-bold,
+.text-extra-bold {
   font-weight: 800;
 }
 
-.bold {
+.bold,
+.text-bold {
   font-weight: 700;
 }
 
-.semi-bold {
+.semi-bold,
+.text-semi-bold {
   font-weight: 600;
+}
+
+.regular,
+.text-regular {
+  font-weight: 400;
 }
 
 // COLORS
@@ -87,6 +99,24 @@ h6 {
   color: var(--carousel-panel-text);
 }
 
-.list-text {
-  color: var(--list-text);
+ul {
+  list-style: none;
+  li {
+    font-size: 1.125rem;
+    color: var(--list-text);
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1px;
+      margin-top: 12px;
+      margin-right: 12px;
+      background-color: var(--list-bullet-bg);
+      flex-shrink: 0;
+    }
+  }
 }

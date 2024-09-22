@@ -38,7 +38,6 @@
 
 .hero-container {
   width: 100%;
-  max-height: 100vh;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -169,7 +168,7 @@
       color: var(--hero-text);
       width: 100%;
       text-align: center;
-      font-size: calc(min(100vw * 0.9, 1440px) / 8.25);
+      font-size: calc(min(100vw * 0.9, 1920px) / 8.25);
       font-weight: 800;
       overflow: hidden;
     }

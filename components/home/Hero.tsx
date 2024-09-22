@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="round-4" />
         <div className="round-5" />
       </div>
-      <div className="content-container">
+      <div className="wide-content-container">
         <div className="hero-content flex flex-col py-8 gap-0">
           <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
             <h2 className="hero-sub-text bold whitespace-nowrap">

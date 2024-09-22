@@ -1,12 +1,17 @@
-.contact-container {
-  position: relative;
+.contact-section {
   background: var(--contact-bg);
   overflow: hidden;
+}
+
+.contact-container {
+  position: relative;
   padding-top: 240px;
   padding-bottom: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 2560px;
+  margin: auto;
 }
 
 .contact-name-card-main {
@@ -41,7 +46,9 @@
 }
 
 .contact-name-card {
-  width: 480px;
+  width: 24vw;
+  min-width: 480px;
+  max-width: 600px;
   aspect-ratio: 1.75;
   box-sizing: border-box;
   padding: 24px 32px;

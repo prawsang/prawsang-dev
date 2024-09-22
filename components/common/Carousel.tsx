@@ -6,12 +6,12 @@ import { useEffect, useRef, useState } from 'react'
 const getWindowWidth = () => {
   if (typeof window !== 'undefined') {
     const width = window?.innerWidth
-    return width || 0
+    return Math.min(width, 1800) || 0
   } else return 0
 }
 
-const getPre = (windowWidth: number) => {
-  return Math.max(windowWidth * 0.05, (windowWidth - 1440) / 2)
+const getPre = () => {
+  return 48
 }
 
 const getCardsPerPage = (
@@ -19,9 +19,7 @@ const getCardsPerPage = (
   cardWidth: number,
   gap: number
 ) => {
-  return (
-    Math.round((windowWidth - getPre(windowWidth)) / (cardWidth + gap)) || 1
-  )
+  return Math.round((windowWidth - getPre()) / (cardWidth + gap)) || 1
 }
 export default function Carousel({
   children,
@@ -87,7 +85,7 @@ export default function Carousel({
 
     const cardsPerPage = getCardsPerPage(windowWidth, cardWidth, gap)
     scrollContainer.current.scrollTo({
-      left: getPre(windowWidth) + cardsPerPage * i * (cardWidth + gap) - gap,
+      left: getPre() + cardsPerPage * i * (cardWidth + gap) - gap,
       behavior: 'smooth',
     })
   }

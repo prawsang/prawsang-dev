@@ -1,5 +1,39 @@
 .carousel {
   position: relative;
+  max-width: 1920px;
+  margin: auto;
+
+  &:after {
+    content: '';
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    background: transparent;
+    background: linear-gradient(
+      -90deg,
+      rgba(var(--carousel-shadow), 0.7),
+      rgba(var(--carousel-shadow), 0)
+    );
+  }
+
+  &:before {
+    content: '';
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+    background: transparent;
+    background: linear-gradient(
+      90deg,
+      rgba(var(--carousel-shadow), 0.7),
+      rgba(var(--carousel-shadow), 0)
+    );
+  }
 
   .carousel-cards-wrapper {
     display: flex;
@@ -13,7 +47,7 @@
   }
 
   .carousel-pre {
-    width: calc(max(5%, (100% - 1440px)/2));
+    width: 48px;
     flex-shrink: 0;
   }
 

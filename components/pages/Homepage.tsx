@@ -20,6 +20,9 @@ export default function Homepage() {
   const { ref: heroRef, inView: heroInView } = useInView({
     threshold: 0,
   })
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: 0.2,
+  })
 
   const onNavLinkClick = (id: string) => {
     switch (id) {
@@ -66,7 +69,9 @@ export default function Homepage() {
             <Experience />
           </div>
           <div className="section-wrapper" ref={contact}>
-            <Contact />
+            <div ref={contactRef}>
+              <Contact show={contactInView} />
+            </div>
           </div>
         </div>
       </div>

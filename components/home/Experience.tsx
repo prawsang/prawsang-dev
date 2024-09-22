@@ -38,20 +38,24 @@ export default function Experience() {
     <section className="experience-container">
       <div className="emoji-container">
         <div className="animoji">
-          <div className="animoji-img">
-            <Image
-              unoptimized
-              className="animoji-img"
-              src="/images/animoji-2.png"
-              alt="Prawsang Animoji"
-              width={320}
-              height={320}
-            ></Image>
+          <div className="emoji-img-wrapper">
+            <div className="animoji-img">
+              <Image
+                unoptimized
+                className="animoji-img"
+                src="/images/animoji-2.png"
+                alt="Prawsang Animoji"
+                width={320}
+                height={320}
+              ></Image>
+            </div>
           </div>
         </div>
         <div className="laptop">
-          <div className="laptop-img">
-            <Laptop />
+          <div className="emoji-img-wrapper">
+            <div className="laptop-img">
+              <Laptop />
+            </div>
           </div>
         </div>
       </div>

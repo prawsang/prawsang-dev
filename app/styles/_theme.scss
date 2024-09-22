@@ -31,6 +31,7 @@ main {
   --carousel-panel-text: #{$primary-600};
   --carousel-indicator-active-bg: #{$base-500};
   --carousel-indicator-inactive-bg: #{$base-200};
+  --carousel-shadow: 250, 250, 250;
   --contact-bg: #{$base-100};
   --contact-main-card-bg: #{$base-50};
   --link-text: #{$primary-500};
@@ -67,6 +68,7 @@ main.dark-mode {
   --carousel-panel-text: #{$primary-300};
   --carousel-indicator-active-bg: #{$base-200};
   --carousel-indicator-inactive-bg: #{$base-800};
+  --carousel-shadow: 9, 9, 11;
   --contact-bg: #{$base-900};
   --contact-main-card-bg: #{$base-950};
   --link-text: #{$primary-400};

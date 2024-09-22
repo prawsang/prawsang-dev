@@ -37,7 +37,13 @@ section {
 }
 
 .content-container {
-  max-width: 1440px;
+  max-width: 1600px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wide-content-container {
+  max-width: 1920px;
   width: 90%;
   margin: 0 auto;
 }

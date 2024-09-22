@@ -17,9 +17,10 @@ main {
   --nav-close-bg: #{$primary-200};
   --nav-close-bg-hover: #{$primary-100};
   --nav-close-icon-fill: #{$primary-900};
-  --nav-panel-bg: white;
+  --nav-panel-bg: #{$base-50};
   --nav-panel-text: #{$primary-900};
   --nav-panel-active-bg: #{$primary-100};
+  --nav-panel-shadow: rgba(0, 0, 0, 0.15);
   --chip-bg: #{$primary-100};
   --chip-border: #{$primary-300};
   --chip-text: #{$primary-800};
@@ -57,6 +58,7 @@ main.dark-mode {
   --nav-panel-bg: #{$base-900};
   --nav-panel-text: #{$primary-200};
   --nav-panel-active-bg: #{$primary-800};
+  --nav-panel-shadow: rgba(0, 0, 0, 0.4);
   --chip-bg: #{$primary-950};
   --chip-border: #{$primary-800};
   --chip-text: #{primary-100};

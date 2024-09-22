@@ -57,7 +57,6 @@ export default function Hero() {
                 bottomOpen && 'visible'
               }`}
             >
-              {/* <Trail open={bottomOpen} containerClasses=""> */}
               <h2>A</h2>
               <div className="flex gap-4">
                 <h2>Front</h2>
@@ -65,7 +64,6 @@ export default function Hero() {
                 <h2>end</h2>
               </div>
               <h2>Developer</h2>
-              {/* </Trail> */}
             </div>
           </div>
         </div>

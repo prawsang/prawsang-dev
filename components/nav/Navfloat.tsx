@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 export default function Navfloat({
   onLinkClick,
-  show,
+  show = false,
 }: {
   onLinkClick: (value: string) => void
   show: boolean

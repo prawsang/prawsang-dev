@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Hero from '@/components/home/Hero'
 import Intro from '@/components/home/Intro'
 import Projects from '@/components/home/Projects'
@@ -10,12 +10,20 @@ import Contact from '@/components/home/Contact'
 import Navfloat from '@/components/nav/Navfloat'
 import Navbar from '@/components/nav/Navbar'
 import { useInView } from 'react-intersection-observer'
+
 export default function Homepage() {
   const intro = useRef<HTMLDivElement>(null)
   const projects = useRef<HTMLDivElement>(null)
   const skills = useRef<HTMLDivElement>(null)
   const experience = useRef<HTMLDivElement>(null)
   const contact = useRef<HTMLDivElement>(null)
+
+  // prevents flickers
+  const [mounted, setMounted] = useState<boolean>()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const { ref: heroRef, inView: heroInView } = useInView({
     threshold: 0,
@@ -51,7 +59,10 @@ export default function Homepage() {
     <>
       <Navbar onLinkClick={onNavLinkClick} />
       <div className="page-container">
-        <Navfloat onLinkClick={onNavLinkClick} show={!heroInView} />
+        <Navfloat
+          onLinkClick={onNavLinkClick}
+          show={(mounted && !heroInView) || false}
+        />
         <div ref={heroRef}>
           <Hero />
         </div>

@@ -1,8 +1,5 @@
-'use client'
-
 import { useSpring, a } from '@react-spring/web'
 import ContactNameCard from './ContactNameCard'
-import { useEffect, useState } from 'react'
 
 export default function Contact({ show }: { show: boolean }) {
   const ani1 = useSpring({
@@ -35,10 +32,6 @@ export default function Contact({ show }: { show: boolean }) {
     transform: show ? 'rotate(15deg)' : 'rotate(-90deg)',
     from: { left: '-100%', top: '150%', transform: 'rotate(-90deg)' },
   })
-  const [mounted, setMounted] = useState<boolean>(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return (
     <section className="contact-section">
@@ -72,25 +65,21 @@ export default function Contact({ show }: { show: boolean }) {
             </div>
           </div>
         </div>
-        {mounted && (
-          <>
-            <a.div className="contact-name-card-wrapper bg-1" style={ani1}>
-              <ContactNameCard background={1} />
-            </a.div>
-            <a.div className="contact-name-card-wrapper bg-2" style={ani2}>
-              <ContactNameCard background={2} />
-            </a.div>
-            <a.div className="contact-name-card-wrapper bg-3" style={ani3}>
-              <ContactNameCard background={3} />
-            </a.div>
-            <a.div className="contact-name-card-wrapper bg-4" style={ani4}>
-              <ContactNameCard background={4} />
-            </a.div>
-            <a.div className="contact-name-card-wrapper bg-5" style={ani5}>
-              <ContactNameCard background={5} />
-            </a.div>
-          </>
-        )}
+        <a.div className="contact-name-card-wrapper bg-1" style={ani1}>
+          <ContactNameCard background={1} />
+        </a.div>
+        <a.div className="contact-name-card-wrapper bg-2" style={ani2}>
+          <ContactNameCard background={2} />
+        </a.div>
+        <a.div className="contact-name-card-wrapper bg-3" style={ani3}>
+          <ContactNameCard background={3} />
+        </a.div>
+        <a.div className="contact-name-card-wrapper bg-4" style={ani4}>
+          <ContactNameCard background={4} />
+        </a.div>
+        <a.div className="contact-name-card-wrapper bg-5" style={ani5}>
+          <ContactNameCard background={5} />
+        </a.div>
       </div>
     </section>
   )

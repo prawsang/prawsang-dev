@@ -1,0 +1,111 @@
+.nav-float {
+  position: fixed;
+  top: -350px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: row-reverse;
+  pointer-events: none;
+  transition: top 0.5s ease-in-out;
+  &.show {
+    top: 24px;
+  }
+
+  .nav-float-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 32px;
+    background-color: var(--nav-close-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+    pointer-events: all;
+    &:hover {
+      background-color: var(--nav-close-bg-hover);
+    }
+    .nav-float-toggle-bars {
+      position: relative;
+      width: 24px;
+      height: 16px;
+      transition: height 0.3s ease-in-out;
+      .nav-float-toggle-bar {
+        background-color: var(--nav-close-icon-fill);
+        position: absolute;
+        height: 2px;
+        width: 24px;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+        &.bar-1 {
+          top: 0;
+          left: 50%;
+        }
+        &.bar-2 {
+          top: 50%;
+          left: 50%;
+        }
+        &.bar-3 {
+          top: 100%;
+          left: 50%;
+        }
+      }
+    }
+  }
+
+  &.open .nav-float-toggle {
+    .nav-float-toggle-bars {
+      height: 24px;
+      .nav-float-toggle-bar {
+        &.bar-1 {
+          transform: translate(-50%, -50%) rotate(45deg);
+          top: 50%;
+        }
+        &.bar-2 {
+          transform: translate(-50%, -50%) rotate(45deg);
+          opacity: 0;
+          top: 50%;
+        }
+        &.bar-3 {
+          transform: translate(-50%, -50%) rotate(-45deg);
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  .nav-float-panel {
+    background-color: var(--nav-panel-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 0px 8px;
+    height: 0px;
+    overflow: hidden;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: all;
+
+    .nav-float-panel-item {
+      border-radius: 10px;
+      padding: 12px;
+      padding-right: 24px;
+      font-weight: bold;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      color: var(--nav-panel-text);
+      background: transparent;
+      transition: background 0.1s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: var(--nav-panel-active-bg);
+      }
+    }
+  }
+
+  &.open .nav-float-panel {
+    padding: 8px;
+    height: 288px;
+  }
+}

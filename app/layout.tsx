@@ -1,6 +1,5 @@
 import './globals.scss'
 import { Syne } from 'next/font/google'
-import Navbar from '@/components/nav/Navbar'
 import { ThemeContextProvider } from '@/contexts/ThemeContext'
 import ThemeProvider from '@/providers/ThemeProvider'
 
@@ -15,12 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${syne.className}`}>
         <ThemeContextProvider>
-          <ThemeProvider>
-            <>
-              <Navbar />
-              {children}
-            </>
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </ThemeContextProvider>
       </body>
     </html>

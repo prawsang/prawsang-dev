@@ -22,8 +22,17 @@ main {
   overflow: hidden;
 }
 
+.section-wrapper {
+  &:first-child {
+    padding-top: 108px;
+  }
+  padding-top: 54px;
+  padding-bottom: 54px;
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
 section {
-  margin-top: 108px;
   position: relative;
 }
 

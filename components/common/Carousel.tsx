@@ -19,7 +19,9 @@ const getCardsPerPage = (
   cardWidth: number,
   gap: number
 ) => {
-  return Math.round((windowWidth - getPre(windowWidth)) / (cardWidth + gap))
+  return (
+    Math.round((windowWidth - getPre(windowWidth)) / (cardWidth + gap)) || 1
+  )
 }
 export default function Carousel({
   children,
@@ -36,7 +38,7 @@ export default function Carousel({
   const [windowWidth, setWindowWidth] = useState<number>(() => {
     return getWindowWidth()
   })
-  const [indicatorCount, setIndicatorCount] = useState<number>(0)
+  const [indicatorCount, setIndicatorCount] = useState<number>(1)
   const [activeIndicator, setActiveIndicator] = useState<number>(0)
   const [indicatorPositions, setIndicatorPositions] = useState<number[]>([])
   const [ignoreScrollEvent, setIgnoreScrollEvent] =
@@ -44,6 +46,7 @@ export default function Carousel({
 
   // Calculate indicator count
   useEffect(() => {
+    if (!scrollContainer.current) return
     const cardsPerPage = getCardsPerPage(windowWidth, cardWidth, gap)
     const _indicatorCount = Math.ceil(totalCards / cardsPerPage)
     setIndicatorCount(_indicatorCount)
@@ -57,10 +60,8 @@ export default function Carousel({
   // Resize observer to recalculate indicator count
   useEffect(() => {
     if (scrollContainer.current) {
-      const observer = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-          setWindowWidth(entry.contentRect.width)
-        }
+      const observer = new ResizeObserver(() => {
+        setWindowWidth(getWindowWidth())
       })
 
       observer.observe(scrollContainer.current)

@@ -1,9 +1,9 @@
 import Hero from '@/components/home/Hero'
-import Intro from '../home/Intro'
-import Projects from '../home/Projects'
-import Skills from '../home/Skills'
-import Experience from '../home/Experience'
-import Contact from '../home/Contact'
+import Intro from '@/components/home/Intro'
+import Projects from '@/components/home/Projects'
+import Skills from '@/components/home/Skills'
+import Experience from '@/components/home/Experience'
+import Contact from '@/components/home/Contact'
 export default function Homepage() {
   return (
     <div className="page-container">

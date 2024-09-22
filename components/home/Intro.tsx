@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Chip from '../common/Chip'
+import Chip from '@/components/common/Chip'
 
 export default function Intro() {
   return (

@@ -1,4 +1,4 @@
-import Chip from '../common/Chip'
+import Chip from '@/components/common/Chip'
 
 const SKILL_LIST: { header: string; skills: string[] }[] = [
   {

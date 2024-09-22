@@ -12,7 +12,7 @@ import GeospatialDark from '@/public/images/projects/geospatial-dark.svg'
 import LandingPageDark from '@/public/images/projects/landing-page-dark.svg'
 import { FC, SVGProps } from 'react'
 import ProjectCarouselCard from './ProjectCarouselCard'
-import Carousel from '../common/Carousel'
+import Carousel from '@/components/common/Carousel'
 
 interface ProjectCarouselCardData {
   svg: FC<SVGProps<SVGElement>>

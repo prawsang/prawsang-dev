@@ -65,11 +65,12 @@
     display: flex;
     justify-content: flex-start;
 
-    .aniomji-img {
+    .animoji-img {
       transform: rotate(5deg);
       width: 320px;
       aspect-ratio: 1;
-      max-width: 85%;
+      max-width: 90%;
+      margin: auto;
     }
   }
 
@@ -89,6 +90,7 @@
       position: relative;
       bottom: 180px;
       transform: rotate(-15deg);
+      margin: auto;
     }
   }
 }

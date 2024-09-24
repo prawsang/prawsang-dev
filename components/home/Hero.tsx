@@ -34,22 +34,26 @@ export default function Hero() {
       </div>
       <div className="wide-content-container">
         <div className="hero-content flex flex-col py-8 gap-0">
-          <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
-            <h2 className="hero-sub-text bold whitespace-nowrap">
-              Hi! I&apos;m
-            </h2>
-          </Trail>
-          <div className="text-center">
-            <Trail open={heroOpen} containerClasses="justify-center">
-              <span className="hero-text">P</span>
-              <span className="hero-text">r</span>
-              <span className="hero-text">a</span>
-              <span className="hero-text">w</span>
-              <span className="hero-text">s</span>
-              <span className="hero-text">a</span>
-              <span className="hero-text">n</span>
-              <span className="hero-text">g</span>
+          <div className="flex">
+            <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
+              <h2 className="hero-sub-text bold whitespace-nowrap">
+                Hi! I&apos;m
+              </h2>
             </Trail>
+          </div>
+          <div className="text-center">
+            <div className="flex justify-center">
+              <Trail open={heroOpen}>
+                <span className="hero-text">P</span>
+                <span className="hero-text">r</span>
+                <span className="hero-text">a</span>
+                <span className="hero-text">w</span>
+                <span className="hero-text">s</span>
+                <span className="hero-text">a</span>
+                <span className="hero-text">n</span>
+                <span className="hero-text">g</span>
+              </Trail>
+            </div>
           </div>
           <div className="flex justify-end">
             <div

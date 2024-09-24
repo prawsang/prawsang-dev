@@ -2,6 +2,23 @@
 
 .experience-container {
   position: relative;
+  .experience-content {
+    position: relative;
+    .timeline-conceal {
+      width: 8px;
+      position: absolute;
+      top: 9px;
+      bottom: -9px;
+      left: 4px;
+      background-color: var(--bg);
+      transition: top 2s linear;
+      z-index: 10;
+      &.show {
+        top: 100%;
+        bottom: 0;
+      }
+    }
+  }
   .timeline-container {
     align-self: stretch;
     position: relative;
@@ -12,7 +29,7 @@
     border-radius: 999px;
     background-color: var(--timeline-bullet-bg);
     margin-top: 9px;
-    z-index: 10;
+    z-index: 12;
     position: relative;
   }
   .timeline-line {
@@ -52,7 +69,7 @@
       transform: rotate(5deg);
       width: 320px;
       aspect-ratio: 1;
-      max-width: 80%;
+      max-width: 85%;
     }
   }
 
@@ -68,18 +85,10 @@
     .laptop-img {
       width: 200px;
       aspect-ratio: 1;
-      max-width: 60%;
+      max-width: 85%;
       position: relative;
       bottom: 180px;
       transform: rotate(-15deg);
     }
   }
 }
-
-// 5vw | 90 vw | 5vw
-// 5vw | 90/6vw | 90*2/3vw | 90/6vw | 5vw
-
-// xxx | 1440px | xxx
-// xxx | 1440/6px | 1440*2/3px | 1440/6px | xxx
-
-// (100vw - 1440/6px - 1440/6px) /2

@@ -1,5 +1,6 @@
 import Laptop from '@/public/images/laptop.svg'
 import Image from 'next/image'
+import OpacityTrail from '../common/OpacityTrail'
 
 const EXPERIENCE = [
   {
@@ -33,29 +34,33 @@ const EXPERIENCE = [
   },
 ]
 
-export default function Experience() {
+export default function Experience({ show }: { show: boolean }) {
   return (
     <section className="experience-container">
       <div className="emoji-container">
         <div className="animoji">
           <div className="emoji-img-wrapper">
-            <div className="animoji-img">
-              <Image
-                unoptimized
-                className="animoji-img"
-                src="/images/animoji-2.png"
-                alt="Prawsang Animoji"
-                width={320}
-                height={320}
-              ></Image>
-            </div>
+            <OpacityTrail open={show} slide="up">
+              <div className="animoji-img">
+                <Image
+                  unoptimized
+                  className="animoji-img"
+                  src="/images/animoji-2.png"
+                  alt="Prawsang Animoji"
+                  width={320}
+                  height={320}
+                ></Image>
+              </div>
+            </OpacityTrail>
           </div>
         </div>
         <div className="laptop">
           <div className="emoji-img-wrapper">
-            <div className="laptop-img">
-              <Laptop />
-            </div>
+            <OpacityTrail open={show} slide="up">
+              <div className="laptop-img">
+                <Laptop />
+              </div>
+            </OpacityTrail>
           </div>
         </div>
       </div>
@@ -66,32 +71,35 @@ export default function Experience() {
             <div className="text-center mb-6">
               <h1>Job Experience</h1>
             </div>
-            {EXPERIENCE.map((e, i) => (
-              <div key={`exp-${i}`} className="flex gap-5">
-                <div className="timeline-container">
-                  <div className="timeline-mark" />
-                  {i !== EXPERIENCE.length - 1 && (
-                    <div className="timeline-line" />
-                  )}
-                </div>
-                <div className="mb-6">
-                  <div className="flex items-end gap-4 mb-1">
-                    <h3 className="bold">{e.company}</h3>
-                    <h4 className="base-sub-header-text text-regular">
-                      {e.period}
-                    </h4>
+            <div className="experience-content">
+              <div className={`timeline-conceal ${show && 'show'}`} />
+              {EXPERIENCE.map((e, i) => (
+                <div key={`exp-${i}`} className="flex gap-5">
+                  <div className="timeline-container">
+                    <div className="timeline-mark" />
+                    {i !== EXPERIENCE.length - 1 && (
+                      <div className="timeline-line" />
+                    )}
                   </div>
-                  <h4 className="mb-3 text-regular base-sub-header-text">
-                    {e.position}
-                  </h4>
-                  <ul>
-                    {e.description.map((d, di) => (
-                      <li key={`d-${i + di}`}>{d}</li>
-                    ))}
-                  </ul>
+                  <div className="mb-6">
+                    <div className="flex items-end gap-4 mb-1">
+                      <h3 className="bold">{e.company}</h3>
+                      <h4 className="base-sub-header-text text-regular">
+                        {e.period}
+                      </h4>
+                    </div>
+                    <h4 className="mb-3 text-regular base-sub-header-text">
+                      {e.position}
+                    </h4>
+                    <ul>
+                      {e.description.map((d, di) => (
+                        <li key={`d-${i + di}`}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           <div className="basis-1/6" />
         </div>
@@ -99,15 +107,3 @@ export default function Experience() {
     </section>
   )
 }
-
-{
-  /* <Laptop /> */
-}
-
-// <Image
-//                 unoptimized
-//                 src="/images/animoji-2.png"
-//                 alt="Prawsang Animoji"
-//                 width={320}
-//                 height={320}
-//               ></Image>

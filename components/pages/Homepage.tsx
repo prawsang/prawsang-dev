@@ -9,14 +9,10 @@ import Experience from '@/components/home/Experience'
 import Contact from '@/components/home/Contact'
 import Navfloat from '@/components/nav/Navfloat'
 import Navbar from '@/components/nav/Navbar'
-import { useInView } from 'react-intersection-observer'
+import useInView from '@/hooks/useInView'
 
 export default function Homepage() {
   const intro = useRef<HTMLDivElement>(null)
-  const projects = useRef<HTMLDivElement>(null)
-  const skills = useRef<HTMLDivElement>(null)
-  const experience = useRef<HTMLDivElement>(null)
-  const contact = useRef<HTMLDivElement>(null)
 
   // prevents flickers
   const [mounted, setMounted] = useState<boolean>()
@@ -25,10 +21,22 @@ export default function Homepage() {
     setMounted(true)
   }, [])
 
-  const { ref: heroRef, inView: heroInView } = useInView({
+  const { ref: hero, inView: heroInView } = useInView({
     threshold: 0,
   })
-  const { ref: contactRef, inView: contactInView } = useInView({
+  const { ref: projects, inView: projectsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  })
+  const { ref: skills, inView: skillsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  })
+  const { ref: experience, inView: experienceInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  })
+  const { ref: contact, inView: contactInView } = useInView({
     threshold: 0.2,
   })
 
@@ -63,7 +71,7 @@ export default function Homepage() {
           onLinkClick={onNavLinkClick}
           show={(mounted && !heroInView) || false}
         />
-        <div ref={heroRef}>
+        <div ref={hero}>
           <Hero />
         </div>
         <div>
@@ -71,18 +79,16 @@ export default function Homepage() {
             <Intro />
           </div>
           <div className="section-wrapper" ref={projects}>
-            <Projects />
+            <Projects show={projectsInView} />
           </div>
           <div className="section-wrapper" ref={skills}>
-            <Skills />
+            <Skills show={skillsInView} />
           </div>
           <div className="section-wrapper" ref={experience}>
-            <Experience />
+            <Experience show={experienceInView} />
           </div>
           <div className="section-wrapper" ref={contact}>
-            <div ref={contactRef}>
-              <Contact show={contactInView} />
-            </div>
+            <Contact show={contactInView} />
           </div>
         </div>
       </div>

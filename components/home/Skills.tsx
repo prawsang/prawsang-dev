@@ -1,4 +1,5 @@
 import Chip from '@/components/common/Chip'
+import OpacityTrail from '../common/OpacityTrail'
 
 const SKILL_LIST: { header: string; skills: string[] }[] = [
   {
@@ -41,7 +42,7 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
   },
 ]
 
-export default function Skills() {
+export default function Skills({ show }: { show: boolean }) {
   return (
     <section>
       <div className="content-container">
@@ -51,11 +52,13 @@ export default function Skills() {
             <div key={`skill-h-${i}`}>
               <p className="bold base-sub-header-text mb-4">{s.header}</p>
               <div className="flex flex-wrap">
-                {s.skills.map((skill) => (
-                  <Chip key={`skill-${skill}`} className="mb-3 mr-3">
-                    <>{skill}</>
-                  </Chip>
-                ))}
+                <OpacityTrail open={show}>
+                  {s.skills.map((skill) => (
+                    <Chip key={`skill-${skill}`} className="mb-3 mr-3">
+                      <>{skill}</>
+                    </Chip>
+                  ))}
+                </OpacityTrail>
               </div>
             </div>
           ))}

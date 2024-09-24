@@ -13,6 +13,7 @@ import LandingPageDark from '@/public/images/projects/landing-page-dark.svg'
 import { FC, SVGProps } from 'react'
 import ProjectCarouselCard from './ProjectCarouselCard'
 import Carousel from '@/components/common/Carousel'
+import OpacityTrail from '../common/OpacityTrail'
 
 interface ProjectCarouselCardData {
   svg: FC<SVGProps<SVGElement>>
@@ -54,7 +55,7 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
   },
 ]
 
-export default function Projects() {
+export default function Projects({ show }: { show: boolean }) {
   return (
     <section>
       <div className="content-container">
@@ -63,15 +64,17 @@ export default function Projects() {
         </h1>
       </div>
       <Carousel cardWidth={420} gap={48} totalCards={CAROUSEL_DATA.length}>
-        {CAROUSEL_DATA.map((d, i) => (
-          <ProjectCarouselCard
-            key={'carousel' + '-' + i}
-            SvgLight={d.svg}
-            SvgDark={d.svgDark}
-            text={d.text}
-            header={d.header}
-          />
-        ))}
+        <OpacityTrail open={show} slide="right">
+          {CAROUSEL_DATA.map((d, i) => (
+            <ProjectCarouselCard
+              key={'carousel' + '-' + i}
+              SvgLight={d.svg}
+              SvgDark={d.svgDark}
+              text={d.text}
+              header={d.header}
+            />
+          ))}
+        </OpacityTrail>
       </Carousel>
     </section>
   )

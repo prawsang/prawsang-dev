@@ -22,7 +22,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="hero-container" style={{ height: height + 'px' }}>
+    <div
+      className="hero-container"
+      style={{ height: height ? height + 'px' : '100vh' }}
+    >
       <div className="gradient-container">
         <div className="gradient-1" />
         <div className="gradient-2" />

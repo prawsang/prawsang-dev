@@ -15,7 +15,7 @@ const EXPERIENCE = [
   },
   {
     company: 'AI & Robotics Ventures (ARV)',
-    period: '2019 - 2021',
+    period: '2020 - 2021',
     position: 'Part-time | Front-end Developer',
     description: [
       'Developed various web applications using React for products of various purposes, such as data management and geospatial analysis.',
@@ -56,7 +56,7 @@ export default function Experience({ show }: { show: boolean }) {
         </div>
         <div className="laptop">
           <div className="emoji-img-wrapper">
-            <OpacityTrail open={show} slide="up">
+            <OpacityTrail gutter={16} open={show} slide="up">
               <div className="laptop-img">
                 <Laptop />
               </div>

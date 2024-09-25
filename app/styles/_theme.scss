@@ -1,6 +1,6 @@
 @import './variables';
 
-main {
+body {
   --bg: #{$base-50};
   --base-text: #{$base-800};
   --base-sub-text: #{$base-500};
@@ -38,7 +38,7 @@ main {
   --link-text: #{$primary-500};
 }
 
-main.dark-mode {
+body.dark-mode {
   --bg: #{$base-950};
   --base-text: #{$base-100};
   --base-sub-text: #{$base-400};

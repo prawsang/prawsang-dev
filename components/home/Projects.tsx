@@ -63,7 +63,7 @@ export default function Projects({ show }: { show: boolean }) {
           Some projects I have worked on
         </h1>
       </div>
-      <Carousel cardWidth={420} gap={48} totalCards={CAROUSEL_DATA.length}>
+      <Carousel totalCards={CAROUSEL_DATA.length}>
         <OpacityTrail open={show} slide="right">
           {CAROUSEL_DATA.map((d, i) => (
             <ProjectCarouselCard

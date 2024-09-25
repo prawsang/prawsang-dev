@@ -8,8 +8,6 @@ export default function Carousel({
   totalCards,
 }: {
   children: React.ReactNode
-  cardWidth: number
-  gap: number
   totalCards: number
 }) {
   const getWindowWidth = useCallback(() => {
@@ -103,7 +101,8 @@ export default function Carousel({
       left:
         getPre(windowWidth) +
         cardsPerPage * i * (getCardWidth(windowWidth) + gap) -
-        gap,
+        gap +
+        2,
       behavior: 'smooth',
     })
   }
@@ -138,6 +137,7 @@ export default function Carousel({
       >
         <div className="carousel-pre" />
         {children}
+        <div className="carousel-post" />
       </div>
       <div className="content-container">
         <div className="indicators">

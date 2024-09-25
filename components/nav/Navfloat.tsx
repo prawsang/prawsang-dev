@@ -1,7 +1,11 @@
 'use client'
 
 import { NAV_LNKS } from '@/constants/NavLinks'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Switch from '../common/Switch'
+import { ThemeContext } from '@/contexts/ThemeContext'
+import MoonStarsFill from '@/public/icons/moon-stars-fill.svg'
+import SunFill from '@/public/icons/sun-fill.svg'
 
 export default function Navfloat({
   onLinkClick,
@@ -14,6 +18,8 @@ export default function Navfloat({
   useEffect(() => {
     if (!show) setOpen(false)
   }, [show])
+
+  const { theme, toggle } = useContext(ThemeContext)
 
   return (
     <div className={`nav-float ${open && 'open'} ${show && 'show'}`}>
@@ -37,6 +43,14 @@ export default function Navfloat({
             {text}
           </div>
         ))}
+        <div className="block md:hidden px-4 py-3">
+          <Switch
+            onChange={toggle}
+            value={theme === 'dark'}
+            IconOn={MoonStarsFill}
+            IconOff={SunFill}
+          />
+        </div>
       </div>
     </div>
   )

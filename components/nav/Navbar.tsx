@@ -32,6 +32,7 @@ export default function Navbar({
             value={theme === 'dark'}
             IconOn={MoonStarsFill}
             IconOff={SunFill}
+            inverted={theme === 'dark'}
           />
         </div>
       </div>

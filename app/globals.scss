@@ -12,12 +12,14 @@
 @import './styles/components/common/index';
 @import './styles/components/nav/index';
 
-main {
+body {
   color: var(--base-text);
+  background-color: var(--bg);
+  overflow: visible !important;
+  padding-right: 0 !important;
 }
 
 .page-container {
-  background-color: var(--bg);
   max-width: 100vw;
   overflow: hidden;
 }

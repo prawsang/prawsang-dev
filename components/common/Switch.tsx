@@ -5,15 +5,19 @@ export default function Switch({
   value,
   IconOn,
   IconOff,
+  inverted,
 }: {
   onChange: (value: boolean) => void
   value: boolean
   IconOn?: FC<SVGProps<SVGElement>>
   IconOff?: FC<SVGProps<SVGElement>>
+  inverted?: boolean
 }) {
   return (
     <div
-      className={`switch ${value === true && 'on'}`}
+      className={`switch ${value === true && 'on'} ${
+        inverted === true && 'inverted'
+      }`}
       onClick={() => onChange(value)}
     >
       {IconOn && (

@@ -16,11 +16,13 @@ export default function OpacityTrail({
   slide,
   config,
   children,
+  gutter,
 }: {
   open: boolean
   slide?: 'up' | 'right'
   config?: any
   children?: ReactNode[] | ReactNode
+  gutter?: number
 }) {
   const items = React.Children.toArray(children)
   const trail = useTrail(items.length, {
@@ -35,7 +37,7 @@ export default function OpacityTrail({
   return (
     <>
       {trail.map(({ ...style }, index) => (
-        <a.div key={index} style={{ ...style }}>
+        <a.div key={index} style={{ ...style, padding: gutter + 'px 0' }}>
           {items[index]}
         </a.div>
       ))}

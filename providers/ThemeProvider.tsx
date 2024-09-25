@@ -9,10 +9,14 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (theme === 'dark') document.body.classList.add('dark-mode')
+    else if (document.body.classList.contains('dark-mode'))
+      document.body.classList.remove('dark-mode')
+  }, [theme])
   if (mounted) {
-    return (
-      <main className={`${theme === 'dark' && 'dark-mode'}`}>{children}</main>
-    )
+    return <main>{children}</main>
   }
   return <main />
 }

@@ -3,7 +3,7 @@
   max-width: 1920px;
   margin: auto;
 
-  @media screen and (min-width: $breakpoint-lg) {
+  @media screen and (min-width: $breakpoint-xl) {
     &:after {
       content: '';
       z-index: 50;
@@ -43,11 +43,13 @@
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
 
-    & > *:not(.carousel-pre) {
+    & > *:not(.carousel-pre):not(.carousel-post) {
       max-width: 480px;
       width: 75%;
-      margin-right: calc(min(5%, 48px));
       flex-shrink: 0;
+      &:not(:nth-last-child(2)):not(:last-child) {
+        margin-right: calc(min(5%, 48px));
+      }
     }
   }
 
@@ -55,7 +57,8 @@
     display: none; /* Safari and Chrome */
   }
 
-  .carousel-pre {
+  .carousel-pre,
+  .carousel-post {
     width: calc(min(48px, 5%));
     flex-shrink: 0;
   }

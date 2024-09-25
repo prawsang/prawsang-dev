@@ -1,4 +1,4 @@
-import { useTrail, a } from '@react-spring/web'
+import { useTrail, a, SpringConfig } from '@react-spring/web'
 import React, { ReactNode } from 'react'
 
 export default function Trail({
@@ -7,7 +7,7 @@ export default function Trail({
   children,
 }: {
   open: boolean
-  config?: any
+  config?: SpringConfig
   children?: ReactNode[] | ReactNode
 }) {
   const items = React.Children.toArray(children)

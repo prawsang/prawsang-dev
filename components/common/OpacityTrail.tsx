@@ -1,4 +1,4 @@
-import { useTrail, a } from '@react-spring/web'
+import { useTrail, a, SpringConfig } from '@react-spring/web'
 import React, { ReactNode } from 'react'
 
 const getSlideTransform = (slide: 'up' | 'right') => {
@@ -20,7 +20,7 @@ export default function OpacityTrail({
 }: {
   open: boolean
   slide?: 'up' | 'right'
-  config?: any
+  config?: SpringConfig
   children?: ReactNode[] | ReactNode
   gutter?: number
 }) {

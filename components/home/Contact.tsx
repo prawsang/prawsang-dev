@@ -65,7 +65,10 @@ export default function Contact({ show }: { show: boolean }) {
             </div>
           </div>
         </div>
-        <a.div className="contact-name-card-wrapper bg-1" style={ani1}>
+        <a.div
+          className="hidden sm:block contact-name-card-wrapper bg-1"
+          style={ani1}
+        >
           <ContactNameCard background={1} />
         </a.div>
         <a.div className="contact-name-card-wrapper bg-2" style={ani2}>
@@ -74,7 +77,10 @@ export default function Contact({ show }: { show: boolean }) {
         <a.div className="contact-name-card-wrapper bg-3" style={ani3}>
           <ContactNameCard background={3} />
         </a.div>
-        <a.div className="contact-name-card-wrapper bg-4" style={ani4}>
+        <a.div
+          className="hidden sm:block contact-name-card-wrapper bg-4"
+          style={ani4}
+        >
           <ContactNameCard background={4} />
         </a.div>
         <a.div className="contact-name-card-wrapper bg-5" style={ani5}>

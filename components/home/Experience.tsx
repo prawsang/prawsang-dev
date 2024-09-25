@@ -66,8 +66,8 @@ export default function Experience({ show }: { show: boolean }) {
       </div>
       <div className="content-container">
         <div className="flex">
-          <div className="basis-1/6" />
-          <div className="basis-2/3 shrink-0">
+          <div className="hidden lg:flex lg:basis-1/6" />
+          <div className="lg:basis-2/3 lg:shrink-0">
             <div className="text-center mb-6">
               <h1>Job Experience</h1>
             </div>
@@ -82,7 +82,7 @@ export default function Experience({ show }: { show: boolean }) {
                     )}
                   </div>
                   <div className="mb-6">
-                    <div className="flex items-end gap-4 mb-1">
+                    <div className="sm:flex items-end gap-4 mb-1">
                       <h3 className="bold">{e.company}</h3>
                       <h4 className="base-sub-header-text text-regular">
                         {e.period}
@@ -101,7 +101,7 @@ export default function Experience({ show }: { show: boolean }) {
               ))}
             </div>
           </div>
-          <div className="basis-1/6" />
+          <div className="hidden lg:flex lg:basis-1/6" />
         </div>
       </div>
     </section>

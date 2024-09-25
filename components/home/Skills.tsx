@@ -3,7 +3,7 @@ import OpacityTrail from '../common/OpacityTrail'
 
 const SKILL_LIST: { header: string; skills: string[] }[] = [
   {
-    header: 'Front-end Frameworks & Libraries',
+    header: 'Front-end Skills',
     skills: [
       'Angular',
       'React',
@@ -14,6 +14,7 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
       'Gatsby',
       'MobX',
       'Storybook',
+      'Responsive Web',
     ],
   },
   {

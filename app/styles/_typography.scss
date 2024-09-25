@@ -37,7 +37,7 @@ h6 {
 
 .p-large {
   font-size: 1rem;
-  @media screen and (min-width: $breakpoint-sm) {
+  @media screen and (min-width: $breakpoint-md) {
     font-size: 1.125rem;
   }
 }
@@ -121,7 +121,10 @@ h6 {
 ul {
   list-style: none;
   li {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 1.125rem;
+    }
     color: var(--list-text);
     display: flex;
     &:not(:last-child) {

@@ -51,6 +51,10 @@
     pointer-events: none;
   }
   .emoji-img-wrapper {
+    opacity: 0.2;
+    @media screen and (min-width: $breakpoint-lg) {
+      opacity: 1;
+    }
     display: flex;
     justify-content: center;
     max-width: 747px;
@@ -88,7 +92,10 @@
       aspect-ratio: 1;
       max-width: 85%;
       position: relative;
-      bottom: 180px;
+      bottom: 56px;
+      @media screen and (min-width: $breakpoint-lg) {
+        bottom: 180px;
+      }
       transform: rotate(-15deg);
       margin: auto;
     }

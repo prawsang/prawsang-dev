@@ -47,7 +47,7 @@ export default function Skills({ show }: { show: boolean }) {
     <section>
       <div className="content-container">
         <h1 className="base-header-text bold mb-6">My Skills</h1>
-        <div className="grid grid-cols-3 gap-x-4 gap-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-2 md:gap-x-4 gap-y-5 md:gap-y-6">
           {SKILL_LIST.map((s, i) => (
             <div key={`skill-h-${i}`}>
               <p className="bold base-sub-header-text mb-4">{s.header}</p>

@@ -1,14 +1,17 @@
+@import '../../variables';
+
 .project-carousel-card {
-  width: 480px;
+  width: 100%;
   align-self: stretch;
-  margin-right: 48px;
   background-color: var(--carousel-panel-bg);
   border-radius: 32px;
   overflow: hidden;
-  flex-shrink: 0;
   height: 100%;
   .project-carousel-card-content {
-    padding: 32px;
+    padding: 24px;
+    @media screen and (min-width: $breakpoint-md) {
+      padding: 32px;
+    }
   }
   .project-carousel-card-header {
     color: var(--carousel-panel-header-text);

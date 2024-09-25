@@ -3,36 +3,38 @@
   max-width: 1920px;
   margin: auto;
 
-  &:after {
-    content: '';
-    z-index: 50;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: calc(min(48px, 2.5%));
-    background: transparent;
-    background: linear-gradient(
-      -90deg,
-      rgba(var(--carousel-shadow), 0.7),
-      rgba(var(--carousel-shadow), 0)
-    );
-  }
+  @media screen and (min-width: $breakpoint-lg) {
+    &:after {
+      content: '';
+      z-index: 50;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(min(48px, 5%));
+      background: transparent;
+      background: linear-gradient(
+        -90deg,
+        rgba(var(--carousel-shadow), 0.7),
+        rgba(var(--carousel-shadow), 0)
+      );
+    }
 
-  &:before {
-    content: '';
-    z-index: 50;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: calc(min(48px, 2.5%));
-    background: transparent;
-    background: linear-gradient(
-      90deg,
-      rgba(var(--carousel-shadow), 0.7),
-      rgba(var(--carousel-shadow), 0)
-    );
+    &:before {
+      content: '';
+      z-index: 50;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: calc(min(48px, 5%));
+      background: transparent;
+      background: linear-gradient(
+        90deg,
+        rgba(var(--carousel-shadow), 0.7),
+        rgba(var(--carousel-shadow), 0)
+      );
+    }
   }
 
   .carousel-cards-wrapper {
@@ -40,6 +42,13 @@
     overflow-x: auto;
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
+
+    & > *:not(.carousel-pre) {
+      max-width: 480px;
+      width: 75%;
+      margin-right: calc(min(5%, 48px));
+      flex-shrink: 0;
+    }
   }
 
   .carousel-cards-wrapper::-webkit-scrollbar {
@@ -47,7 +56,7 @@
   }
 
   .carousel-pre {
-    width: calc(min(48px, 2.5%));
+    width: calc(min(48px, 5%));
     flex-shrink: 0;
   }
 

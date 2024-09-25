@@ -5,9 +5,10 @@ export default function Intro() {
   return (
     <section>
       <div className="content-container">
-        <div className="flex gap-4">
-          <div className="basis-1/6">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="md:basis-1/5 text-center">
             <Image
+              className="m-auto"
               unoptimized
               src="/images/animoji-1.png"
               alt="Prawsang Animoji"
@@ -15,9 +16,11 @@ export default function Intro() {
               height={288}
             ></Image>
           </div>
-          <div className="basis-2/3 flex flex-col gap-5">
+          <div className="md:basis-2/3 flex flex-col gap-5">
             <div>
-              <h1 className="primary-header-text mb-3">Hello there!</h1>
+              <h1 className="primary-header-text mb-3 text-center md:text-left">
+                Hello there!
+              </h1>
               <p className="p-large">
                 <b>My name is Prawsang. </b>I am a frontend developer based in
                 Bangkok, Thailand. With 4 years of experience in frontend
@@ -50,7 +53,7 @@ export default function Intro() {
               </div>
             </div>
           </div>
-          <div className="basis-1/6"></div>
+          <div className="hidden md:block md:basis-1/6"></div>
         </div>
       </div>
     </section>

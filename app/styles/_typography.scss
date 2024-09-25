@@ -1,7 +1,14 @@
+@import './variables';
+
 // FONT SIZES
 h1,
 .size-h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  @media screen and (min-width: $breakpoint-sm) {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
 }
 
 h2,
@@ -29,7 +36,10 @@ h6 {
 }
 
 .p-large {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  @media screen and (min-width: $breakpoint-sm) {
+    font-size: 1.125rem;
+  }
 }
 
 // FONT WEIGHTS

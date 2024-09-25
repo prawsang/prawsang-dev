@@ -10,7 +10,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 48px;
+    width: calc(min(48px, 2.5%));
     background: transparent;
     background: linear-gradient(
       -90deg,
@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 48px;
+    width: calc(min(48px, 2.5%));
     background: transparent;
     background: linear-gradient(
       90deg,
@@ -47,7 +47,7 @@
   }
 
   .carousel-pre {
-    width: 48px;
+    width: calc(min(48px, 2.5%));
     flex-shrink: 0;
   }
 

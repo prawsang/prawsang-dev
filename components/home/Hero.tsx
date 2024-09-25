@@ -36,24 +36,23 @@ export default function Hero() {
         <div className="hero-content flex flex-col py-8 gap-0">
           <div className="flex">
             <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
-              <h2 className="hero-sub-text bold whitespace-nowrap">
+              <span className="hero-sub-text bold whitespace-nowrap">
                 Hi! I&apos;m
-              </h2>
+              </span>
             </Trail>
           </div>
-          <div className="text-center">
-            <div className="flex justify-center">
-              <Trail open={heroOpen}>
-                <span className="hero-text">P</span>
-                <span className="hero-text">r</span>
-                <span className="hero-text">a</span>
-                <span className="hero-text">w</span>
-                <span className="hero-text">s</span>
-                <span className="hero-text">a</span>
-                <span className="hero-text">n</span>
-                <span className="hero-text">g</span>
-              </Trail>
-            </div>
+          <div className="flex flex-wrap justify-start md:justify-center mt-3 mb-3 sm:mb-6">
+            <Trail open={heroOpen}>
+              <div className="hero-text">P</div>
+              <div className="hero-text">r</div>
+              <div className="hero-text">a</div>
+              <div className="hero-text">w</div>
+              <div className="hero-break" />
+              <div className="hero-text bottom-line">s</div>
+              <div className="hero-text bottom-line">a</div>
+              <div className="hero-text bottom-line">n</div>
+              <div className="hero-text bottom-line">g</div>
+            </Trail>
           </div>
           <div className="flex justify-end">
             <div
@@ -61,13 +60,13 @@ export default function Hero() {
                 bottomOpen && 'visible'
               }`}
             >
-              <h2>A</h2>
+              <span>A</span>
               <div className="flex gap-4">
-                <h2>Front</h2>
-                <h2>-</h2>
-                <h2>end</h2>
+                <span>Front</span>
+                <span>-</span>
+                <span>end</span>
               </div>
-              <h2>Developer</h2>
+              <span>Developer</span>
             </div>
           </div>
         </div>

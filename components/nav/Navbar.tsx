@@ -14,7 +14,7 @@ export default function Navbar({
 }) {
   const { theme, toggle } = useContext(ThemeContext)
   return (
-    <nav className="nav-bar absolute">
+    <nav className="nav-bar absolute hidden md:block">
       <div className="wide-content-container">
         <div className="flex justify-between items-center">
           {NAV_LNKS.map(({ text, id }) => (

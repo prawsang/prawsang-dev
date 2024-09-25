@@ -1,145 +1,109 @@
-"use client";
+import Laptop from '@/public/images/laptop.svg'
+import Image from 'next/image'
+import OpacityTrail from '../common/OpacityTrail'
 
-import Image from "next/image";
-import Header from "../Header";
-import Mono from "../Mono";
-import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+const EXPERIENCE = [
+  {
+    company: 'IBM Consulting',
+    period: '2021 - present',
+    position: 'Full-time | Full-stack Developer',
+    description: [
+      'Working in the consulting department, delivering solutions, such as web applications and mobile applications, to clients, which include banks and top companies in Thailand.',
+      'Created, enhanced, and maintained the company’s private UI library for Angular.',
+      'Wrote extensive unit test specifications to ensure quality of products delivered to clients.',
+    ],
+  },
+  {
+    company: 'AI & Robotics Ventures (ARV)',
+    period: '2020 - 2021',
+    position: 'Part-time | Front-end Developer',
+    description: [
+      'Developed various web applications using React for products of various purposes, such as data management and geospatial analysis.',
+      'Created landing pages for the company’s various products using Webflow.',
+    ],
+  },
+  {
+    company: 'Wongnai Media Co.,Ltd.',
+    period: 'June 2020 - July 2020',
+    position: 'Intern | Front-end Developer',
+    description: [
+      'Worked with React, TypeScript, and various tools to enhance parts of the company’s main web pages and private libraries.',
+      'Created pixel-perfect web pages using an existing strict styling system',
+      'Worked with automated tests and unit tests for React (TypeScript).',
+    ],
+  },
+]
 
-export default function Experience() {
-  const { ref: refExperience, inView: inViewExperience } = useInView({
-    threshold: 0.2,
-  });
-  const [isLoadedExperience, setIsLoadedExperience] = useState<boolean>(false);
-  useEffect(() => {
-    if (inViewExperience) setIsLoadedExperience(true);
-  }, [inViewExperience]);
-
-  const { ref: refEducation, inView: inViewEducation } = useInView({
-    threshold: 0.2,
-  });
-  const [isLoadedEducation, setIsLoadedEducation] = useState<boolean>(false);
-  useEffect(() => {
-    if (inViewEducation) setIsLoadedEducation(true);
-  }, [inViewEducation]);
-
+export default function Experience({ show }: { show: boolean }) {
   return (
-    <div className="pt-32 pb-32 md:pt-40 md:pb-40 bg-base-100">
-      <div className="container md:flex md:gap-x-8 md:pl-0">
-        <div>
-          <div
-            ref={refExperience}
-            className={`flex flex-col-reverse md:flex-row md:gap-x-8 fade-in-and-slide-up ${
-              isLoadedExperience && "visible"
-            }`}
-          >
-            <div className="basis-3/5">
-              <Header className="mb-12">Job Experience</Header>
-              <div className="pb-12 ml-8 md:ml-0 relative">
-                <div className="timeline-container">
-                  <div className="timeline-mark" />
-                  <div className="timeline-line" />
-                </div>
-                <div className="mb-1">
-                  <Mono className="text-xl font-bold text-base-800 mr-4">
-                    IBM Consulting (Thailand)
-                  </Mono>
-                  <Mono className="text-lg">2021 - present</Mono>
-                </div>
-                <div className="mb-3">
-                  <Mono>
-                    <span className="italic">Full-time</span> |{" "}
-                    <span className="italic">Full-stack Developer</span>
-                  </Mono>
-                </div>
-                <p className="text-lg">
-                  Worked with various clients on a number of projects, mainly
-                  delivering solutions such as web applications to the clients,
-                  which include banks and large organizations in Thailand.
-                </p>
+    <section className="experience-container">
+      <div className="emoji-container">
+        <div className="animoji">
+          <div className="emoji-img-wrapper">
+            <OpacityTrail open={show} slide="up">
+              <div className="animoji-img">
+                <Image
+                  unoptimized
+                  className="animoji-img"
+                  src="/images/animoji-2.png"
+                  alt="Prawsang Animoji"
+                  width={320}
+                  height={320}
+                ></Image>
               </div>
-              <div className="pb-12 ml-8 md:ml-0 relative">
-                <div className="timeline-container">
-                  <div className="timeline-mark" />
-                  <div className="timeline-line" />
-                </div>
-                <div className="mb-1">
-                  <Mono className="text-xl font-bold text-base-800 mr-4">
-                    AI and Robotics Ventures (ARV)
-                  </Mono>
-                  <Mono className="text-lg">2020 - 2021</Mono>
-                </div>
-                <div className="mb-3">
-                  <Mono>
-                    <span className="italic">Part-time</span> |{" "}
-                    <span className="italic">Frontend Developer</span>
-                  </Mono>
-                </div>
-                <p className="text-lg">
-                  Developed various web applications using React for products of
-                  various purposes, such as data management and geospatial
-                  analysis. Apart from that, I have also created websites for
-                  marketing purposes.
-                </p>
-              </div>
-              <div className="mb-20 ml-8 md:ml-0 relative">
-                <div className="timeline-container">
-                  <div className="timeline-mark" />
-                </div>
-                <div className="mb-1">
-                  <Mono className="text-xl font-bold text-base-800 mr-4">
-                    Wongnai Media
-                  </Mono>
-                  <Mono className="text-lg">June 2020 - July 2020</Mono>
-                </div>
-                <div className="mb-3">
-                  <Mono className="italic">
-                    <span className="italic">Intern</span> |{" "}
-                    <span className="italic">Frontend Developer</span>
-                  </Mono>
-                </div>
-                <p className="text-lg">
-                  Worked with React, TypeScript, and various tools to assist the
-                  development team on enhancing parts of the company&apos;s main
-                  web pages and private libraries, and also created automated
-                  unit tests for the components I worked on.
-                </p>
-              </div>
-            </div>
-            <div className="basis-2/5 flex justify-center md:justify-end items-start mb-20">
-              <Image
-                src="./wireframe-pixel-alternate.svg"
-                alt="Pixel Wireframe"
-                width="386"
-                height="386"
-              ></Image>
-            </div>
+            </OpacityTrail>
           </div>
-
-          <div
-            ref={refEducation}
-            className={`fade-in-and-slide-up ${isLoadedEducation && "visible"}`}
-          >
-            <Header className="mb-12">Education</Header>
-            <div className="mb-1">
-              <Mono className="text-xl font-bold text-base-800 mr-4">
-                Chulalongkorn University
-              </Mono>
-            </div>
-            <div className="mb-3">
-              <Mono className="font-bold">
-                Bachelor of Engineering (Computer Engineering)
-              </Mono>
-            </div>
-            <div>
-              <Mono>
-                <span className="italic">Graduated in 2021</span> |{" "}
-                <span className="italic">GPA: 3.40 (2nd Class Honors)</span>
-              </Mono>
-            </div>
+        </div>
+        <div className="laptop">
+          <div className="emoji-img-wrapper">
+            <OpacityTrail gutter={16} open={show} slide="up">
+              <div className="laptop-img">
+                <Laptop />
+              </div>
+            </OpacityTrail>
           </div>
         </div>
       </div>
-    </div>
-  );
+      <div className="content-container">
+        <div className="flex">
+          <div className="hidden lg:flex lg:basis-1/6" />
+          <div className="lg:basis-2/3 lg:shrink-0">
+            <div className="text-center mb-6">
+              <h1>Job Experience</h1>
+            </div>
+            <div className="experience-content">
+              <div className={`timeline-conceal ${show && 'show'}`} />
+              {EXPERIENCE.map((e, i) => (
+                <div key={`exp-${i}`} className="flex gap-5">
+                  <div className="timeline-container">
+                    <div className="timeline-mark" />
+                    {i !== EXPERIENCE.length - 1 && (
+                      <div className="timeline-line" />
+                    )}
+                  </div>
+                  <div className="mb-6">
+                    <div className="sm:flex items-end gap-4 mb-1">
+                      <h3 className="bold">{e.company}</h3>
+                      <h4 className="base-sub-header-text text-regular">
+                        {e.period}
+                      </h4>
+                    </div>
+                    <h4 className="mb-3 text-regular base-sub-header-text">
+                      {e.position}
+                    </h4>
+                    <ul>
+                      {e.description.map((d, di) => (
+                        <li key={`d-${i + di}`}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="hidden lg:flex lg:basis-1/6" />
+        </div>
+      </div>
+    </section>
+  )
 }

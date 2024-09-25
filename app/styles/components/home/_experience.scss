@@ -1,0 +1,105 @@
+@import '../../variables';
+
+.experience-container {
+  position: relative;
+  .experience-content {
+    position: relative;
+    .timeline-conceal {
+      width: 8px;
+      position: absolute;
+      top: 9px;
+      bottom: -9px;
+      left: 4px;
+      background-color: var(--bg);
+      transition: top 2s linear;
+      z-index: 10;
+      &.show {
+        top: 100%;
+        bottom: 0;
+      }
+    }
+  }
+  .timeline-container {
+    align-self: stretch;
+    position: relative;
+  }
+  .timeline-mark {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background-color: var(--timeline-bullet-bg);
+    margin-top: 9px;
+    z-index: 12;
+    position: relative;
+  }
+  .timeline-line {
+    position: absolute;
+    top: 9px;
+    bottom: -9px;
+    left: 6px;
+    width: 4px;
+    background-color: var(--timeline-line-bg);
+    z-index: 9;
+  }
+
+  .emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 12;
+  }
+  .emoji-img-wrapper {
+    opacity: 0.2;
+    @media screen and (min-width: $breakpoint-lg) {
+      opacity: 1;
+    }
+    display: flex;
+    justify-content: center;
+    max-width: 747px;
+    width: 100%;
+    overflow: visible;
+  }
+  .animoji {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: calc(max(20%, (100% - 1067px) / 2));
+    display: flex;
+    justify-content: flex-start;
+
+    .animoji-img {
+      transform: rotate(5deg);
+      width: 320px;
+      aspect-ratio: 1;
+      max-width: 90%;
+      margin: auto;
+    }
+  }
+
+  .laptop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(max(20%, (100% - 1067px) / 2));
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    @media screen and (min-width: $breakpoint-lg) {
+      margin-bottom: 180px;
+    }
+    .laptop-img {
+      width: 200px;
+      aspect-ratio: 1;
+      max-width: 85%;
+      position: relative;
+      transform: rotate(-15deg);
+      margin: auto;
+    }
+  }
+}

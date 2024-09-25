@@ -1,18 +1,22 @@
-import "./globals.scss";
-import { Open_Sans } from "next/font/google";
+import './globals.scss'
+import { Syne } from 'next/font/google'
+import { ThemeContextProvider } from '@/contexts/ThemeContext'
+import ThemeProvider from '@/providers/ThemeProvider'
 
-const openSans = Open_Sans({ subsets: ["latin"] });
+const syne = Syne({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.className}`}>
-        {children}
+      <body className={`${syne.className}`}>
+        <ThemeContextProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
-  );
+  )
 }

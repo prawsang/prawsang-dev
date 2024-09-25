@@ -1,68 +1,75 @@
-"use client"
+import Image from 'next/image'
+import Chip from '@/components/common/Chip'
 
-import Image from "next/image"
-import Mono from "../Mono"
-import { useInView } from "react-intersection-observer"
-import { useEffect, useState } from "react"
+function yearsSinceJanuary2020(): number {
+  const january2020 = new Date(2020, 0) // January is month 0 in Date objects
+  const currentDate = new Date()
+
+  // Convert both dates to milliseconds using getTime()
+  const differenceInMilliseconds = currentDate.getTime() - january2020.getTime()
+  const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25 // Includes leap years
+
+  const yearsAgo = differenceInMilliseconds / millisecondsPerYear
+
+  // Round down to the nearest 0.5
+  return Math.floor(yearsAgo * 2) / 2
+}
 
 export default function Intro() {
-
-  const { ref, inView } = useInView({
-    threshold: 0.2
-  })
-  const [isLoaded, setIsLoaded] = useState<boolean>(false)
-  useEffect(() => {
-    if (inView) setIsLoaded(true)
-  }, [inView])
-
-  const [animationSeq, setAnimationSeq] = useState<number>(0)
-  useEffect(() => {
-    // animate
-    if (!isLoaded) return
-    setTimeout(() => {
-      setAnimationSeq(1)
-    }, 1000)
-    setTimeout(() => {
-      setAnimationSeq(2)
-    }, 2300)
-    setTimeout(() => {
-      setAnimationSeq(3)
-    }, 3100)
-    setTimeout(() => {
-      setAnimationSeq(4)
-    }, 3900)
-  },[isLoaded])
-
-  const getFrameImageName = () => {
-    switch (animationSeq) {
-      case 0: return '/frame3.svg';
-      case 1: return '/frame1.svg';
-      case 2: return '/frame3.svg';
-      default: return '/frame2.svg';
-    }
-  }
-
   return (
-    <div className="bg-base-100 pt-40 pb-40">
-      <div className="container flex flex-col-reverse sm:flex-row justify-start items-center sm:items-start gap-x-12" ref={ref}>
-        <div className={`basis-3/5 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
-          <Mono className="font-bold text-6xl text-base-900 leading-loose">Hi!</Mono><br/>
-          <p>My name is Prawsang. I am a frontend developer based in Bangkok, Thailand. 
-            With 3 years of experience in frontend web development, I have worked in various organizations, 
-            focusing on a variety of industries, such as robotics, social media, and consultancy. 
-            Throughout the years, I have experience in a variety of libraries, frameworks, 
-            such as React and Angular, and testing libraries such as Jest and Enzyme. Also having a heart for 
-            art and design, I prioritize both the aesthetics of the user interface and the functionality of 
-            the web applications I develop.</p>
-        </div>
-        <div className={`basis-2/5 flex justify-center mb-8 sm:mb-0 fade-in-and-slide-up ${isLoaded && 'visible'}`}>
-          {animationSeq === 1 && <Image src="/hi.svg" alt="Hi bubble" width="139" height="106" className="hi-bubble" />}
-          <div className="relative">
-            <Image src="/heart.svg" alt="Heart" width="80" height="80" className={`heart ${animationSeq === 4 && 'visible'}`} />
-            <Image src={getFrameImageName()} alt="Intro avatar" width="246" height="265" className="mt-8" />
+    <section>
+      <div className="content-container">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="md:basis-1/5 text-center">
+            <Image
+              className="m-auto w-3/5 md:w-fit"
+              unoptimized
+              src="/images/animoji-1.png"
+              alt="Prawsang Animoji"
+              width={313}
+              height={288}
+            ></Image>
           </div>
+          <div className="md:basis-2/3 flex flex-col gap-5">
+            <div>
+              <h1 className="primary-header-text mb-3 text-center md:text-left">
+                Hello there!
+              </h1>
+              <p className="p-large">
+                <b>My name is Prawsang. </b>I am a frontend developer based in
+                Bangkok, Thailand. With {yearsSinceJanuary2020()} years of
+                experience in frontend development, I have worked in various
+                organizations, focusing on a variety of industries, such as
+                robotics, social media, and consultancy. Throughout the years, I
+                have experience in a variety of libraries, frameworks, and
+                tools, such as React and Angular.
+              </p>
+            </div>
+            <div>
+              <h2 className="primary-header-text mb-3">Education</h2>
+              <h3>Chulalongkorn University</h3>
+              <p className="semi-bold primary-sub-header-text mb-3">
+                Bachelor of Engineering (Computer Engineering)
+              </p>
+              <p className="base-sub-header-text">
+                Graduated in 2021 | GPA: 3.40 (2nd Class Honors)
+              </p>
+            </div>
+            <div>
+              <h2 className="primary-header-text mb-3">Languages</h2>
+              <div className="flex gap-3">
+                <Chip>
+                  English <span className="chip-sub-text">- Fluent</span>
+                </Chip>
+                <Chip>
+                  Thai <span className="chip-sub-text">- Native</span>
+                </Chip>
+              </div>
+            </div>
+          </div>
+          <div className="hidden md:block md:basis-1/6"></div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

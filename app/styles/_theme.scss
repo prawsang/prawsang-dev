@@ -1,0 +1,77 @@
+@import './variables';
+
+body {
+  --bg: #{$base-50};
+  --base-text: #{$base-800};
+  --base-sub-text: #{$base-500};
+  --hero-text: #{$base-800};
+  --hero-sub-text: #{$primary-400};
+  --base-header-text: #{$base-800};
+  --base-sub-header-text: #{$base-500};
+  --primary-header-text: #{$primary-500};
+  --primary-sub-header-text: #{$primary-400};
+  --primary-text: #{$primary-800};
+  --primary-sub-text: #{$primary-500};
+  --list-text: #{$base-700};
+  --list-bullet-bg: #{$primary-400};
+  --nav-close-bg: #{$primary-200};
+  --nav-close-bg-hover: #{$primary-100};
+  --nav-close-icon-fill: #{$primary-900};
+  --nav-panel-bg: #{$base-50};
+  --nav-panel-text: #{$primary-900};
+  --nav-panel-active-bg: #{$primary-100};
+  --nav-panel-shadow: rgba(0, 0, 0, 0.15);
+  --chip-bg: #{$primary-100};
+  --chip-border: #{$primary-300};
+  --chip-text: #{$primary-800};
+  --chip-sub-text: #{$primary-500};
+  --timeline-bullet-bg: #{$primary-500};
+  --timeline-line-bg: #{$primary-200};
+  --carousel-panel-bg: #{$primary-100};
+  --carousel-panel-header-text: #{$primary-950};
+  --carousel-panel-text: #{$primary-600};
+  --carousel-indicator-active-bg: #{$base-500};
+  --carousel-indicator-inactive-bg: #{$base-200};
+  --carousel-shadow: 250, 250, 250;
+  --contact-bg: #{$base-100};
+  --contact-main-card-bg: #{$base-50};
+  --link-text: #{$primary-500};
+}
+
+body.dark-mode {
+  --bg: #{$base-950};
+  --base-text: #{$base-100};
+  --base-sub-text: #{$base-400};
+  --hero-text: #{$base-100};
+  --hero-sub-text: #{$primary-500};
+  --base-header-text: #{$base-100};
+  --base-sub-header-text: #{$base-400};
+  --primary-header-text: #{$primary-400};
+  --primary-sub-header-text: #{$primary-500};
+  --primary-text: #{$primary-100};
+  --primary-sub-text: #{$primary-400};
+  --list-text: #{$base-300};
+  --list-bullet-bg: #{$primary-400};
+  --nav-close-bg: #{$primary-900};
+  --nav-close-bg-hover: #{$primary-800};
+  --nav-close-icon-fill: #{$primary-200};
+  --nav-panel-bg: #{$base-900};
+  --nav-panel-text: #{$primary-200};
+  --nav-panel-active-bg: #{$primary-800};
+  --nav-panel-shadow: rgba(0, 0, 0, 0.4);
+  --chip-bg: #{$primary-950};
+  --chip-border: #{$primary-800};
+  --chip-text: #{primary-100};
+  --chip-sub-text: #{$primary-400};
+  --timeline-bullet-bg: #{$primary-500};
+  --timeline-line-bg: #{$primary-900};
+  --carousel-panel-bg: #{$primary-950};
+  --carousel-panel-header-text: #{$primary-100};
+  --carousel-panel-text: #{$primary-300};
+  --carousel-indicator-active-bg: #{$base-200};
+  --carousel-indicator-inactive-bg: #{$base-800};
+  --carousel-shadow: 9, 9, 11;
+  --contact-bg: #{$base-900};
+  --contact-main-card-bg: #{$base-950};
+  --link-text: #{$primary-400};
+}

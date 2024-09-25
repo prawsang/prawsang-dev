@@ -1,0 +1,26 @@
+@import '../../variables';
+
+.project-carousel-card {
+  width: 100%;
+  align-self: stretch;
+  background-color: var(--carousel-panel-bg);
+  border-radius: 32px;
+  overflow: hidden;
+  height: 100%;
+  .project-carousel-card-content {
+    padding: 24px;
+    @media screen and (min-width: $breakpoint-md) {
+      padding: 32px;
+    }
+  }
+  .project-carousel-card-header {
+    color: var(--carousel-panel-header-text);
+    font-size: 1.5rem;
+  }
+  .project-carousel-card-text {
+    color: var(--carousel-panel-text);
+  }
+  .project-carousel-card-image {
+    width: 100%;
+  }
+}

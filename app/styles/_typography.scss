@@ -1,0 +1,156 @@
+@import './variables';
+
+// FONT SIZES
+h1,
+.size-h1 {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  @media screen and (min-width: $breakpoint-sm) {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+}
+
+h2,
+.size-h2 {
+  font-size: 2rem;
+}
+
+h3,
+.size-h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+.size-h4 {
+  font-size: 1.125rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+.p-large {
+  font-size: 1rem;
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 1.125rem;
+  }
+}
+
+// FONT WEIGHTS
+.extra-bold,
+.text-extra-bold {
+  font-weight: 800;
+}
+
+.bold,
+.text-bold {
+  font-weight: 700;
+}
+
+.semi-bold,
+.text-semi-bold {
+  font-weight: 600;
+}
+
+.medium,
+.text-medium {
+  font-weight: 500;
+}
+
+.regular,
+.text-regular {
+  font-weight: 400;
+}
+
+// COLORS
+
+.base-text {
+  color: var(--base-text);
+}
+
+.base-sub-text {
+  color: var(--base-sub-text);
+}
+
+.base-header-text {
+  color: var(--base-header-text);
+}
+
+.base-sub-header-text {
+  color: var(--base-sub-header-text);
+}
+
+.primary-header-text {
+  color: var(--primary-header-text);
+}
+
+.primary-sub-header-text {
+  color: var(--primary-sub-header-text);
+}
+
+.primary-text {
+  color: var(--primary-text);
+}
+
+.primary-sub-text {
+  color: var(--primary-sub-text);
+}
+
+.chip-text {
+  color: var(--chip-text);
+}
+
+.chip-sub-text {
+  color: var(--chip-sub-text);
+}
+
+.carousel-panel-header-text {
+  color: var(--carousel-panel-header-text);
+}
+
+.carousel-panel-text {
+  color: var(--carousel-panel-text);
+}
+
+ul {
+  list-style: none;
+  li {
+    font-size: 1rem;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 1.125rem;
+    }
+    color: var(--list-text);
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1px;
+      margin-top: 12px;
+      margin-right: 12px;
+      background-color: var(--list-bullet-bg);
+      flex-shrink: 0;
+    }
+  }
+}
+
+a {
+  &.underlined {
+    text-decoration: underline;
+  }
+  color: inherit;
+  transition: 0.3s color ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: var(--link-text);
+  }
+}

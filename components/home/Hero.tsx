@@ -1,129 +1,97 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import Mono from "../Mono";
-import Image from "next/image";
-
+'use client'
+import React, { useEffect, useState } from 'react'
+import Trail from '../common/Trail'
 export default function Hero() {
-  const [animationSeq, setAnimationSeq] = useState<number>(0);
+  const [heroOpen, setHeroOpen] = useState<boolean>(false)
+  const [topOpen, setTopOpen] = useState<boolean>(false)
+  const [bottomOpen, setBottomOpen] = useState<boolean>(false)
 
-  const NAME = 'prawsang '
-  const DESCRIPTION = '// a frontend developer'
-
-  const [name, setName] = useState<string>('')
-  const [description, setDescription] = useState<string>('')
-
-  const windowRef = useRef<Window>();
   const [height, setHeight] = useState<number>(0)
 
-  const animate = () => {
-    setTimeout(() => {
-      setAnimationSeq(1)
-    }, 500)
-    setTimeout(() => {
-      setAnimationSeq(2)
-      animateName()
-    }, 500)
-    setTimeout(() => {
-      setAnimationSeq(3)
-    }, 1300)
-    setTimeout(() => {
-      setAnimationSeq(4)
-    }, 1600)
-    setTimeout(() => {
-      setAnimationSeq(5)
-      animateDescription()
-    }, 2000)
-    setTimeout(() => {
-      setAnimationSeq(6)
-    }, 4000)
-    setTimeout(() => {
-      setAnimationSeq(7)
-    }, 4400)
-  }
-
-  const animateName = () => {
-    let string = ''
-    let i = 0
-    let interval = setInterval(() => {
-      if (i < NAME.length) {
-        string = string + NAME[i]
-        setName(string)
-        i++
-      } else {
-        clearInterval(interval)
-      }
-    }, 80)
-  }
-
-  const animateDescription = () => {
-    let string = DESCRIPTION[0]
-    setDescription(string)
-    let i = 1
-    let interval = setInterval(() => {
-      if (i < DESCRIPTION.length) {
-        string = string + DESCRIPTION[i]
-        setDescription(string)
-        i++
-      } else {
-        clearInterval(interval)
-      }
-    }, 80)
-  }
-
-
   useEffect(() => {
-    windowRef.current = window
-    setHeight(windowRef.current?.innerHeight || 0)
-    animate()
+    setTopOpen(true)
+    setTimeout(() => setHeroOpen(true), 500)
+    setTimeout(() => setBottomOpen(true), 1100)
+
+    setHeight(
+      Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      )
+    )
   }, [])
 
   return (
-    <>
-      <div className="hero font-bold text-5xl xs:text-6xl sm:text-7xl leading-tight"
-        style={{ height: height + 'px'}}>
-        <div className="container relative">
-          <div>
-            <div className="whitespace-nowrap">
-              <div className={`cursor ${animationSeq === 0 ? 'inline-block' : 'hidden'}`} />
-              <Mono className={`text-primary opacity-50 ${animationSeq > 0 || 'invisible'}`}>.</Mono>
-              <div className={`cursor ${animationSeq === 1 ? 'inline-block' : 'hidden'}`} />
-              <Mono className={`text-primary ${animationSeq > 1 || 'invisible'}`}>{name}</Mono>
-              <div className={`cursor ${animationSeq === 2 ? 'inline-block' : 'hidden'}`} />
-
-              <Mono className={`text-orange ${animationSeq === 3 ? 'inline-block' : 'hidden'}`}>
-                <span className="opacity-50">{`{`}</span>
-                <div className={`cursor ${animationSeq === 3 ? 'inline-block' : 'hidden'}`} />
-                <span className="opacity-50">{`}`}</span>
-              </Mono>
-              <Mono className={`text-orange opacity-50 ${animationSeq > 3 ? 'inline-block' : 'hidden'}`}>
-                {`{`}
-              </Mono>
-            </div>
-            <div className={`pl-12 sm:pl-20 mt-4 mb-4 ml-4 border-l-2 border-base-800 border-solid ${animationSeq === 4 ? 'block' : 'hidden'}`}>
-              <div className={`cursor ${animationSeq === 4 ? 'inline-block' : 'hidden'}`} />
-            </div>
-            <div className={`pl-12 sm:pl-20 mt-4 mb-4 ml-4 border-l-2 border-base-800 border-solid block ${animationSeq > 4 || 'invisible'}`}>
-              <div>
-                <Mono className="text-base-400 font-normal">
-                  {description}
-                </Mono>
-                <div className={`cursor ${animationSeq === 5 ? 'inline-block' : 'hidden'}`} />
-                <div className={`cursor blink ${animationSeq >= 6 ? 'inline-block' : 'hidden'}`} />
+    <div
+      className="hero-container"
+      style={{ height: height ? height + 'px' : '100vh' }}
+    >
+      <div className="gradient-container">
+        <div className="gradient-1" />
+        <div className="gradient-2" />
+        <div className="round-1" />
+        <div className="round-2" />
+        <div className="round-3" />
+        <div className="round-4" />
+        <div className="round-5" />
+      </div>
+      <div className="wide-content-container">
+        <div className="hero-content flex flex-col py-8 gap-0">
+          <div className="flex">
+            <Trail open={topOpen} config={{ tension: 1000, friction: 200 }}>
+              <span className="hero-sub-text bold whitespace-nowrap">
+                Hi! I&apos;m
+              </span>
+            </Trail>
+          </div>
+          <div className="flex flex-wrap justify-start md:justify-center mt-3 mb-3 sm:mb-6">
+            <Trail open={heroOpen}>
+              <div className="hero-text">P</div>
+              <div className="hero-text">r</div>
+              <div className="hero-text">a</div>
+              <div className="hero-text">w</div>
+              <div className="hero-break" />
+              <div className="hero-text bottom-line">s</div>
+              <div className="hero-text bottom-line">a</div>
+              <div className="hero-text bottom-line">n</div>
+              <div className="hero-text bottom-line">g</div>
+            </Trail>
+          </div>
+          <div className="flex justify-end">
+            <div
+              className={`hero-sub-text flex flex-col gap-1 fade-in ${
+                bottomOpen && 'visible'
+              }`}
+            >
+              <span>A</span>
+              <div className="flex gap-4">
+                <span>Front</span>
+                <span>-</span>
+                <span>end</span>
               </div>
+              <span>Developer</span>
             </div>
-            <Mono className={`text-orange opacity-50 ${animationSeq > 3 || 'invisible'}`}>{`}`}</Mono>
           </div>
         </div>
       </div>
-      <div className={`scroll-label-container ${animationSeq === 7 && 'visible'}`}>
-        <div>
-          <div className="mb-4">
-          <Mono className="text-base-300">Scroll Down</Mono>
-          </div>
-          <Image src="/caret-up.svg" alt="caret up" width="48" height="48" className="scroll-icon" />
-        </div>
-      </div>
-    </>
-  );
+      <svg style={{ display: 'none' }} xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  )
 }

@@ -1,0 +1,93 @@
+.contact-section {
+  background: var(--contact-bg);
+  overflow: hidden;
+}
+
+.contact-container {
+  position: relative;
+  padding-top: 240px;
+  padding-bottom: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 2560px;
+  margin: auto;
+}
+
+.contact-name-card-main {
+  max-width: 480px;
+  width: 90%;
+  aspect-ratio: 1.75;
+  background-color: var(--contact-main-card-bg);
+  position: relative;
+  z-index: 10;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-name-card-wrapper {
+  position: absolute;
+  &.bg-1 {
+    z-index: 5;
+  }
+  &.bg-2 {
+    z-index: 2;
+  }
+  &.bg-3 {
+    z-index: 3;
+  }
+  &.bg-4 {
+    z-index: 1;
+  }
+  &.bg-5 {
+    z-index: 4;
+  }
+}
+
+.contact-name-card {
+  width: 24vw;
+  min-width: 480px;
+  max-width: 600px;
+  aspect-ratio: 1.75;
+  box-sizing: border-box;
+  padding: 24px 32px;
+  color: rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  &.bg-1 {
+    background-color: #fbe9e2;
+  }
+  &.bg-2 {
+    background-color: #d6c9e1;
+  }
+  &.bg-3 {
+    background-color: #f1e0e8;
+  }
+  &.bg-4 {
+    background-color: #f7e9f1;
+  }
+  &.bg-5 {
+    background-color: #e8d6ef;
+  }
+}
+
+.dark-mode {
+  .contact-name-card {
+    color: rgba(0, 0, 0, 0.4);
+    &.bg-1 {
+      background-color: #6d5052;
+    }
+    &.bg-2 {
+      background-color: #4e406b;
+    }
+    &.bg-3 {
+      background-color: #704058;
+    }
+    &.bg-4 {
+      background-color: #582e43;
+    }
+    &.bg-5 {
+      background-color: #6c5480;
+    }
+  }
+}

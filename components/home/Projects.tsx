@@ -63,7 +63,11 @@ export default function Projects({ show }: { show: boolean }) {
           Some projects I have worked on
         </h1>
       </div>
-      <Carousel totalCards={CAROUSEL_DATA.length}>
+      <Carousel
+        totalCards={CAROUSEL_DATA.length}
+        autoScroll={true}
+        beginAutoScroll={show}
+      >
         <OpacityTrail open={show} slide="right">
           {CAROUSEL_DATA.map((d, i) => (
             <ProjectCarouselCard

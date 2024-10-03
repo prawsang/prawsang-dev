@@ -26,18 +26,15 @@ export default function Homepage() {
   })
   const { ref: projects, inView: projectsInView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.35,
   })
-  const { ref: skills, inView: skillsInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
+  const skills = useRef<HTMLDivElement>(null)
   const { ref: experience, inView: experienceInView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.35,
   })
   const { ref: contact, inView: contactInView } = useInView({
-    threshold: 0.2,
+    threshold: 0.35,
   })
 
   const onNavLinkClick = (id: string) => {
@@ -81,9 +78,7 @@ export default function Homepage() {
           <div className="section-wrapper" ref={projects}>
             <Projects show={projectsInView} />
           </div>
-          <div className="section-wrapper" ref={skills}>
-            <Skills show={skillsInView} />
-          </div>
+          <Skills />
           <div className="section-wrapper" ref={experience}>
             <Experience show={experienceInView} />
           </div>

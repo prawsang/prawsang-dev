@@ -112,8 +112,10 @@ export default function Carousel({
     if (scrollContainer.current) {
       let closest = 0
       if (
-        scrollContainer.current.scrollLeft >=
-        scrollContainer.current.scrollWidth - windowWidth
+        scrollContainer.current.scrollWidth -
+          scrollContainer.current.clientWidth -
+          scrollContainer.current.scrollLeft <
+        100
       ) {
         setActiveIndicator(indicatorCount - 1)
         return

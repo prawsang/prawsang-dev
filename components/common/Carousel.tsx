@@ -6,9 +6,13 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 export default function Carousel({
   children,
   totalCards,
+  autoScroll,
+  beginAutoScroll,
 }: {
   children: React.ReactNode
   totalCards: number
+  autoScroll?: boolean
+  beginAutoScroll?: boolean
 }) {
   const getWindowWidth = useCallback(() => {
     if (typeof document !== 'undefined') {
@@ -26,6 +30,10 @@ export default function Carousel({
   const [indicatorPositions, setIndicatorPositions] = useState<number[]>([])
   const [ignoreScrollEvent, setIgnoreScrollEvent] =
     useTimeoutState<boolean>(false)
+  const [autoScrollCleared, setAutoScrollCleared] = useState<boolean>(false)
+  const [currentTimeoutId, setCurrentTimeoutId] = useState<
+    NodeJS.Timeout | undefined
+  >()
 
   const getPre = useCallback((windowWidth: number) => {
     return Math.min(windowWidth * 0.05, 48)
@@ -80,32 +88,42 @@ export default function Carousel({
         observer.disconnect()
       }
     }
-  }, [getWindowWidth])
+  }, [getWindowWidth, currentTimeoutId])
 
-  const onIndicatorClick = (i: number) => {
-    if (!scrollContainer.current) return
-    const currentIndicator = activeIndicator
-    setIgnoreScrollEvent(true, {
-      timeout: Math.abs(currentIndicator - i) * 600,
-    })
-    setActiveIndicator(i)
-    if (i === 0) {
-      scrollContainer.current.scrollTo({ left: 0, behavior: 'smooth' })
-      return
-    }
+  const scrollToIndicator = useCallback(
+    (i: number) => {
+      if (i === 0) {
+        scrollContainer?.current?.scrollTo({ left: 0, behavior: 'smooth' })
+        return
+      }
 
-    const gap = getGap(windowWidth)
+      const gap = getGap(windowWidth)
 
-    const cardsPerPage = getCardsPerPage(windowWidth, gap)
-    scrollContainer.current.scrollTo({
-      left:
-        getPre(windowWidth) +
-        cardsPerPage * i * (getCardWidth(windowWidth) + gap) -
-        gap +
-        2,
-      behavior: 'smooth',
-    })
-  }
+      const cardsPerPage = getCardsPerPage(windowWidth, gap)
+      scrollContainer?.current?.scrollTo({
+        left:
+          getPre(windowWidth) +
+          cardsPerPage * i * (getCardWidth(windowWidth) + gap) -
+          gap +
+          2,
+        behavior: 'smooth',
+      })
+    },
+    [getCardWidth, getGap, getPre, getCardsPerPage, windowWidth]
+  )
+
+  const onIndicatorClick = useCallback(
+    (i: number) => {
+      if (!scrollContainer.current) return
+      const currentIndicator = activeIndicator
+      setIgnoreScrollEvent(true, {
+        timeout: Math.abs(currentIndicator - i) * 600,
+      })
+      setActiveIndicator(i)
+      scrollToIndicator(i)
+    },
+    [activeIndicator, scrollToIndicator, setIgnoreScrollEvent]
+  )
 
   const handleScroll = () => {
     if (ignoreScrollEvent) return
@@ -130,8 +148,49 @@ export default function Carousel({
     }
   }
 
+  // AUTO SCROLL
+  // Begin autoScroll
+  const startTimeout = useCallback(() => {
+    if (currentTimeoutId) clearTimeout(currentTimeoutId)
+    const id = setTimeout(() => {
+      const nextIndicator =
+        activeIndicator < indicatorCount - 1 ? activeIndicator + 1 : 0
+      onIndicatorClick(nextIndicator)
+    }, 5000)
+    setCurrentTimeoutId(id)
+  }, [currentTimeoutId, activeIndicator, indicatorCount, onIndicatorClick])
+
+  useEffect(() => {
+    if (autoScroll && beginAutoScroll && !autoScrollCleared) {
+      startTimeout()
+    }
+  }, [autoScrollCleared, beginAutoScroll, activeIndicator])
+
+  // if the active indicator count changes, clear the timeout and restart
+  useEffect(() => {
+    if (currentTimeoutId) {
+      clearTimeout(currentTimeoutId)
+      startTimeout()
+    }
+  }, [indicatorCount])
+
+  // clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (currentTimeoutId) clearTimeout(currentTimeoutId)
+    }
+  }, [])
+
+  // clear on click
+  const clearAutoScroll = useCallback(() => {
+    if (currentTimeoutId) {
+      clearTimeout(currentTimeoutId)
+      setAutoScrollCleared(true)
+    }
+  }, [currentTimeoutId])
+
   return (
-    <div className="carousel">
+    <div className="carousel" onClick={() => clearAutoScroll()}>
       <div
         className="carousel-cards-wrapper"
         ref={scrollContainer}

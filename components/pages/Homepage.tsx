@@ -78,7 +78,9 @@ export default function Homepage() {
           <div className="section-wrapper" ref={projects}>
             <Projects show={projectsInView} />
           </div>
-          <Skills />
+          <div className="section-wrapper" ref={skills}>
+            <Skills />
+          </div>
           <div className="section-wrapper" ref={experience}>
             <Experience show={experienceInView} />
           </div>

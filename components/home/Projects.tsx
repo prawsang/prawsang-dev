@@ -1,11 +1,13 @@
 'use client'
 
 import WebAdminAppsLight from '@/public/images/projects/web-admin-apps-light.svg'
+import UILibraryLight from '@/public/images/projects/ui-library-light.svg'
 import DashboardLight from '@/public/images/projects/dashboard-light.svg'
 import DataManagementLight from '@/public/images/projects/data-management-light.svg'
 import GeospatialLight from '@/public/images/projects/geospatial-light.svg'
 import LandingPageLight from '@/public/images/projects/landing-page-light.svg'
 import WebAdminAppsDark from '@/public/images/projects/web-admin-apps-dark.svg'
+import UILibraryDark from '@/public/images/projects/ui-library-dark.svg'
 import DashboardDark from '@/public/images/projects/dashboard-dark.svg'
 import DataManagementDark from '@/public/images/projects/data-management-dark.svg'
 import GeospatialDark from '@/public/images/projects/geospatial-dark.svg'
@@ -28,6 +30,12 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
     svgDark: WebAdminAppsDark,
     header: 'Web admin applications',
     text: 'Applications tailored to manage the custom and specific processes of a corporation, which require extensive access control, form validation,  and handling of large amounts of data.',
+  },
+  {
+    svg: UILibraryLight,
+    svgDark: UILibraryDark,
+    header: 'Private UI Libraries',
+    text: 'Libraries consisting of common components, such as buttons, dropdowns, carousels, date pickers, and much more. Such libraries are used to kickstart a project, greatly reducing development time.',
   },
   {
     svg: DashboardLight,

@@ -39,7 +39,7 @@ body {
 }
 
 body.dark-mode {
-  --bg: #{$base-950};
+  --bg: #{$base-900};
   --base-text: #{$base-100};
   --base-sub-text: #{$base-400};
   --hero-text: #{$base-100};
@@ -55,7 +55,7 @@ body.dark-mode {
   --nav-close-bg: #{$primary-900};
   --nav-close-bg-hover: #{$primary-800};
   --nav-close-icon-fill: #{$primary-200};
-  --nav-panel-bg: #{$base-900};
+  --nav-panel-bg: #{$base-800};
   --nav-panel-text: #{$primary-200};
   --nav-panel-active-bg: #{$primary-800};
   --nav-panel-shadow: rgba(0, 0, 0, 0.4);
@@ -70,8 +70,8 @@ body.dark-mode {
   --carousel-panel-text: #{$primary-300};
   --carousel-indicator-active-bg: #{$base-200};
   --carousel-indicator-inactive-bg: #{$base-800};
-  --carousel-shadow: 9, 9, 11;
-  --contact-bg: #{$base-900};
-  --contact-main-card-bg: #{$base-950};
+  --carousel-shadow: 24, 24, 27;
+  --contact-bg: #{$base-800};
+  --contact-main-card-bg: #{$base-900};
   --link-text: #{$primary-400};
 }

@@ -35,6 +35,7 @@ export default function Hero() {
         <div className="round-4" />
         <div className="round-5" />
       </div>
+      <div className="noise" />
       <div className="wide-content-container">
         <div className="hero-content flex flex-col py-8 gap-0">
           <div className="flex">
@@ -74,7 +75,10 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <svg style={{ display: 'none' }} xmlns="http://www.w3.org/2000/svg">
+      <svg
+        style={{ position: 'absolute', height: 0 }}
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
           <filter id="goo">
             <feGaussianBlur
@@ -82,13 +86,6 @@ export default function Hero() {
               stdDeviation="10"
               result="blur"
             />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-              result="goo"
-            />
-            <feBlend in="SourceGraphic" in2="goo" />
           </filter>
         </defs>
       </svg>

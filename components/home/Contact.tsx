@@ -36,7 +36,11 @@ export default function Contact({ show }: { show: boolean }) {
   return (
     <section className="contact-section">
       <div className="contact-container">
+        <div className="noise" />
         <div className="contact-name-card-main">
+          <h2 className="contact-name-card-text extra-bold inverted">
+            Prawsang
+          </h2>
           <div>
             <h3 className="mb-1 bold">Contact me</h3>
             <a
@@ -64,6 +68,7 @@ export default function Contact({ show }: { show: boolean }) {
               </a>
             </div>
           </div>
+          <div className="paper-overlay" />
         </div>
         <a.div
           className="hidden sm:block contact-name-card-wrapper bg-1"

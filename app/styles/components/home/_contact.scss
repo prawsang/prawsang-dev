@@ -21,9 +21,10 @@
   background-color: var(--contact-main-card-bg);
   position: relative;
   z-index: 10;
-  padding: 32px;
+  padding: 24px 32px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .contact-name-card-wrapper {
@@ -52,7 +53,6 @@
   aspect-ratio: 1.75;
   box-sizing: border-box;
   padding: 24px 32px;
-  color: rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
   &.bg-1 {
     background-color: #fbe9e2;
@@ -73,7 +73,7 @@
 
 .dark-mode {
   .contact-name-card {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.2);
     &.bg-1 {
       background-color: #6d5052;
     }
@@ -88,6 +88,73 @@
     }
     &.bg-5 {
       background-color: #6c5480;
+    }
+  }
+}
+
+.contact-name-card-text {
+  color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  &::before {
+    content: 'Prawsang';
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0 2px 1px rgba(255, 255, 255, 0.3);
+    mix-blend-mode: overlay;
+  }
+  &::after {
+    content: 'Prawsang';
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+    mix-blend-mode: overlay;
+  }
+
+  &.inverted {
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    color: $base-300;
+    &::before {
+      text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    }
+    &::after {
+      text-shadow: 0 -2px 1px rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.dark-mode {
+  .contact-name-card-text {
+    color: rgba(0, 0, 0, 0.05);
+    &::before {
+      content: 'Prawsang';
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-shadow: 0 2px 1px rgba(255, 255, 255, 0.2);
+      mix-blend-mode: overlay;
+    }
+    &::after {
+      content: 'Prawsang';
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+      mix-blend-mode: overlay;
+    }
+  }
+
+  .contact-name-card-text.inverted {
+    color: rgba(0, 0, 0, 0.2);
+    &::before {
+      text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    &::after {
+      text-shadow: 0 -2px 1px rgba(255, 255, 255, 0.1);
     }
   }
 }

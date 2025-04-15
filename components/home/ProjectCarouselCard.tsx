@@ -18,7 +18,10 @@ export default function ProjectCarouselCard({
 
   return (
     <div className="project-carousel-card">
-      {theme === 'dark' ? <SvgDark /> : <SvgLight />}
+      <div className="project-carousel-card-image">
+        {theme === 'dark' ? <SvgDark /> : <SvgLight />}
+        <div className="noise" />
+      </div>
       <div className="project-carousel-card-content">
         <h3 className="project-carousel-card-header mb-1">{header}</h3>
         <p className="project-carousel-card-text">{text}</p>

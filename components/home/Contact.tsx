@@ -45,11 +45,11 @@ export default function Contact({ show }: { show: boolean }) {
             <h3 className="mb-1 bold">Contact me</h3>
             <a
               href="mailto:prawsang.c@gmail.com"
-              className="base-sub-header-text size-h3 block mb-5"
+              className="base-sub-header-text size-h3"
             >
               prawsang.c@gmail.com
             </a>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-5">
               <a
                 href="https://www.linkedin.com/in/prawsang/"
                 className="medium underlined block size-h3"

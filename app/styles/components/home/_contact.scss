@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .contact-name-card-wrapper {
@@ -54,6 +55,7 @@
   box-sizing: border-box;
   padding: 24px 32px;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);
   &.bg-1 {
     background-color: #fbe9e2;
   }

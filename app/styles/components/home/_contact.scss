@@ -76,6 +76,8 @@
 .dark-mode {
   .contact-name-card {
     color: rgba(0, 0, 0, 0.2);
+    // remove white lining in mac
+    border: 1px solid transparent;
     &.bg-1 {
       background-color: #6d5052;
     }

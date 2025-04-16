@@ -15,9 +15,9 @@
 }
 
 .contact-name-card-main {
-  max-width: 480px;
-  width: 90%;
-  aspect-ratio: 1.75;
+  width: 480px;
+  max-width: 95%;
+  min-height: 274px;
   background-color: var(--contact-main-card-bg);
   position: relative;
   z-index: 10;
@@ -98,13 +98,14 @@
 
 .contact-name-card-text {
   color: rgba(0, 0, 0, 0.1);
+  mix-blend-mode: overlay;
   position: relative;
   &::before {
     content: 'Prawsang';
     position: absolute;
     top: 0;
     left: 0;
-    text-shadow: 0 2px 1px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 2px 1px rgba(255, 255, 255, 0.4);
     mix-blend-mode: overlay;
   }
   &::after {
@@ -112,7 +113,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
     mix-blend-mode: overlay;
   }
 
@@ -122,6 +123,7 @@
     -o-transform: scale(-1, 1);
     transform: scale(-1, 1);
     color: $base-300;
+    mix-blend-mode: normal;
     &::before {
       text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     }
@@ -133,6 +135,7 @@
 
 .dark-mode {
   .contact-name-card-text {
+    mix-blend-mode: normal;
     color: rgba(0, 0, 0, 0.05);
     &::before {
       content: 'Prawsang';
@@ -153,12 +156,13 @@
   }
 
   .contact-name-card-text.inverted {
-    color: rgba(0, 0, 0, 0.2);
+    mix-blend-mode: normal;
+    color: rgba(0, 0, 0, 0.1);
     &::before {
       text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
     }
     &::after {
-      text-shadow: 0 -2px 1px rgba(255, 255, 255, 0.1);
+      text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.1);
     }
   }
 }

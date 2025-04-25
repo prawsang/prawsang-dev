@@ -83,9 +83,9 @@ export default function Hero() {
           <filter id="goo">
             <feGaussianBlur
               in="SourceGraphic"
-              stdDeviation="10"
+              stdDeviation="20"
               result="blur"
-              color-interpolation-filters="sRGB"
+              color-interpolation-filters="auto"
             />
           </filter>
         </defs>

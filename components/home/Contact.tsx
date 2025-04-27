@@ -42,14 +42,14 @@ export default function Contact({ show }: { show: boolean }) {
             Prawsang
           </h2>
           <div>
-            <h3 className="sm:mb-1 bold mt-2">Contact me</h3>
+            <h3 className="bold mt-2">Contact me</h3>
             <a
               href="mailto:prawsang.c@gmail.com"
               className="base-sub-header-text size-h3"
             >
               prawsang.c@gmail.com
             </a>
-            <div className="flex gap-4 mt-3 sm:mt-5">
+            <div className="flex gap-4 mt-5">
               <a
                 href="https://www.linkedin.com/in/prawsang/"
                 className="medium underlined block size-h3"

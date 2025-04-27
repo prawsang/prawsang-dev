@@ -85,7 +85,7 @@ export default function Hero() {
               in="SourceGraphic"
               stdDeviation="20"
               result="blur"
-              color-interpolation-filters="auto"
+              color-interpolation-filters="sRGB"
             />
           </filter>
         </defs>

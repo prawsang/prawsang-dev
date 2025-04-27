@@ -60,6 +60,11 @@
           left: 50%;
           transition: all 0.3s ease-in-out;
         }
+        &.bar-1,
+        &.bar-2,
+        &.bar-3 {
+          transition-delay: 0.3s;
+        }
         &.bar-cross-1,
         &.bar-cross-2 {
           width: 0;
@@ -69,6 +74,7 @@
           transform: translate(-50%, -50%) rotate(45deg);
           top: 50%;
           left: 50%;
+          transition-delay: 0s;
         }
         &.bar-cross-2 {
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -87,10 +93,17 @@
         &.bar-2,
         &.bar-3 {
           width: 0;
+          transition-delay: 0s;
         }
         &.bar-cross-1,
         &.bar-cross-2 {
           width: 24px;
+        }
+        &.bar-cross-1 {
+          transition-delay: 0.1s;
+        }
+        &.bar-cross-1 {
+          transition-delay: 0.2s;
         }
       }
     }

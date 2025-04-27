@@ -12,10 +12,11 @@ import DashboardDark from '@/public/images/projects/dashboard-dark.svg'
 import DataManagementDark from '@/public/images/projects/data-management-dark.svg'
 import GeospatialDark from '@/public/images/projects/geospatial-dark.svg'
 import LandingPageDark from '@/public/images/projects/landing-page-dark.svg'
-import { FC, SVGProps } from 'react'
+import { FC, SVGProps, useContext, useEffect, useState } from 'react'
 import ProjectCarouselCard from './ProjectCarouselCard'
 import Carousel from '@/components/common/Carousel'
 import OpacityTrail from '../common/OpacityTrail'
+import { ClickEventContext } from '@/contexts/ClickEventContext'
 
 interface ProjectCarouselCardData {
   svg: FC<SVGProps<SVGElement>>
@@ -64,6 +65,33 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
 ]
 
 export default function Projects({ show }: { show: boolean }) {
+  const { canHover } = useContext(ClickEventContext)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (!canHover) {
+      window.addEventListener('click-outside', () => {
+        setExpandedIndex(null)
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('click-outside', () => {
+        setExpandedIndex(null)
+      })
+    }
+  })
+
+  const handleCardClick = (index: number) => {
+    if (expandedIndex === null) {
+      setExpandedIndex(index)
+    } else {
+      setExpandedIndex(null)
+    }
+  }
+
   return (
     <section>
       <div className="content-container">
@@ -84,6 +112,10 @@ export default function Projects({ show }: { show: boolean }) {
               SvgDark={d.svgDark}
               text={d.text}
               header={d.header}
+              expanded={expandedIndex === i}
+              onClick={() => {
+                !canHover && handleCardClick(i)
+              }}
             />
           ))}
         </OpacityTrail>

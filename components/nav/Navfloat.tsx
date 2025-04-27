@@ -28,6 +28,8 @@ export default function Navfloat({
           <div className="nav-float-toggle-bar bar-1" />
           <div className="nav-float-toggle-bar bar-2" />
           <div className="nav-float-toggle-bar bar-3" />
+          <div className="nav-float-toggle-bar bar-cross-1" />
+          <div className="nav-float-toggle-bar bar-cross-2" />
         </div>
       </div>
       <div className="nav-float-panel">

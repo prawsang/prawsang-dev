@@ -40,7 +40,7 @@ export default function Carousel({
   }, [])
 
   const getCardWidth = useCallback((windowWidth: number) => {
-    return Math.min(480, windowWidth * 0.75)
+    return Math.max(Math.min(480, windowWidth * 0.75), 320)
   }, [])
 
   const getCardsPerPage = useCallback(
@@ -190,7 +190,13 @@ export default function Carousel({
   }, [currentTimeoutId])
 
   return (
-    <div className="carousel" onClick={() => clearAutoScroll()}>
+    <div
+      className="carousel"
+      onClick={(e) => {
+        clearAutoScroll()
+        e.stopPropagation()
+      }}
+    >
       <div
         className="carousel-cards-wrapper"
         ref={scrollContainer}

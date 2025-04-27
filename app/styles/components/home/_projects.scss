@@ -3,26 +3,69 @@
 .project-carousel-card {
   width: 100%;
   align-self: stretch;
-  background-color: var(--carousel-panel-bg);
   border-radius: 32px;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
   height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   .project-carousel-card-content {
+    flex-basis: 100%;
+    position: relative;
+    & > .project-carousel-card-header {
+      visibility: hidden;
+    }
+  }
+  .project-carousel-card-content,
+  .project-carousel-card-content-expand {
     padding: 24px;
     @media screen and (min-width: $breakpoint-md) {
       padding: 32px;
     }
   }
+  .project-carousel-card-content-expand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--carousel-panel-bg);
+    border-radius: 0 0 32px 32px;
+    height: auto;
+    min-height: calc(100% + 2px);
+  }
   .project-carousel-card-header {
     color: var(--carousel-panel-header-text);
     font-size: 1.5rem;
+    margin-bottom: 0;
   }
   .project-carousel-card-text {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    max-height: 0;
+    height: auto;
     color: var(--carousel-panel-text);
     font-size: 1.125rem;
+    margin-top: 0;
   }
   .project-carousel-card-image {
     width: 100%;
     position: relative;
+  }
+  @media not (hover: none) {
+    &:hover {
+      .project-carousel-card-text {
+        opacity: 1;
+        margin-top: 0.5rem;
+        max-height: 200px;
+      }
+    }
+  }
+  .project-carousel-card-text.expanded {
+    opacity: 1;
+    margin-top: 0.5rem;
+    max-height: 220px;
   }
 }

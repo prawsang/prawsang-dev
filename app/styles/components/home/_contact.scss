@@ -5,8 +5,8 @@
 
 .contact-container {
   position: relative;
-  padding-top: 240px;
-  padding-bottom: 240px;
+  padding-top: 320px;
+  padding-bottom: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,10 +18,11 @@
   width: 480px;
   max-width: 95%;
   min-height: 274px;
+  aspect-ratio: 1.75;
   background-color: var(--contact-main-card-bg);
   position: relative;
   z-index: 10;
-  padding: 24px 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,11 +50,11 @@
 
 .contact-name-card {
   width: 24vw;
-  min-width: 480px;
+  min-width: 420px;
   max-width: 600px;
   aspect-ratio: 1.75;
   box-sizing: border-box;
-  padding: 24px 32px;
+  padding: 24px;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);
   &.bg-1 {
@@ -100,6 +101,7 @@
   color: rgba(0, 0, 0, 0.1);
   mix-blend-mode: overlay;
   position: relative;
+  font-size: 1.5rem;
   &::before {
     content: 'Prawsang';
     position: absolute;
@@ -164,5 +166,17 @@
     &::after {
       text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.1);
     }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .contact-name-card-text {
+    font-size: 2rem;
+  }
+
+  .contact-name-card,
+  .contact-name-card-main {
+    padding: 24px 32px;
+    min-width: 480px;
   }
 }

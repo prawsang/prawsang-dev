@@ -45,6 +45,7 @@
 
     & > *:not(.carousel-pre):not(.carousel-post) {
       max-width: 480px;
+      min-width: 320px;
       width: 75%;
       flex-shrink: 0;
       &:not(:nth-last-child(2)):not(:last-child) {

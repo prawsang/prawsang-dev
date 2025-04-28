@@ -46,7 +46,7 @@ export default function Carousel({
   const getCardsPerPage = useCallback(
     (windowWidth: number, gap: number) => {
       return (
-        Math.round(
+        Math.floor(
           (windowWidth - getPre(windowWidth)) /
             (getCardWidth(windowWidth) + gap)
         ) || 1

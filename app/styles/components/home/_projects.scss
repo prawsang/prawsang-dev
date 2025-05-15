@@ -10,6 +10,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: var(--carousel-panel-bg);
   .project-carousel-card-content {
     flex-basis: 100%;
     position: relative;
@@ -17,7 +18,13 @@
       visibility: hidden;
     }
   }
-  .project-carousel-card-content,
+
+  .project-carousel-card-content-expand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   .project-carousel-card-content-expand {
     padding: 24px;
     @media screen and (min-width: $breakpoint-md) {
@@ -25,16 +32,13 @@
     }
   }
   .project-carousel-card-content-expand {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 11;
     transition: all 0.3s ease-in-out;
-    background-color: var(--carousel-panel-bg);
+    background-color: var(--carousel-panel-content-bg);
     border-radius: 0 0 32px 32px;
     height: auto;
     min-height: calc(100% + 2px);
+    backdrop-filter: blur(12px);
   }
   .project-carousel-card-header {
     color: var(--carousel-panel-header-text);

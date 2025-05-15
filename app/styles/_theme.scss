@@ -27,9 +27,10 @@ body {
   --chip-sub-text: #{$primary-500};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-200};
-  --carousel-panel-bg: #{$primary-100};
+  --carousel-panel-bg: #{$base-100};
+  --carousel-panel-content-bg: rgba(255, 255, 255, 0.6);
   --carousel-panel-header-text: #{$primary-950};
-  --carousel-panel-text: #{$primary-600};
+  --carousel-panel-text: #{$primary-700};
   --carousel-indicator-active-bg: #{$base-500};
   --carousel-indicator-inactive-bg: #{$base-200};
   --carousel-shadow: 250, 250, 250;
@@ -65,7 +66,8 @@ body.dark-mode {
   --chip-sub-text: #{$primary-400};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-900};
-  --carousel-panel-bg: #{$primary-950};
+  --carousel-panel-bg: black;
+  --carousel-panel-content-bg: rgba(0, 0, 0, 0.2);
   --carousel-panel-header-text: #{$primary-100};
   --carousel-panel-text: #{$primary-300};
   --carousel-indicator-active-bg: #{$base-200};

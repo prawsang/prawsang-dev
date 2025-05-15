@@ -27,7 +27,6 @@ export default function ProjectCarouselCard({
         <div className="noise" />
       </div>
       <div className="project-carousel-card-content">
-        <h3 className="project-carousel-card-header">{header}</h3>
         <div className="project-carousel-card-content-expand">
           <h3 className="project-carousel-card-header">{header}</h3>
           <p

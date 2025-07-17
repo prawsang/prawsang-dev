@@ -1,0 +1,29 @@
+.skills-container {
+  height: auto;
+
+  .gradient-container {
+    opacity: 0.5;
+  }
+
+  .round-1 {
+    margin-left: 50vw;
+  }
+  .round-2 {
+    margin-left: 70vw;
+  }
+  .round-3 {
+    margin-left: -10vw;
+  }
+  .round-4 {
+    margin-left: -50vw;
+  }
+  .round-5 {
+    margin-left: 80vw;
+  }
+}
+
+.dark-mode {
+  .gradient-container {
+    opacity: 0.75;
+  }
+}

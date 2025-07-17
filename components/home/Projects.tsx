@@ -64,7 +64,13 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
   },
 ]
 
-export default function Projects({ show }: { show: boolean }) {
+export default function Projects({
+  show,
+  windowHeight,
+}: {
+  show: boolean
+  windowHeight: number | undefined
+}) {
   const { canHover } = useContext(ClickEventContext)
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
@@ -93,33 +99,38 @@ export default function Projects({ show }: { show: boolean }) {
   }
 
   return (
-    <section>
-      <div className="content-container">
-        <h1 className="base-header-text bold mb-6">
-          Some projects I have worked on
-        </h1>
+    <section
+      className="section-wrapper flex flex-col justify-center"
+      style={{ minHeight: windowHeight ? windowHeight + 'px' : '100vh' }}
+    >
+      <div className="py-8">
+        <div className="content-container">
+          <h1 className="base-header-text bold mb-6">
+            Some projects I have worked on
+          </h1>
+        </div>
+        <Carousel
+          totalCards={CAROUSEL_DATA.length}
+          autoScroll={true}
+          beginAutoScroll={show}
+        >
+          <OpacityTrail open={show} slide="right">
+            {CAROUSEL_DATA.map((d, i) => (
+              <ProjectCarouselCard
+                key={'carousel' + '-' + i}
+                SvgLight={d.svg}
+                SvgDark={d.svgDark}
+                text={d.text}
+                header={d.header}
+                expanded={expandedIndex === i}
+                onClick={() => {
+                  !canHover && handleCardClick(i)
+                }}
+              />
+            ))}
+          </OpacityTrail>
+        </Carousel>
       </div>
-      <Carousel
-        totalCards={CAROUSEL_DATA.length}
-        autoScroll={true}
-        beginAutoScroll={show}
-      >
-        <OpacityTrail open={show} slide="right">
-          {CAROUSEL_DATA.map((d, i) => (
-            <ProjectCarouselCard
-              key={'carousel' + '-' + i}
-              SvgLight={d.svg}
-              SvgDark={d.svgDark}
-              text={d.text}
-              header={d.header}
-              expanded={expandedIndex === i}
-              onClick={() => {
-                !canHover && handleCardClick(i)
-              }}
-            />
-          ))}
-        </OpacityTrail>
-      </Carousel>
     </section>
   )
 }

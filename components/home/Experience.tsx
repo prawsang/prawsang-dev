@@ -34,9 +34,18 @@ const EXPERIENCE = [
   },
 ]
 
-export default function Experience({ show }: { show: boolean }) {
+export default function Experience({
+  show,
+  windowHeight,
+}: {
+  show: boolean
+  windowHeight: number | undefined
+}) {
   return (
-    <section className="experience-container">
+    <section
+      className="section-wrapper experience-container py-5 md:py-7 my-6"
+      style={{ minHeight: windowHeight ? windowHeight + 'px' : '100vh' }}
+    >
       <div className="emoji-container">
         <div className="animoji">
           <div className="emoji-img-wrapper">
@@ -66,8 +75,8 @@ export default function Experience({ show }: { show: boolean }) {
       </div>
       <div className="content-container">
         <div className="flex">
-          <div className="hidden lg:flex lg:basis-1/6" />
-          <div className="lg:basis-2/3 lg:shrink-0">
+          <div className="hidden sm:flex sm:basis-1/6 lg:basis-1/4" />
+          <div className="sm:basis-2/3 lg:basis-1/2 lg:shrink-0">
             <div className="text-center mb-6">
               <h1>Job Experience</h1>
             </div>
@@ -101,7 +110,7 @@ export default function Experience({ show }: { show: boolean }) {
               ))}
             </div>
           </div>
-          <div className="hidden lg:flex lg:basis-1/6" />
+          <div className="hidden sm:basis-1/6 lg:flex lg:basis-1/4" />
         </div>
       </div>
     </section>

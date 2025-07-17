@@ -1,0 +1,48 @@
+.intro-container {
+  .primary-header-text {
+    word-spacing: 24px;
+  }
+
+  .hello-there {
+    display: none;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    .primary-header-text {
+      word-spacing: 36px;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    .hello-there {
+      display: none;
+      z-index: 2;
+      font-size: max(calc(100vh / 7 - 2px), 120px);
+      font-weight: 800;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--intro-background);
+
+      & > div {
+        line-height: max(calc(100vh / 7 - 2px), 120px);
+      }
+    }
+
+    .intro-content {
+      z-index: 10;
+      position: relative;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    .hello-there {
+      left: 24px;
+      transform: none;
+    }
+  }
+}

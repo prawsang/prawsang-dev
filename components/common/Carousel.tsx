@@ -40,7 +40,7 @@ export default function Carousel({
   }, [])
 
   const getCardWidth = useCallback((windowWidth: number) => {
-    return Math.max(Math.min(480, windowWidth * 0.75), 320)
+    return Math.max(Math.min(450, windowWidth * 0.75), 320)
   }, [])
 
   const getCardsPerPage = useCallback(

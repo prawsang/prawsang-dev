@@ -46,7 +46,11 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
   },
 ]
 
-export default function Skills() {
+export default function Skills({
+  windowHeight,
+}: {
+  windowHeight: number | undefined
+}) {
   const inView1 = useInView({ threshold: 0.3, triggerOnce: true })
   const inView2 = useInView({ threshold: 0.3, triggerOnce: true })
   const inView3 = useInView({ threshold: 0.3, triggerOnce: true })
@@ -56,24 +60,44 @@ export default function Skills() {
   const refs = [inView1, inView2, inView3, inView4, inView5]
 
   return (
-    <section>
-      <div className="content-container">
-        <h1 className="base-header-text bold mb-6">My Skills</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-2 md:gap-x-4 gap-y-5 md:gap-y-6">
-          {SKILL_LIST.map((s, i) => (
-            <div key={`skill-h-${i}`} ref={refs[i]?.ref}>
-              <p className="bold base-sub-header-text mb-4">{s.header}</p>
-              <div className="flex flex-wrap">
-                <OpacityTrail open={refs[i]?.inView}>
-                  {s.skills.map((skill) => (
-                    <Chip key={`skill-${skill}`} className="mb-3 mr-3">
-                      <>{skill}</>
-                    </Chip>
-                  ))}
-                </OpacityTrail>
+    <section
+      style={{ minHeight: windowHeight ? windowHeight + 'px' : '100vh' }}
+      className="skills-container py-8"
+    >
+      <div className="gradient-container">
+        <div className="gradient-1" />
+        <div className="gradient-2" />
+        <div className="round-1" />
+        <div className="round-2" />
+        <div className="round-3" />
+        <div className="round-4" />
+        <div className="round-5" />
+      </div>
+      <div className="noise" />
+      <div className="content-container" style={{ zIndex: 100 }}>
+        <div className="py-8">
+          <h1
+            className="base-header-text bold mb-6"
+            style={{ mixBlendMode: 'difference' }}
+          >
+            My Skills
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-2 md:gap-x-4 gap-y-5 md:gap-y-6">
+            {SKILL_LIST.map((s, i) => (
+              <div key={`skill-h-${i}`} ref={refs[i]?.ref}>
+                <p className="bold primary-sub-header-text mb-4">{s.header}</p>
+                <div className="flex flex-wrap">
+                  <OpacityTrail open={refs[i]?.inView}>
+                    {s.skills.map((skill) => (
+                      <Chip key={`skill-${skill}`} className="mb-3 mr-3">
+                        <>{skill}</>
+                      </Chip>
+                    ))}
+                  </OpacityTrail>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -16,9 +16,19 @@ export default function Homepage() {
 
   // prevents flickers
   const [mounted, setMounted] = useState<boolean>()
+  const [height, setHeight] = useState<number | undefined>(undefined)
 
   useEffect(() => {
     setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    setHeight(
+      Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      )
+    )
   }, [])
 
   const { ref: hero, inView: heroInView } = useInView({
@@ -69,23 +79,23 @@ export default function Homepage() {
           show={(mounted && !heroInView) || false}
         />
         <div ref={hero}>
-          <Hero />
+          <Hero windowHeight={height} />
         </div>
         <div>
           <div className="section-wrapper" ref={intro}>
-            <Intro />
+            <Intro windowHeight={height} />
           </div>
           <div className="section-wrapper" ref={projects}>
-            <Projects show={projectsInView} />
+            <Projects windowHeight={height} show={projectsInView} />
           </div>
           <div className="section-wrapper" ref={skills}>
-            <Skills />
+            <Skills windowHeight={height} />
           </div>
           <div className="section-wrapper" ref={experience}>
-            <Experience show={experienceInView} />
+            <Experience windowHeight={height} show={experienceInView} />
           </div>
           <div className="section-wrapper" ref={contact}>
-            <Contact show={contactInView} />
+            <Contact windowHeight={height} show={contactInView} />
           </div>
         </div>
       </div>

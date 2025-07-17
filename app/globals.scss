@@ -25,27 +25,7 @@ body {
 }
 
 .section-wrapper {
-  &:first-child {
-    padding-top: 84px;
-  }
-  padding-top: 42px;
-  padding-bottom: 42px;
-  &:last-child {
-    padding-bottom: 0;
-  }
-
-  @media screen and (min-width: $breakpoint-lg) {
-    &:first-child {
-      padding-top: 108px;
-    }
-    padding-top: 54px;
-    padding-bottom: 54px;
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-}
-section {
+  max-width: 100%;
   position: relative;
 }
 

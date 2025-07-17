@@ -1,10 +1,17 @@
+.contact-section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .contact-section {
   background: var(--contact-bg);
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .contact-container {
-  position: relative;
   padding-top: 320px;
   padding-bottom: 320px;
   display: flex;
@@ -12,6 +19,12 @@
   justify-content: center;
   max-width: 2560px;
   margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .contact-name-card-main {
@@ -58,19 +71,19 @@
   transform: translate(-50%, -50%);
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);
   &.bg-1 {
-    background-color: #fbe9e2;
+    background-color: #ebe8f4;
   }
   &.bg-2 {
-    background-color: #d6c9e1;
+    background-color: #d6d6dd;
   }
   &.bg-3 {
-    background-color: #f1e0e8;
+    background-color: #ebe8f4;
   }
   &.bg-4 {
-    background-color: #f7e9f1;
+    background-color: #eeeef0;
   }
   &.bg-5 {
-    background-color: #e8d6ef;
+    background-color: #e7e7ea;
   }
 }
 
@@ -80,19 +93,19 @@
     // remove white lining in mac
     border: 1px solid transparent;
     &.bg-1 {
-      background-color: #6d5052;
+      background-color: #313135;
     }
     &.bg-2 {
-      background-color: #4e406b;
+      background-color: #222225;
     }
     &.bg-3 {
-      background-color: #704058;
+      background-color: #27272a;
     }
     &.bg-4 {
-      background-color: #582e43;
+      background-color: $base-900;
     }
     &.bg-5 {
-      background-color: #6c5480;
+      background-color: $base-800;
     }
   }
 }
@@ -124,13 +137,13 @@
     -moz-transform: scale(-1, 1);
     -o-transform: scale(-1, 1);
     transform: scale(-1, 1);
-    color: $base-300;
-    mix-blend-mode: normal;
+    color: rgba(127, 122, 179, 0.72);
+    // mix-blend-mode: normal;
     &::before {
       text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     }
     &::after {
-      text-shadow: 0 -2px 1px rgba(255, 255, 255, 1);
+      text-shadow: 0 -2px 1px rgba(255, 255, 255, 0.5);
     }
   }
 }
@@ -158,8 +171,8 @@
   }
 
   .contact-name-card-text.inverted {
-    mix-blend-mode: normal;
-    color: rgba(0, 0, 0, 0.1);
+    // mix-blend-mode: normal;
+    color: rgba(82, 34, 138, 0.18);
     &::before {
       text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
     }

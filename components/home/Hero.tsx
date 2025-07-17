@@ -1,30 +1,25 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Trail from '../common/Trail'
-export default function Hero() {
+export default function Hero({
+  windowHeight,
+}: {
+  windowHeight: number | undefined
+}) {
   const [heroOpen, setHeroOpen] = useState<boolean>(false)
   const [topOpen, setTopOpen] = useState<boolean>(false)
   const [bottomOpen, setBottomOpen] = useState<boolean>(false)
-
-  const [height, setHeight] = useState<number>(0)
 
   useEffect(() => {
     setTopOpen(true)
     setTimeout(() => setHeroOpen(true), 500)
     setTimeout(() => setBottomOpen(true), 1100)
-
-    setHeight(
-      Math.max(
-        document.documentElement.clientHeight || 0,
-        window.innerHeight || 0
-      )
-    )
   }, [])
 
   return (
     <div
       className="hero-container"
-      style={{ height: height ? height + 'px' : '100vh' }}
+      style={{ height: windowHeight ? windowHeight + 'px' : '100vh' }}
     >
       <div className="gradient-container">
         <div className="gradient-1" />

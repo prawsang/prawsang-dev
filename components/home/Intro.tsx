@@ -15,6 +15,23 @@ function yearsSinceJanuary2020(): number {
   return Math.floor(yearsAgo * 2) / 2
 }
 
+const helloThere = [
+  'H',
+  'e',
+  'L',
+  'L',
+  'o',
+  ' ',
+  ' ',
+  ' ',
+  'T',
+  'h',
+  'e',
+  'r',
+  'e',
+  '!',
+]
+
 export default function Intro({
   windowHeight,
 }: {
@@ -28,20 +45,21 @@ export default function Intro({
       <div className="content-container intro-container py-8 md:py-6">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="hello-there">
-            <div>H</div>
-            <div>e</div>
-            <div>L</div>
-            <div>L</div>
-            <div>o</div>
-            <div> </div>
-            <div> </div>
-            <div> </div>
-            <div>T</div>
-            <div>h</div>
-            <div>e</div>
-            <div>r</div>
-            <div>e</div>
-            <div>!</div>
+            {helloThere.map((char) => (
+              <div
+                key={char}
+                style={{
+                  fontSize: windowHeight
+                    ? windowHeight / 7 - 2 + 'px'
+                    : 'calc(100vh / 7) - 2px',
+                  lineHeight: windowHeight
+                    ? windowHeight / 7 - 2 + 'px'
+                    : 'calc(100vh / 7) - 2px',
+                }}
+              >
+                {char}
+              </div>
+            ))}
           </div>
           <div className="sm:basis-1/3 hidden lg:block" />
           <div className="intro-content sm:basis-1/2 lg:basis-1/3">
@@ -55,9 +73,9 @@ export default function Intro({
               height={212}
             ></Image>
             <div>
-              <h1 className="primary-header-text mb-3 text-center md:text-left">
+              <h1 className="primary-header-text mb-3 text-center">
                 Hello there! <br />
-                My name is Prawsang
+                My name is Prawsang.
               </h1>
               <p className="p-large">
                 I am a frontend developer based in Bangkok, Thailand. With{' '}

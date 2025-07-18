@@ -26,7 +26,8 @@ export default function Homepage() {
     setHeight(
       Math.max(
         document.documentElement.clientHeight || 0,
-        window.innerHeight || 0
+        window.innerHeight || 0,
+        640
       )
     )
   }, [])

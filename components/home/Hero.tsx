@@ -70,7 +70,7 @@ export default function Hero({
           </div>
         </div>
       </div>
-      <svg
+      {/* <svg
         style={{ position: 'absolute', height: 0 }}
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -78,13 +78,13 @@ export default function Hero({
           <filter id="goo">
             <feGaussianBlur
               in="SourceGraphic"
-              stdDeviation="20"
+              stdDeviation="5"
               result="blur"
               color-interpolation-filters="sRGB"
             />
           </filter>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   )
 }

@@ -17,7 +17,6 @@
     .hello-there {
       display: none;
       z-index: 2;
-      font-size: max(calc(100vh / 7 - 2px), 120px);
       font-weight: 800;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -27,10 +26,6 @@
       left: 50%;
       transform: translateX(-50%);
       color: var(--intro-background);
-
-      & > div {
-        line-height: max(calc(100vh / 7 - 2px), 120px);
-      }
     }
 
     .intro-content {

@@ -10,14 +10,10 @@ export default function Hero({
   const [topOpen, setTopOpen] = useState<boolean>(false)
   const [bottomOpen, setBottomOpen] = useState<boolean>(false)
 
-  const [colorDepth, setColorDepth] = useState<number>(32)
-
   useEffect(() => {
     setTopOpen(true)
     setTimeout(() => setHeroOpen(true), 500)
     setTimeout(() => setBottomOpen(true), 1100)
-
-    if (screen.colorDepth) setColorDepth(screen.colorDepth)
   }, [])
 
   return (
@@ -25,9 +21,7 @@ export default function Hero({
       className="hero-container"
       style={{ height: windowHeight ? windowHeight + 'px' : '100vh' }}
     >
-      <div
-        className={`gradient-container ${colorDepth !== 32 && 'blur-effect'}`}
-      >
+      <div className="gradient-container">
         <div className="gradient-1" />
         <div className="gradient-2" />
         <div className="round-1" />

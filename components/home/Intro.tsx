@@ -45,9 +45,9 @@ export default function Intro({
       <div className="content-container intro-container py-8 md:py-6">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="hello-there">
-            {helloThere.map((char) => (
+            {helloThere.map((char, i) => (
               <div
-                key={char}
+                key={char + i}
                 style={{
                   fontSize: windowHeight
                     ? windowHeight / 7 - 2 + 'px'

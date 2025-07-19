@@ -58,9 +58,9 @@
   }
 }
 
-// .hero-container .gradient-container {
-//   filter: url(#goo);
-// }
+.gradient-container.blur-effect {
+  filter: url(#goo);
+}
 
 .hero-container,
 .skills-container {
@@ -71,6 +71,7 @@
   align-items: flex-end;
 
   .gradient-container {
+    transform: translateZ(0);
     position: absolute;
     top: -16px;
     left: -16px;

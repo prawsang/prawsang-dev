@@ -3,6 +3,7 @@
 import Chip from '@/components/common/Chip'
 import OpacityTrail from '../common/OpacityTrail'
 import useInView from '@/hooks/useInView'
+import { useEffect, useState } from 'react'
 
 const SKILL_LIST: { header: string; skills: string[] }[] = [
   {
@@ -59,12 +60,19 @@ export default function Skills({
 
   const refs = [inView1, inView2, inView3, inView4, inView5]
 
+  const [colorDepth, setColorDepth] = useState<number>(32)
+  useEffect(() => {
+    if (screen.colorDepth) setColorDepth(screen.colorDepth)
+  }, [])
+
   return (
     <section
       style={{ minHeight: windowHeight ? windowHeight + 'px' : '100vh' }}
       className="skills-container py-8"
     >
-      <div className="gradient-container">
+      <div
+        className={`gradient-container ${colorDepth !== 32 && 'blur-effect'}`}
+      >
         <div className="gradient-1" />
         <div className="gradient-2" />
         <div className="round-1" />

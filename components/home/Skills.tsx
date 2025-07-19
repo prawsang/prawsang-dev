@@ -3,7 +3,7 @@
 import Chip from '@/components/common/Chip'
 import OpacityTrail from '../common/OpacityTrail'
 import useInView from '@/hooks/useInView'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 const SKILL_LIST: { header: string; skills: string[] }[] = [
   {

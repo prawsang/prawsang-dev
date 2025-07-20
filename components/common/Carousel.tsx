@@ -62,7 +62,7 @@ export default function Carousel({
   // Calculate indicator count
   useEffect(() => {
     if (!scrollContainer.current) return
-    const cardsPerPage = getCardsPerPage(windowWidth, windowWidth * 0.05)
+    const cardsPerPage = getCardsPerPage(windowWidth, getGap(windowWidth))
     const _indicatorCount = Math.ceil(totalCards / cardsPerPage)
     setIndicatorCount(_indicatorCount)
     const arr = []

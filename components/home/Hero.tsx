@@ -22,15 +22,13 @@ export default function Hero({
       style={{ height: windowHeight ? windowHeight + 'px' : '100vh' }}
     >
       <div className="gradient-container">
-        <div className="gradient-1" />
-        <div className="gradient-2" />
         <div className="round-1" />
         <div className="round-2" />
         <div className="round-3" />
         <div className="round-4" />
         <div className="round-5" />
       </div>
-      <div className="noise" />
+      <div className="noise hero-noise" />
       <div className="wide-content-container">
         <div className="hero-content flex flex-col py-8 gap-0">
           <div className="flex">
@@ -70,21 +68,6 @@ export default function Hero({
           </div>
         </div>
       </div>
-      {/* <svg
-        style={{ position: 'absolute', height: 0 }}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="20"
-              result="blur"
-              colorInterpolationFilters="sRGB"
-            />
-          </filter>
-        </defs>
-      </svg> */}
     </div>
   )
 }

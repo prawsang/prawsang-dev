@@ -66,8 +66,6 @@ export default function Skills({
       className="skills-container py-8"
     >
       <div className="gradient-container">
-        <div className="gradient-1" />
-        <div className="gradient-2" />
         <div className="round-1" />
         <div className="round-2" />
         <div className="round-3" />

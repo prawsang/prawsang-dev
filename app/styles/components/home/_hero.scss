@@ -77,49 +77,24 @@
     left: -16px;
     right: -16px;
     bottom: -16px;
+    background: url('hero-background.png');
+    background-size: cover;
   }
-
-  .gradient-1,
-  .gradient-2,
   .round-1,
   .round-2,
   .round-3,
-  .round-4 {
+  .round-4,
+  .round-5 {
     position: absolute;
   }
 
   .round-1,
   .round-2,
   .round-3,
-  .round-4 {
+  .round-4,
+  .round-5 {
     mix-blend-mode: color-burn;
   }
-
-  .gradient-1,
-  .gradient-2 {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-
-  .gradient-1 {
-    background: #c8c8d0;
-    background: linear-gradient(
-      180deg,
-      #dfdfe6 0,
-      $primary-100 50%,
-      $base-50 75%,
-      $base-100 100%
-    );
-  }
-
-  .gradient-2 {
-    background: #d6c9e1;
-    background: linear-gradient(-45deg, $base-100, $primary-300, $base-200);
-    opacity: 0.5;
-  }
-
   .round-1 {
     background: transparent;
     background: radial-gradient($base-300 0, transparent 50%);
@@ -223,52 +198,92 @@
 }
 
 .dark-mode {
-  .gradient-1 {
-    background: $base-900;
-    background: linear-gradient(
-      180deg,
-      #24242a 0,
-      $base-900 50%,
-      $base-950 75%,
-      $base-800 100%
-    );
+  .gradient-container {
+    background: url('hero-background-dark.png');
+    background-size: cover;
+  }
+  @media (hover: none) {
+    .round-1,
+    .round-2,
+    .round-3,
+    .round-4,
+    .round-5 {
+      mix-blend-mode: color-dodge;
+    }
+
+    .round-1 {
+      background: transparent;
+      background: radial-gradient(rgba(136, 20, 179, 0.53) 0, transparent 50%);
+    }
+
+    .round-2 {
+      background: transparent;
+      background: radial-gradient(rgb(63, 63, 66) 0, transparent 50%);
+    }
+
+    .round-3 {
+      background: transparent;
+      background: radial-gradient(#7b34bd88 0, transparent 50%);
+    }
+
+    .round-4 {
+      background: transparent;
+      background: radial-gradient(rgb(63, 63, 70) 0, transparent 50%);
+    }
+
+    .round-5 {
+      background: transparent;
+      background: radial-gradient(rgba(91, 32, 140, 0.36) 0, transparent 50%);
+    }
   }
 
-  .gradient-2 {
-    background: $base-900;
-    background: linear-gradient(-45deg, $base-800, $base-950, $base-900);
-    opacity: 0.5;
-  }
+  @media (hover: hover) {
+    // removes banding in larger computers
+    .gradient-container {
+      filter: saturate(200%) brightness(110%);
+    }
+    .hero-noise {
+      display: none;
+    }
 
-  .round-1,
-  .round-2,
-  .round-3,
-  .round-4 {
-    mix-blend-mode: color-dodge;
-  }
+    .round-1,
+    .round-2,
+    .round-3,
+    .round-4,
+    .round-5 {
+      mix-blend-mode: color-dodge;
+    }
 
-  .round-1 {
-    background: transparent;
-    background: radial-gradient(rgba(136, 20, 179, 0.53) 0, transparent 50%);
-  }
+    .round-1 {
+      background: transparent;
+      background: radial-gradient(rgba(136, 20, 179, 0.53) 0, transparent 50%),
+        url('../../noise-dark.svg');
+    }
 
-  .round-2 {
-    background: transparent;
-    background: radial-gradient(rgb(63, 63, 66) 0, transparent 50%);
-  }
+    .round-2 {
+      background: transparent;
+      background: radial-gradient(rgb(63, 63, 66) 0, transparent 50%),
+        url('../../noise-dark.svg');
+      opacity: 0.5;
+    }
 
-  .round-3 {
-    background: transparent;
-    background: radial-gradient(#7b34bd88 0, transparent 50%);
-  }
+    .round-3 {
+      background: transparent;
+      background: radial-gradient(#7b34bd88 0, transparent 50%),
+        url('../../noise-dark.svg');
+    }
 
-  .round-4 {
-    background: transparent;
-    background: radial-gradient(rgb(63, 63, 70) 0, transparent 50%);
-  }
+    .round-4 {
+      background: transparent;
+      background: radial-gradient(rgb(63, 63, 70) 0, transparent 50%),
+        url('../../noise-dark.svg');
+      opacity: 0.5;
+    }
 
-  .round-5 {
-    background: transparent;
-    background: radial-gradient(rgba(91, 32, 140, 0.36) 0, transparent 50%);
+    .round-5 {
+      background: transparent;
+      background: radial-gradient(rgba(91, 32, 140, 0.5) 0, transparent 50%),
+        url('../../noise-dark.svg');
+    }
   }
 }

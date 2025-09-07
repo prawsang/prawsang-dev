@@ -21,6 +21,7 @@ body {
   --nav-panel-text: #{$primary-900};
   --nav-panel-active-bg: #{$primary-100};
   --nav-panel-shadow: rgba(0, 0, 0, 0.15);
+  --nav-underline: #{$primary-500};
   --intro-background: #{$primary-100};
   --chip-bg: rgb(240, 236, 251, 0.5);
   --chip-border: #{$primary-300};
@@ -61,6 +62,7 @@ body.dark-mode {
   --nav-panel-text: #{$primary-200};
   --nav-panel-active-bg: #{$primary-800};
   --nav-panel-shadow: rgba(0, 0, 0, 0.4);
+  --nav-underline: #{$primary-600};
   --chip-bg: #34294588;
   --chip-border: #4a3b74;
   --chip-text: #{primary-100};

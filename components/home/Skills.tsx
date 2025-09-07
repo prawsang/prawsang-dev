@@ -65,13 +65,7 @@ export default function Skills({
       style={{ minHeight: windowHeight ? windowHeight + 'px' : '100vh' }}
       className="skills-container py-8"
     >
-      <div className="gradient-container">
-        {/* <div className="round-1" />
-        <div className="round-2" />
-        <div className="round-3" />
-        <div className="round-4" />
-        <div className="round-5" /> */}
-      </div>
+      <div className="gradient-container"></div>
       <div className="noise" />
       <div className="content-container" style={{ zIndex: 100 }}>
         <div className="py-8">

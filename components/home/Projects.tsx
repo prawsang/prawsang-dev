@@ -6,12 +6,14 @@ import DashboardLight from '@/public/images/projects/dashboard-light.svg'
 import DataManagementLight from '@/public/images/projects/data-management-light.svg'
 import GeospatialLight from '@/public/images/projects/geospatial-light.svg'
 import LandingPageLight from '@/public/images/projects/landing-page-light.svg'
+import TextEditorLight from '@/public/images/projects/text-editor-light.svg'
 import WebAdminAppsDark from '@/public/images/projects/web-admin-apps-dark.svg'
 import UILibraryDark from '@/public/images/projects/ui-library-dark.svg'
 import DashboardDark from '@/public/images/projects/dashboard-dark.svg'
 import DataManagementDark from '@/public/images/projects/data-management-dark.svg'
 import GeospatialDark from '@/public/images/projects/geospatial-dark.svg'
 import LandingPageDark from '@/public/images/projects/landing-page-dark.svg'
+import TextEditorDark from '@/public/images/projects/text-editor-dark.svg'
 import { FC, SVGProps, useContext, useEffect, useState } from 'react'
 import ProjectCarouselCard from './ProjectCarouselCard'
 import Carousel from '@/components/common/Carousel'
@@ -43,6 +45,12 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
     svgDark: DashboardDark,
     header: 'Dashboards',
     text: 'A web admin dashboard presents key metrics and data through various visualizations, such as pie charts, bar charts, and line graphs, allowing for a customized display of information.',
+  },
+  {
+    svg: TextEditorLight,
+    svgDark: TextEditorDark,
+    header: 'Rich Text Editors',
+    text: 'A rich text editor for creating and formatting structured documents. It supports styled text, tables, and page breaks, making it suitable for producing organized and print-ready content.',
   },
   {
     svg: DataManagementLight,

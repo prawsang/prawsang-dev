@@ -27,6 +27,10 @@ body {
   --chip-border: #{$primary-300};
   --chip-text: #{$base-800};
   --chip-sub-text: #{$primary-500};
+  --chip-hover-bg: rgb(240, 236, 251, 1);
+  --chip-disabled-border: #{$base-300};
+  --chip-disabled-bg: transparent;
+  --chip-disabled-text: #{$base-300};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-200};
   --carousel-panel-bg: #{$base-100};
@@ -67,6 +71,10 @@ body.dark-mode {
   --chip-border: #4a3b74;
   --chip-text: #{primary-100};
   --chip-sub-text: #{$primary-400};
+  --chip-hover-bg: #342945bb;
+  --chip-disabled-border: #{$base-800};
+  --chip-disabled-bg: transparent;
+  --chip-disabled-text: #{$base-800};
   --intro-background: #{$base-900};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-900};

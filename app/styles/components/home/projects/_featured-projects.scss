@@ -1,0 +1,67 @@
+@import '../../../variables';
+
+.project-page-container {
+  flex-grow: 1;
+  flex-basis: 100%;
+  overflow: hidden;
+  display: flex;
+  height: calc(100vh - 3.25rem - 96px);
+}
+
+.project-description-container,
+.project-image-container {
+  flex-basis: 50%;
+}
+
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.project-image-container {
+  height: calc(100vh - 3.25rem - 96px);
+  position: relative;
+}
+.project-image-container svg:first-child {
+  height: 100%;
+}
+
+.project-animation-wrapper {
+  position: relative;
+  min-width: 756px;
+}
+
+// TEXT EDITOR
+@keyframes caretBlink {
+  0% {
+    opacity: 1;
+    background-color: $primary-500;
+  }
+  50% {
+    opacity: 0;
+    background-color: transparent;
+  }
+  100% {
+    opacity: 1;
+    background-color: $primary-500;
+  }
+}
+.text-editor-caret {
+  width: 0.5%;
+  height: 3%;
+  background-color: transparent;
+  position: absolute;
+  top: 12%;
+  left: 62%;
+}
+.text-editor-caret.show {
+  animation: caretBlink 1s step-end infinite;
+}

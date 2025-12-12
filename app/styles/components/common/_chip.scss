@@ -14,4 +14,23 @@
   .chip-sub-text {
     color: var(--chip-sub-text);
   }
+  display: block;
+  width: auto;
+
+  &.button {
+    padding: 12px;
+    width: fit-content;
+    transition: background 0.3s ease-in-out;
+    color: var(--chip-text);
+    &:not(.disabled):hover {
+      background-color: var(--chip-hover-bg);
+      color: var(--chip-text);
+    }
+    &.disabled {
+      border-color: var(--chip-disabled-border);
+      background-color: var(--chip-disabled-bg);
+      color: var(--chip-disabled-text);
+      pointer-events: none;
+    }
+  }
 }

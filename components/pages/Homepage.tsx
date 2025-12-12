@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import Hero from '@/components/home/Hero'
 import Intro from '@/components/home/Intro'
-import Projects from '@/components/home/Projects'
+import Projects from '@/components/home/Projects/Projects'
 import Skills from '@/components/home/Skills'
 import Experience from '@/components/home/Experience'
 import Contact from '@/components/home/Contact'
 import Navfloat from '@/components/nav/Navfloat'
 import Navbar from '@/components/nav/Navbar'
 import useInView from '@/hooks/useInView'
+import FeaturedProjects from '../home/FeaturedProjects/FeaturedProjects'
 
 export default function Homepage() {
   const intro = useRef<HTMLDivElement>(null)
@@ -37,6 +38,9 @@ export default function Homepage() {
   })
   const { ref: projects, inView: projectsInView } = useInView({
     triggerOnce: true,
+    threshold: 0.35,
+  })
+  const { ref: featuredProjects, inView: featuredProjectsInView } = useInView({
     threshold: 0.35,
   })
   const skills = useRef<HTMLDivElement>(null)
@@ -85,6 +89,12 @@ export default function Homepage() {
         <div>
           <div className="section-wrapper" ref={intro}>
             <Intro windowHeight={height} />
+          </div>
+          <div className="section-wrapper" ref={featuredProjects}>
+            <FeaturedProjects
+              show={featuredProjectsInView}
+              windowHeight={height}
+            />
           </div>
           <div className="section-wrapper" ref={projects}>
             <Projects windowHeight={height} show={projectsInView} />

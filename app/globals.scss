@@ -84,3 +84,8 @@ body {
 .dark-mode .paper-overlay {
   opacity: 1;
 }
+
+svg.icon {
+  width: 16px;
+  height: 16px; // unless specified
+}

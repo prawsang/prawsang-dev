@@ -5,8 +5,14 @@ import ChevronLeft from '@/public/icons/chevron-left.svg'
 import ChevronRight from '@/public/icons/chevron-right.svg'
 import { useCallback, useState } from 'react'
 import Geospatial from './Geospatial'
+import UILibrary from './UILibrary'
 
 const CONTENT = [
+  {
+    title: 'Private UI Library',
+    content:
+      'This internal Angular UI library was built to give the development team a consistent, dependable foundation for every new client project. Instead of rewriting components from scratch, the library offers solid, reusable building blocks that teams can easily re-style to match each client’s design system. It includes everything from simple elements like buttons, badges, and toast messages, to fully custom form components such as date pickers, time pickers, and comboboxes. The form components integrate cleanly with both Angular Forms and Reactive Forms, making them straightforward to use in any project setup.\n\nEach component comes with its own dedicated unit tests to guarantee correctness and long-term stability. By centralizing these components in one place, the library removes a huge amount of repetitive setup work and gives new projects and proofs of concept a much faster and more reliable starting point.',
+  },
   {
     title: 'Rich Text Editor',
     content:
@@ -16,11 +22,6 @@ const CONTENT = [
     title: 'Geospatial analysis platform',
     content:
       'This geospatial analysis tool was built to take GeoJSON shape data from a legacy system and render it instantly on an interactive map, even when dealing with large or highly detailed geometries. The original approach hit performance limits with complex shapes, so the tool was rebuilt using React and Turf.js to handle spatial processing efficiently on the client side. The result was a dramatic improvement in responsiveness, with shapes appearing immediately and interactions staying smooth. Users can zoom, pan, and inspect shapes without delay, making it easy to interpret boundaries, overlays, and spatial patterns at a glance.',
-  },
-  {
-    title: 'Private UI Library',
-    content:
-      'This internal Angular UI library was built to give the development team a consistent, dependable foundation for every new client project. Instead of rewriting components from scratch, the library offers solid, reusable building blocks that teams can easily re-style to match each client’s design system. It includes everything from simple elements like buttons, badges, and toast messages, to fully custom form components such as date pickers, time pickers, and comboboxes. The form components integrate cleanly with both Angular Forms and Reactive Forms, making them straightforward to use in any project setup.\n\nEach component comes with its own dedicated unit tests to guarantee correctness and long-term stability. By centralizing these components in one place, the library removes a huge amount of repetitive setup work and gives new projects and proofs of concept a much faster and more reliable starting point.',
   },
 ]
 
@@ -46,6 +47,7 @@ export default function FeaturedProjects({
       className="section-wrapper"
       style={{
         minHeight: windowHeight ? Math.max(windowHeight, 500) + 'px' : '100vh',
+        marginBottom: 48,
       }}
     >
       <div className="content-container flex-shrink-0">
@@ -57,7 +59,7 @@ export default function FeaturedProjects({
           minHeight: `calc(${Math.max(
             windowHeight || 0,
             900
-          )}px - 3.25rem - 96px)`,
+          )}px - 3.25rem - 48px)`,
         }}
       >
         <div
@@ -66,11 +68,13 @@ export default function FeaturedProjects({
             minHeight: `calc(${Math.max(
               windowHeight || 0,
               900
-            )}px - 3.25rem - 96px)`,
+            )}px - 3.25rem - 48px)`,
           }}
         >
-          <TextEditor runAnimations={show && page === 0} show={page === 0} />
-          <Geospatial runAnimations={show && page === 1} show={page === 1} />
+          <Geospatial runAnimations={show && page === 2} show={true} />
+          <TextEditor runAnimations={show && page === 1} show={page <= 1} />
+          <UILibrary runAnimations={show && page === 0} show={page === 0} />
+          <div className="noise" />
         </div>
         <div className="project-description-container">
           <div
@@ -80,8 +84,8 @@ export default function FeaturedProjects({
             {CONTENT.map((c, i) => (
               <div
                 key={`project-f-${i}`}
-                className={`slide-transition-wrapper ${page === i && 'show'}`}
-                style={{ maxWidth: 500 }}
+                className={`slide-transition-wrapper ${page <= i && 'show'}`}
+                style={{ maxWidth: 500, zIndex: CONTENT.length - i }}
               >
                 <h1 className="primary-header-text mb-5">{c.title}</h1>
                 <p className="p-large" style={{ whiteSpace: 'pre-wrap' }}>
@@ -90,15 +94,15 @@ export default function FeaturedProjects({
               </div>
             ))}
           </div>
-          <div
-            className="flex gap-2 justify-end"
-            style={{ maxWidth: 500, width: '100%' }}
-          >
+          <div className="flex gap-2" style={{ maxWidth: 500, width: '100%' }}>
             <a
               className={`chip button ${page === 0 && 'disabled'}`}
               onClick={prevPage}
             >
-              <ChevronLeft style={{ transform: 'translateX(-1px)' }} />
+              <ChevronLeft
+                className="icon"
+                style={{ transform: 'translateX(-1px)', width: 24, height: 24 }}
+              />
             </a>
             <a
               className={`chip button ${
@@ -106,7 +110,10 @@ export default function FeaturedProjects({
               }`}
               onClick={nextPage}
             >
-              <ChevronRight style={{ transform: 'translateX(1px)' }} />
+              <ChevronRight
+                className="icon"
+                style={{ transform: 'translateX(1px)', width: 24, height: 24 }}
+              />
             </a>
           </div>
         </div>

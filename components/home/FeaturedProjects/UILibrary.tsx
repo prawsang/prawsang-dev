@@ -9,13 +9,19 @@ import ChevronDown from '@/public/icons/chevron-down.svg'
 export default function UILibrary({
   show,
   runAnimations,
+  isLast = false,
 }: {
   show: boolean
   runAnimations: boolean
+  isLast?: boolean
 }) {
   const { theme } = useContext(ThemeContext)
   return (
-    <div className={`slide-transition-wrapper ${show && 'show'} w-full`}>
+    <div
+      className={`slide-transition-wrapper ${show && 'show'} w-full ${
+        isLast && 'last'
+      }`}
+    >
       <div className="project-animation-wrapper text-editor">
         {theme === 'dark' ? <UILibraryDark /> : <UILibraryLight />}
         <ChevronDown

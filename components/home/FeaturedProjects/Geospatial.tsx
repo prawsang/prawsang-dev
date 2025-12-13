@@ -13,13 +13,19 @@ import MapMarkIcon from '@/public/icons/geo-alt-fill.svg'
 export default function Geospatial({
   show,
   runAnimations,
+  isLast = false,
 }: {
   show: boolean
   runAnimations: boolean
+  isLast?: boolean
 }) {
   const { theme } = useContext(ThemeContext)
   return (
-    <div className={`slide-transition-wrapper ${show && 'show'} w-full`}>
+    <div
+      className={`slide-transition-wrapper ${show && 'show'} w-full ${
+        isLast && 'last'
+      }`}
+    >
       <div className="project-animation-wrapper">
         {theme === 'dark' ? <GeospatialDark /> : <GeospatialLight />}
         {theme === 'dark' ? (

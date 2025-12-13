@@ -3,6 +3,8 @@
 import TextEditor from './TextEditor'
 import ChevronLeft from '@/public/icons/chevron-left.svg'
 import ChevronRight from '@/public/icons/chevron-right.svg'
+import ChevronCompactUp from '@/public/icons/chevron-compact-up.svg'
+import ChevronCompactDown from '@/public/icons/chevron-compact-down.svg'
 import { useCallback, useState } from 'react'
 import Geospatial from './Geospatial'
 import UILibrary from './UILibrary'
@@ -11,7 +13,7 @@ const CONTENT = [
   {
     title: 'Private UI Library',
     content:
-      'This internal Angular UI library was built to give the development team a consistent, dependable foundation for every new client project. Instead of rewriting components from scratch, the library offers solid, reusable building blocks that teams can easily re-style to match each client’s design system. It includes everything from simple elements like buttons, badges, and toast messages, to fully custom form components such as date pickers, time pickers, and comboboxes. The form components integrate cleanly with both Angular Forms and Reactive Forms, making them straightforward to use in any project setup.\n\nEach component comes with its own dedicated unit tests to guarantee correctness and long-term stability. By centralizing these components in one place, the library removes a huge amount of repetitive setup work and gives new projects and proofs of concept a much faster and more reliable starting point.',
+      'This internal Angular UI library was built to give the development team a consistent, dependable foundation for every new client project. Instead of rewriting components from scratch, the library offers solid, reusable building blocks that teams can easily re-style to match each client’s design system. It includes everything from simple elements like buttons, badges, and toast messages, to fully custom form components such as date pickers, time pickers, and comboboxes. The form components integrate cleanly with both Angular Forms and Reactive Forms, making them straightforward to use in any project setup. Unit tests were included for all components to ensure correct functionality across library releases.',
   },
   {
     title: 'Rich Text Editor',
@@ -35,86 +37,126 @@ export default function FeaturedProjects({
   const [page, setPage] = useState<number>(0)
 
   const nextPage = useCallback(() => {
-    if (page < CONTENT.length) setPage(page + 1)
+    if (page < CONTENT.length) {
+      setPage(page + 1)
+      setExpanded(false)
+    }
   }, [page])
 
   const prevPage = useCallback(() => {
-    if (page > 0) setPage(page - 1)
+    if (page > 0) {
+      setPage(page - 1)
+      setExpanded(false)
+    }
   }, [page])
+
+  const [expanded, setExpanded] = useState<boolean>(false)
 
   return (
     <div
-      className="section-wrapper"
+      className="section-wrapper featured-projects"
       style={{
-        minHeight: windowHeight ? Math.max(windowHeight, 500) + 'px' : '100vh',
+        minHeight: windowHeight ? windowHeight + 'px' : '100vh',
         marginBottom: 48,
+        maxWidth: 1920,
+        marginLeft: 'auto',
+        marginRight: 'auto',
       }}
     >
       <div className="content-container flex-shrink-0">
         <h1 className="base-header-text bold my-6">Featured Projects</h1>
       </div>
-      <div
-        className="project-page-container"
-        style={{
-          minHeight: `calc(${Math.max(
-            windowHeight || 0,
-            900
-          )}px - 3.25rem - 48px)`,
-        }}
-      >
-        <div
-          className="project-image-container"
-          style={{
-            minHeight: `calc(${Math.max(
-              windowHeight || 0,
-              900
-            )}px - 3.25rem - 48px)`,
-          }}
-        >
-          <Geospatial runAnimations={show && page === 2} show={true} />
+      <div className="project-page-container">
+        <div className="project-image-container">
+          <Geospatial
+            runAnimations={show && page === 2}
+            show={true}
+            isLast={true}
+          />
           <TextEditor runAnimations={show && page === 1} show={page <= 1} />
           <UILibrary runAnimations={show && page === 0} show={page === 0} />
           <div className="noise" />
         </div>
-        <div className="project-description-container">
+        <div
+          className={`project-description-container ${expanded && 'expanded'}`}
+        >
           <div
-            className="relative flex justify-center"
+            onClick={() => setExpanded(!expanded)}
+            style={{ cursor: 'pointer' }}
+            className="block md:hidden flex justify-center w-full mb-2"
+          >
+            {expanded ? (
+              <ChevronCompactDown
+                className="icon"
+                style={{ width: 48, height: 48 }}
+              />
+            ) : (
+              <ChevronCompactUp
+                className="icon"
+                style={{ width: 48, height: 48 }}
+              />
+            )}
+          </div>
+          <div
+            className="project-description relative flex justify-center"
             style={{ minWidth: '100%', flexBasis: '100%' }}
           >
             {CONTENT.map((c, i) => (
               <div
                 key={`project-f-${i}`}
-                className={`slide-transition-wrapper ${page <= i && 'show'}`}
-                style={{ maxWidth: 500, zIndex: CONTENT.length - i }}
+                className={`project-description-slide slide-transition-wrapper ${
+                  page <= i && 'show'
+                } ${i === CONTENT.length - 1 && 'last'}`}
+                style={{ zIndex: CONTENT.length - i }}
               >
-                <h1 className="primary-header-text mb-5">{c.title}</h1>
-                <p className="p-large" style={{ whiteSpace: 'pre-wrap' }}>
-                  {c.content}
-                </p>
+                <div className="content-container">
+                  <h1 className="primary-header-text mb-5">{c.title}</h1>
+                  <p
+                    className="p-large mb-5 md:mb-1"
+                    style={{ whiteSpace: 'pre-wrap' }}
+                  >
+                    {c.content}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="flex gap-2" style={{ maxWidth: 500, width: '100%' }}>
-            <a
-              className={`chip button ${page === 0 && 'disabled'}`}
-              onClick={prevPage}
-            >
-              <ChevronLeft
-                className="icon"
-                style={{ transform: 'translateX(-1px)', width: 24, height: 24 }}
-              />
-            </a>
-            <a
-              className={`chip button ${
-                page === CONTENT.length - 1 && 'disabled'
-              }`}
-              onClick={nextPage}
-            >
-              <ChevronRight
-                className="icon"
-                style={{ transform: 'translateX(1px)', width: 24, height: 24 }}
-              />
-            </a>
+          <div className="project-pagination">
+            <div className="content-container">
+              <div
+                className="flex justify-center md:justify-start gap-2 "
+                style={{ width: '100%' }}
+              >
+                <a
+                  className={`chip button ${page === 0 && 'disabled'}`}
+                  onClick={prevPage}
+                >
+                  <ChevronLeft
+                    className="icon"
+                    style={{
+                      transform: 'translateX(-1px)',
+                      width: 24,
+                      height: 24,
+                    }}
+                  />
+                </a>
+                <a
+                  className={`chip button ${
+                    page === CONTENT.length - 1 && 'disabled'
+                  }`}
+                  onClick={nextPage}
+                >
+                  <ChevronRight
+                    className="icon"
+                    style={{
+                      transform: 'translateX(1px)',
+                      width: 24,
+                      height: 24,
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

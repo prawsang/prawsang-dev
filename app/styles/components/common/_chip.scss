@@ -17,6 +17,10 @@
   display: block;
   width: auto;
 
+  &.solid {
+    background-color: var(--chip-border);
+  }
+
   &.button {
     padding: 12px;
     width: fit-content;

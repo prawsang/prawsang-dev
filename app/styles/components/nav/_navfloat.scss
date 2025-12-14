@@ -111,6 +111,7 @@
 
   .nav-float-panel {
     background-color: var(--nav-panel-bg);
+    backdrop-filter: blur(10px);
     padding: 0px 8px;
     overflow: hidden;
     transition: all 0.3s ease-in-out;

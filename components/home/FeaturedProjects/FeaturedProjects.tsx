@@ -110,9 +110,17 @@ export default function FeaturedProjects({
                 style={{ zIndex: CONTENT.length - i }}
               >
                 <div className="content-container">
-                  <h1 className="primary-header-text mb-5">{c.title}</h1>
+                  <h1
+                    className={`primary-header-text mb-5 ${
+                      page !== i && expanded && 'invisible'
+                    }`}
+                  >
+                    {c.title}
+                  </h1>
                   <p
-                    className="p-large mb-5 md:mb-1"
+                    className={`p-large mb-5 md:mb-1 ${
+                      page !== i && expanded && 'invisible'
+                    }`}
                     style={{ whiteSpace: 'pre-wrap' }}
                   >
                     {c.content}

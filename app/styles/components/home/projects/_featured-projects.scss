@@ -15,6 +15,10 @@
   height: 100%;
 }
 
+.expanded .slide-transition-wrapper {
+  background: none;
+}
+
 .project-animation-wrapper {
   position: relative;
 }
@@ -56,7 +60,8 @@
 }
 
 .project-description-container {
-  background: var(--bg);
+  background: var(--bg-blur);
+  backdrop-filter: blur(10px);
   position: relative;
   z-index: 100;
   transform: translateY(0);
@@ -69,6 +74,11 @@
 }
 
 @media screen and (min-width: $breakpoint-md) {
+  .slide-transition-wrapper,
+  .expanded .slide-transition-wrapper {
+    background: var(--bg);
+    backdrop-filter: initial;
+  }
   .project-description-container {
     transition: none;
     transform: none;
@@ -82,6 +92,10 @@
   }
   .project-description:after {
     display: none;
+  }
+
+  .expanded .project-description-slide * {
+    visibility: visible;
   }
 
   .project-page-container {

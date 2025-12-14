@@ -35,16 +35,16 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
     text: 'A web admin dashboard presents key metrics and data through various visualizations, such as pie charts, bar charts, and line graphs, allowing for a customized display of information.',
   },
   {
-    svg: DataManagementLight,
-    svgDark: DataManagementDark,
-    header: 'Data management platforms',
-    text: 'Web data management platforms allows users to store, organize, and process files securely. Files and folder are stored and retrieved using a secured cloud service.',
-  },
-  {
     svg: WebAdminAppsLight,
     svgDark: WebAdminAppsDark,
     header: 'Web admin applications',
     text: 'Applications tailored to manage the custom and specific processes of a corporation, which require extensive access control, form validation,  and handling of large amounts of data.',
+  },
+  {
+    svg: DataManagementLight,
+    svgDark: DataManagementDark,
+    header: 'Data management platforms',
+    text: 'Web data management platforms allows users to store, organize, and process files securely. Files and folder are stored and retrieved using a secured cloud service.',
   },
   // {
   //   svg: TextEditorLight,

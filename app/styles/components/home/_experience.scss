@@ -35,11 +35,15 @@
   .timeline-line {
     position: absolute;
     top: 9px;
-    bottom: -9px;
+    bottom: 100%;
     left: 6px;
     width: 4px;
     background-color: var(--timeline-line-bg);
     z-index: 9;
+    transition: bottom 1s linear;
+  }
+  .timeline-line.show {
+    bottom: -9px;
   }
 
   .emoji-container {
@@ -101,5 +105,9 @@
       transform: rotate(-15deg);
       margin: auto;
     }
+  }
+
+  li {
+    margin-bottom: 16px;
   }
 }

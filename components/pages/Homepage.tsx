@@ -45,8 +45,7 @@ export default function Homepage() {
   })
   const skills = useRef<HTMLDivElement>(null)
   const { ref: experience, inView: experienceInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.35,
+    threshold: 0.2,
   })
   const { ref: contact, inView: contactInView } = useInView({
     threshold: 0.35,
@@ -108,6 +107,31 @@ export default function Homepage() {
           <div className="section-wrapper" ref={contact}>
             <Contact windowHeight={height} show={contactInView} />
           </div>
+          <footer>
+            <div className="xs:flex items-center justify-between">
+              <small className="block">
+                <span className="base-sub-text">
+                  Designed and Developed by{' '}
+                </span>
+                <a
+                  href="https://github.com/prawsang"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="bold primary"
+                >
+                  Prawsang
+                </a>
+                <span className="base-sub-text">.</span>
+              </small>
+              <small
+                className="base-sub-text xs:text-right block"
+                style={{ color: 'var(--license-text)' }}
+              >
+                © {new Date().getFullYear()} Prawsang — Code: MIT · Custom SVG
+                assets: CC BY-NC 4.0
+              </small>
+            </div>
+          </footer>
         </div>
       </div>
     </>

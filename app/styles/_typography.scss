@@ -150,7 +150,11 @@ a {
   color: inherit;
   transition: 0.3s color ease-in-out;
   cursor: pointer;
-  &:hover {
+  &:hover,
+  &.primary {
     color: var(--link-text);
+  }
+  &.primary:hover {
+    color: var(--link-text-hover);
   }
 }

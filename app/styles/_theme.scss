@@ -44,6 +44,9 @@ body {
   --contact-bg: #{$base-100};
   --contact-main-card-bg: #{$primary-100};
   --link-text: #{$primary-500};
+  --link-text-hover: #{$primary-400};
+  --footer-bg: #{$base-100};
+  --license-text: #{$base-400};
 }
 
 body.dark-mode {
@@ -90,4 +93,7 @@ body.dark-mode {
   --contact-bg: #{$base-900};
   --contact-main-card-bg: #47266f;
   --link-text: #{$primary-400};
+  --link-text-hover: #{$primary-500};
+  --footer-bg: #{$base-900};
+  --license-text: #{$base-600};
 }

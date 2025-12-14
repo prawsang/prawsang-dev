@@ -64,7 +64,7 @@ export default function FeaturedProjects({
       }}
     >
       <div className="content-container flex-shrink-0">
-        <h1 className="base-header-text bold my-6">Featured Projects</h1>
+        <h1 className="base-header-text bold pb-6 pt-4">Featured Projects</h1>
       </div>
       <div className="project-page-container">
         <div className="project-image-container">

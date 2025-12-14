@@ -57,7 +57,7 @@ export default function Homepage() {
         intro.current?.scrollIntoView({ behavior: 'smooth' })
         break
       case 'projects':
-        projects.current?.scrollIntoView({ behavior: 'smooth' })
+        featuredProjects.current?.scrollIntoView({ behavior: 'smooth' })
         break
       case 'skills':
         skills.current?.scrollIntoView({ behavior: 'smooth' })

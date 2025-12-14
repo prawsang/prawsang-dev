@@ -52,7 +52,7 @@ export default function Contact({
               Prawsang
             </h2>
             <div>
-              <h3 className="bold mt-2">Contact me</h3>
+              <h3 className="bold mt-2">Let’s Connect.</h3>
               <a
                 href="mailto:prawsang.c@gmail.com"
                 className="primary-sub-header-text size-h3"

@@ -20,6 +20,13 @@
   .round-5 {
     margin-left: 80vw;
   }
+
+  .legend {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--chip-border);
+    border-radius: 0.5rem;
+  }
 }
 
 .dark-mode {

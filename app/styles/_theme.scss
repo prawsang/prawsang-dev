@@ -2,6 +2,7 @@
 
 body {
   --bg: #{$base-50};
+  --bg-blur: rgba(250, 250, 250, 0.75);
   --base-text: #{$base-800};
   --base-sub-text: #{$base-500};
   --hero-text: #{$base-800};
@@ -17,16 +18,20 @@ body {
   --nav-close-bg: #{$primary-200};
   --nav-close-bg-hover: #{$primary-100};
   --nav-close-icon-fill: #{$primary-900};
-  --nav-panel-bg: #{$base-50};
+  --nav-panel-bg: rgba(250, 250, 250, 0.75);
   --nav-panel-text: #{$primary-900};
   --nav-panel-active-bg: #{$primary-100};
   --nav-panel-shadow: rgba(0, 0, 0, 0.15);
   --nav-underline: #{$primary-500};
   --intro-background: #{$primary-100};
-  --chip-bg: rgb(240, 236, 251, 0.5);
+  --chip-bg: rgba(240, 236, 251, 0.5);
   --chip-border: #{$primary-300};
   --chip-text: #{$base-800};
   --chip-sub-text: #{$primary-500};
+  --chip-hover-bg: rgba(240, 236, 251, 1);
+  --chip-disabled-border: #{$base-300};
+  --chip-disabled-bg: transparent;
+  --chip-disabled-text: #{$base-300};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-200};
   --carousel-panel-bg: #{$base-100};
@@ -39,10 +44,14 @@ body {
   --contact-bg: #{$base-100};
   --contact-main-card-bg: #{$primary-100};
   --link-text: #{$primary-500};
+  --link-text-hover: #{$primary-400};
+  --footer-bg: #{$base-100};
+  --license-text: #{$base-400};
 }
 
 body.dark-mode {
   --bg: #{$base-950};
+  --bg-blur: rgba(9, 9, 11, 0.75);
   --base-text: #{$base-200};
   --base-sub-text: #{$base-400};
   --hero-text: #{$primary-600};
@@ -58,15 +67,19 @@ body.dark-mode {
   --nav-close-bg: #{$primary-900};
   --nav-close-bg-hover: #{$primary-800};
   --nav-close-icon-fill: #{$primary-200};
-  --nav-panel-bg: #{$base-900};
+  --nav-panel-bg: rgb(24, 24, 27, 0.75);
   --nav-panel-text: #{$primary-200};
   --nav-panel-active-bg: #{$primary-800};
   --nav-panel-shadow: rgba(0, 0, 0, 0.4);
   --nav-underline: #{$primary-600};
   --chip-bg: #34294588;
-  --chip-border: #4a3b74;
+  --chip-border: #553b74;
   --chip-text: #{primary-100};
   --chip-sub-text: #{$primary-400};
+  --chip-hover-bg: #342945bb;
+  --chip-disabled-border: #{$base-800};
+  --chip-disabled-bg: transparent;
+  --chip-disabled-text: #{$base-800};
   --intro-background: #{$base-900};
   --timeline-bullet-bg: #{$primary-500};
   --timeline-line-bg: #{$primary-900};
@@ -80,4 +93,7 @@ body.dark-mode {
   --contact-bg: #{$base-900};
   --contact-main-card-bg: #47266f;
   --link-text: #{$primary-400};
+  --link-text-hover: #{$primary-500};
+  --footer-bg: #{$base-900};
+  --license-text: #{$base-600};
 }

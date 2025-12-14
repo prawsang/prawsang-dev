@@ -64,8 +64,8 @@ export default function Intro({
           <div className="sm:basis-1/3 hidden lg:block" />
           <div className="intro-content sm:basis-1/2 lg:basis-1/3">
             <Image
-              style={{ width: '50%' }}
-              className="m-auto w-3/5 sm:w-fit mb-6"
+              style={{ width: '35%' }}
+              className="m-auto mb-6"
               unoptimized
               src="/images/animoji-1.png"
               alt="Prawsang Animoji"
@@ -102,7 +102,7 @@ export default function Intro({
               </div>
               <div>
                 <h2 className="primary-header-text mb-3">Languages</h2>
-                <div className="flex gap-3">
+                <div className="flex gap-3 flex-wrap">
                   <Chip className="whitespace-nowrap">
                     English <span className="chip-sub-text">- Fluent</span>
                   </Chip>

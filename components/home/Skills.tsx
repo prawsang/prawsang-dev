@@ -15,15 +15,22 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
       'CSS/SCSS',
       'NextJS',
       'Redux',
-      'Gatsby',
       'MobX',
       'Storybook',
       'Responsive Web',
+      'Turf.js',
+      'ProseMirror',
     ],
   },
   {
     header: 'Testing & Quality Assurance',
-    skills: ['Unit testing', 'Jasmine + Karma', 'Jest', 'Sonarqube'],
+    skills: [
+      'Unit testing',
+      'Jasmine + Karma',
+      'Jest',
+      'React Testing Library',
+      'Sonarqube',
+    ],
   },
   {
     header: 'Programming Languages/Scripts',
@@ -31,21 +38,29 @@ const SKILL_LIST: { header: string; skills: string[] }[] = [
   },
   {
     header: 'Backend & Database',
-    skills: [
-      'Database Design',
-      'SQL',
-      'PostgreSQL',
-      'MongoDB',
-      'Node.js',
-      'Express',
-      'Sequelize',
-    ],
+    skills: ['Database Design', 'SQL', 'PostgreSQL', 'MongoDB', 'Node.js'],
   },
   {
     header: 'Other tools',
-    skills: ['Git', 'Figma', 'Webflow', 'Wordpress'],
+    skills: ['Git', 'Figma', 'Jira', 'Webflow', 'Wordpress'],
   },
 ]
+
+const ACTIVE_SKILLS = new Set([
+  'Angular',
+  'React',
+  'NextJS',
+  'Redux',
+  'Storybook',
+  'Responsive Web',
+  'Unit testing',
+  'Jasmine + Karma',
+  'TypeScript/JavaScript',
+  'CSS/SCSS',
+  'Git',
+  'Figma',
+  'Jira',
+])
 
 export default function Skills({
   windowHeight,
@@ -82,7 +97,12 @@ export default function Skills({
                 <div className="flex flex-wrap">
                   <OpacityTrail open={refs[i]?.inView}>
                     {s.skills.map((skill) => (
-                      <Chip key={`skill-${skill}`} className="mb-3 mr-3">
+                      <Chip
+                        key={`skill-${skill}`}
+                        className={`mb-3 mr-3 ${
+                          ACTIVE_SKILLS.has(skill) && 'solid'
+                        }`}
+                      >
                         <>{skill}</>
                       </Chip>
                     ))}
@@ -90,6 +110,11 @@ export default function Skills({
                 </div>
               </div>
             ))}
+            <div />
+            <div className="flex gap-1 items-center">
+              <div className="legend" />
+              <span className="base-sub-text">Actively Used Skill</span>
+            </div>
           </div>
         </div>
       </div>

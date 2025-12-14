@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import Hero from '@/components/home/Hero'
 import Intro from '@/components/home/Intro'
-import Projects from '@/components/home/Projects'
+import Projects from '@/components/home/Projects/Projects'
 import Skills from '@/components/home/Skills'
 import Experience from '@/components/home/Experience'
 import Contact from '@/components/home/Contact'
 import Navfloat from '@/components/nav/Navfloat'
 import Navbar from '@/components/nav/Navbar'
 import useInView from '@/hooks/useInView'
+import FeaturedProjects from '../home/FeaturedProjects/FeaturedProjects'
 
 export default function Homepage() {
   const intro = useRef<HTMLDivElement>(null)
@@ -39,10 +40,12 @@ export default function Homepage() {
     triggerOnce: true,
     threshold: 0.35,
   })
+  const { ref: featuredProjects, inView: featuredProjectsInView } = useInView({
+    threshold: 0.35,
+  })
   const skills = useRef<HTMLDivElement>(null)
   const { ref: experience, inView: experienceInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.35,
+    threshold: 0.2,
   })
   const { ref: contact, inView: contactInView } = useInView({
     threshold: 0.35,
@@ -54,7 +57,7 @@ export default function Homepage() {
         intro.current?.scrollIntoView({ behavior: 'smooth' })
         break
       case 'projects':
-        projects.current?.scrollIntoView({ behavior: 'smooth' })
+        featuredProjects.current?.scrollIntoView({ behavior: 'smooth' })
         break
       case 'skills':
         skills.current?.scrollIntoView({ behavior: 'smooth' })
@@ -86,6 +89,12 @@ export default function Homepage() {
           <div className="section-wrapper" ref={intro}>
             <Intro windowHeight={height} />
           </div>
+          <div className="section-wrapper" ref={featuredProjects}>
+            <FeaturedProjects
+              show={featuredProjectsInView}
+              windowHeight={height}
+            />
+          </div>
           <div className="section-wrapper" ref={projects}>
             <Projects windowHeight={height} show={projectsInView} />
           </div>
@@ -98,6 +107,31 @@ export default function Homepage() {
           <div className="section-wrapper" ref={contact}>
             <Contact windowHeight={height} show={contactInView} />
           </div>
+          <footer>
+            <div className="xs:flex items-center justify-between">
+              <small className="block">
+                <span className="base-sub-text">
+                  Designed and Developed by{' '}
+                </span>
+                <a
+                  href="https://github.com/prawsang"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="bold primary"
+                >
+                  Prawsang
+                </a>
+                <span className="base-sub-text">.</span>
+              </small>
+              <small
+                className="base-sub-text xs:text-right block"
+                style={{ color: 'var(--license-text)' }}
+              >
+                © {new Date().getFullYear()} Prawsang — Code: MIT · Custom SVG
+                assets: CC BY-NC 4.0
+              </small>
+            </div>
+          </footer>
         </div>
       </div>
     </>

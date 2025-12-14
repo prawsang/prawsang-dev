@@ -110,7 +110,7 @@ export default function Skills({
                 </div>
               </div>
             ))}
-            <div />
+            <div className="hidden sm:block" />
             <div className="flex gap-1 items-center">
               <div className="legend" />
               <span className="base-sub-text">Actively Used Skill</span>

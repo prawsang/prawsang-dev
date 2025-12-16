@@ -26,19 +26,21 @@
 .project-image-container {
   overflow: hidden;
   position: relative;
-  max-height: 60vh;
+  max-height: calc(var(--window-height) * 0.6);
+  margin-bottom: calc(var(--window-height) * 0.4);
 }
 
 .project-pagination {
   width: 100%;
-  margin-top: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .project-description {
-  height: calc(40vh - 158px);
   overflow: hidden;
   position: relative;
   transition: height 0.3s $cubic-bezier;
+  flex-grow: 1;
   &:after {
     content: '';
     bottom: 0;
@@ -60,17 +62,30 @@
 }
 
 .project-description-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: calc(var(--window-height) * 0.6);
   background: var(--bg-blur);
   backdrop-filter: blur(10px);
-  position: relative;
   z-index: 100;
   transform: translateY(0);
-  transition: all 0.3s $cubic-bezier;
+  transition: top 0.3s $cubic-bezier;
+  display: flex;
+  flex-direction: column;
+  & > * {
+    width: 100%;
+  }
+}
+
+.project-page-container {
+  position: relative;
+  padding-bottom: 1px;
 }
 
 .project-description-container.expanded {
-  transform: translateY(-40vh);
-  margin-bottom: -40vh;
+  top: calc(var(--window-height) * 0.2);
 }
 
 @media screen and (min-width: $breakpoint-md) {
@@ -81,7 +96,11 @@
   }
   .project-description-container {
     transition: none;
-    transform: none;
+    position: relative;
+    top: unset;
+    bottom: unset;
+    right: unset;
+    left: unset;
   }
   .project-description-container.expanded {
     margin-bottom: 0;
@@ -124,9 +143,9 @@
   }
 
   .project-image-container {
-    height: calc(100vh - 3.25rem - 72px);
-    min-height: 900;
-    max-height: calc(100vh - 3.25rem - 72px);
+    height: calc(var(--window-height) - 3.25rem - 72px);
+    max-height: calc(var(--window-height) - 3.25rem - 72px);
+    margin-bottom: 0;
   }
   .project-image-container > svg:first-child {
     height: 100%;
@@ -144,6 +163,7 @@
   .project-pagination {
     max-width: 480px;
     margin-top: 0;
+    flex-shrink: 0;
   }
 }
 

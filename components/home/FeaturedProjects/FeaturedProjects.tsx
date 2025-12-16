@@ -56,7 +56,11 @@ export default function FeaturedProjects({
     <div
       className="section-wrapper featured-projects"
       style={{
-        minHeight: windowHeight ? windowHeight + 'px' : '100vh',
+        //@ts-expect-error: I'm just definine a variable here so I can use it in css
+        '--window-height': windowHeight
+          ? Math.max(windowHeight, 640) + 'px'
+          : '100vh',
+        minHeight: windowHeight ? Math.max(windowHeight, 640) + 'px' : '100vh',
         marginBottom: 48,
         maxWidth: 1920,
         marginLeft: 'auto',
@@ -83,7 +87,7 @@ export default function FeaturedProjects({
           <div
             onClick={() => setExpanded(!expanded)}
             style={{ cursor: 'pointer' }}
-            className="block md:hidden flex justify-center w-full mb-2"
+            className="block md:hidden flex justify-center w-full mb-2 flex-shrink-0"
           >
             {expanded ? (
               <ChevronCompactDown

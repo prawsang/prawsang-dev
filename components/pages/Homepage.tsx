@@ -28,8 +28,8 @@ export default function Homepage() {
       Math.max(
         document.documentElement.clientHeight || 0,
         window.innerHeight || 0,
-        640
-      )
+        640,
+      ),
     )
   }, [])
 
@@ -45,7 +45,7 @@ export default function Homepage() {
   })
   const skills = useRef<HTMLDivElement>(null)
   const { ref: experience, inView: experienceInView } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   })
   const { ref: contact, inView: contactInView } = useInView({
     threshold: 0.35,

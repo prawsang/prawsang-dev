@@ -167,6 +167,18 @@
   }
 }
 
+@media screen and (max-width: $breakpoint-xs) {
+  .project-image-container {
+    margin-bottom: calc(var(--window-height) * 0.5);
+  }
+  .project-description-container {
+    top: calc(var(--window-height) * 0.4);
+    &.expanded {
+      top: 0;
+    }
+  }
+}
+
 // TEXT EDITOR
 @keyframes caretBlink {
   0% {

@@ -3,48 +3,10 @@
 import Chip from '@/components/common/Chip'
 import OpacityTrail from '../common/OpacityTrail'
 import useInView from '@/hooks/useInView'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 // import { useEffect, useState } from 'react'
 
-const SKILL_LIST: { header: string; skills: string[] }[] = [
-  {
-    header: 'Front-end Skills',
-    skills: [
-      'Angular',
-      'React',
-      'Vue.js',
-      'CSS/SCSS',
-      'NextJS',
-      'Redux',
-      'MobX',
-      'Storybook',
-      'Responsive Web',
-      'Turf.js',
-      'ProseMirror',
-    ],
-  },
-  {
-    header: 'Testing & Quality Assurance',
-    skills: [
-      'Unit testing',
-      'Jasmine + Karma',
-      'Jest',
-      'React Testing Library',
-      'Sonarqube',
-    ],
-  },
-  {
-    header: 'Programming Languages/Scripts',
-    skills: ['TypeScript/JavaScript', 'Python', 'Java'],
-  },
-  {
-    header: 'Backend & Database',
-    skills: ['Database Design', 'SQL', 'PostgreSQL', 'MongoDB', 'Node.js'],
-  },
-  {
-    header: 'Other tools',
-    skills: ['Git', 'Figma', 'Jira', 'Webflow', 'Wordpress'],
-  },
-]
+const SKILL_LIST: { header: string; skills: string[] }[] = SITE_CONTENT.skills
 
 const ACTIVE_SKILLS = new Set([
   'Angular',

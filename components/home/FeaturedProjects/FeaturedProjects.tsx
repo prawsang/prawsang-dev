@@ -8,24 +8,9 @@ import ChevronCompactDown from '@/public/icons/chevron-compact-down.svg'
 import { useCallback, useState } from 'react'
 import Geospatial from './Geospatial'
 import UILibrary from './UILibrary'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 
-const CONTENT = [
-  {
-    title: 'Private UI Library',
-    content:
-      'This internal Angular UI library was built to give the development team a consistent, dependable foundation for every new client project. Instead of rewriting components from scratch, the library offers solid, reusable building blocks that teams can easily re-style to match each client’s design system. It includes everything from simple elements like buttons, badges, and toast messages, to fully custom form components such as date pickers, time pickers, and comboboxes. The form components integrate cleanly with both Angular Forms and Reactive Forms, making them straightforward to use in any project setup. Unit tests were included for all components to ensure correct functionality across library releases.',
-  },
-  {
-    title: 'Rich Text Editor',
-    content:
-      'This custom-built rich text editor was designed from the ground up to handle complex formatting while keeping the writing experience smooth, predictable, and fast. It’s powered by ProseMirror and architected in Angular, with a component system that supports real-time styling, dynamic layout behavior, and precise cursor interactions. Every part of the editor, from baseline text rendering to advanced features like auto-lists, tables, automatic page breaks, and free-positioning text boxes and images, was implemented to behave exactly like users expect. Minute details like persisting styles across new paragraphs and selection handling logic was handled to make the user experience seamless.',
-  },
-  {
-    title: 'Geospatial analysis platform',
-    content:
-      'This geospatial analysis tool was built to take GeoJSON shape data from a legacy system and render it instantly on an interactive map, even when dealing with large or highly detailed geometries. The original approach hit performance limits with complex shapes, so the tool was rebuilt using React and Turf.js to handle spatial processing efficiently on the client side. The result was a dramatic improvement in responsiveness, with shapes appearing immediately and interactions staying smooth. Users can zoom, pan, and inspect shapes without delay, making it easy to interpret boundaries, overlays, and spatial patterns at a glance.',
-  },
-]
+const CONTENT = SITE_CONTENT.featuredProjects
 
 export default function FeaturedProjects({
   windowHeight,

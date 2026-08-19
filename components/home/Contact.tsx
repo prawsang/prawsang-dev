@@ -1,5 +1,6 @@
 import { useSpring, a } from '@react-spring/web'
 import ContactNameCard from './ContactNameCard'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 
 export default function Contact({
   show,
@@ -54,14 +55,14 @@ export default function Contact({
             <div>
               <h3 className="bold mt-2">Let’s Connect.</h3>
               <a
-                href="mailto:prawsang.c@gmail.com"
+                href={`mailto:${SITE_CONTENT.contact.email}`}
                 className="primary-sub-header-text size-h3"
               >
-                prawsang.c@gmail.com
+                {SITE_CONTENT.contact.email}
               </a>
               <div className="flex gap-4 mt-5">
                 <a
-                  href="https://www.linkedin.com/in/prawsang/"
+                  href={SITE_CONTENT.contact.linkedIn}
                   className="medium underlined block size-h3"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -69,7 +70,7 @@ export default function Contact({
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com/prawsang"
+                  href={SITE_CONTENT.contact.github}
                   className="medium underlined block size-h3"
                   rel="noopener noreferrer"
                   target="_blank"

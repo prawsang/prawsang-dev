@@ -13,6 +13,7 @@ import ProjectCarouselCard from './ProjectCarouselCard'
 import Carousel from '@/components/common/Carousel'
 import OpacityTrail from '../../common/OpacityTrail'
 import { ClickEventContext } from '@/contexts/ClickEventContext'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 
 interface ProjectCarouselCardData {
   svg: FC<SVGProps<SVGElement>>
@@ -31,38 +32,26 @@ const CAROUSEL_DATA: ProjectCarouselCardData[] = [
   {
     svg: DashboardLight,
     svgDark: DashboardDark,
-    header: 'Dashboards',
-    text: 'A web admin dashboard presents key metrics and data through various visualizations, such as pie charts, bar charts, and line graphs, allowing for a customized display of information.',
+    header: SITE_CONTENT.projects[0].header,
+    text: SITE_CONTENT.projects[0].text,
   },
   {
     svg: WebAdminAppsLight,
     svgDark: WebAdminAppsDark,
-    header: 'Web admin applications',
-    text: 'Applications tailored to manage the custom and specific processes of a corporation, which require extensive access control, form validation,  and handling of large amounts of data.',
+    header: SITE_CONTENT.projects[1].header,
+    text: SITE_CONTENT.projects[1].text,
   },
   {
     svg: DataManagementLight,
     svgDark: DataManagementDark,
-    header: 'Data management platforms',
-    text: 'Web data management platforms allows users to store, organize, and process files securely. Files and folder are stored and retrieved using a secured cloud service.',
+    header: SITE_CONTENT.projects[2].header,
+    text: SITE_CONTENT.projects[2].text,
   },
-  // {
-  //   svg: TextEditorLight,
-  //   svgDark: TextEditorDark,
-  //   header: 'Rich Text Editors',
-  //   text: 'A rich text editor for creating and formatting structured documents. It supports styled text, tables, and page breaks, making it suitable for producing organized and print-ready content.',
-  // },
-  // {
-  //   svg: GeospatialLight,
-  //   svgDark: GeospatialDark,
-  //   header: 'Geospatial analysis platforms',
-  //   text: 'Geospatial analysis platforms on the web that visualizes geospatial data in a form of satellite images and topographic maps to allow users to analyze problems in a geographical area.',
-  // },
   {
     svg: LandingPageLight,
     svgDark: LandingPageDark,
-    header: 'Product landing pages',
-    text: 'Landing pages advertise a product, featuring bold visuals and sleek animations to make statements, and seamlessly combining modern design elements with engaging content to highlight the product’s key features.',
+    header: SITE_CONTENT.projects[3].header,
+    text: SITE_CONTENT.projects[3].text,
   },
 ]
 

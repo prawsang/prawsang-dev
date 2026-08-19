@@ -5,41 +5,9 @@ import Image from 'next/image'
 import OpacityTrail from '../common/OpacityTrail'
 import { useCallback } from 'react'
 import useInView from '@/hooks/useInView'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 
-const EXPERIENCE = [
-  {
-    company: 'IBM Consulting',
-    period: '2021 - present',
-    position: 'Full-time | Full-stack Developer',
-    description: [
-      'Delivered large-scale web and mobile solutions for major banks and top companies in Thailand, improving real operational workflows and smoothing out complicated business processes that clients relied on daily.',
-      'Built and maintained the company’s Angular UI library, giving developers a solid foundation to launch client projects faster, with consistent styling and reusable components that cut down repetitive work.',
-      'Took on unfamiliar technical challenges, researched options, and turned them into working proofs of concept, allowing the team to explore new directions and expand its internal codebase with approaches that hadn’t been used before.',
-      'Wrote extensive unit tests that protected the stability of ongoing releases, reducing regression effort and helping the team move faster without breaking existing features.',
-    ],
-  },
-  {
-    company: 'AI & Robotics Ventures (ARV)',
-    period: '2020 - 2021',
-    position: 'Part-time | Front-end Developer',
-    description: [
-      'Developed various web applications using React for products of various purposes, such as data management and geo-spatial analysis. ',
-      'Built a React + Turf.js geospatial tool capable of instantly rendering complicated latitude/longitude shape data from a legacy system, turning raw coordinates into clear visual insights for users.',
-      'Created a React-based image management system connected to an AI anomaly detector, letting users browse files, manage data, and view algorithm-flagged issues directly on each image with visual markers.',
-      'Designed and built Webflow landing pages that looked polished, performed well, and gave non-technical teammates control over updating text and visuals without needing developer assistance.',
-    ],
-  },
-  {
-    company: 'Wongnai Media Co.,Ltd.',
-    period: 'June 2020 - July 2020',
-    position: 'Intern | Front-end Developer',
-    description: [
-      'Contributed improvements to the company’s main React (TypeScript) application, a platform with millions of active users, working directly on sections that impacted daily user experience.',
-      'Built pixel-perfect pages using the company’s React based private UI library and strict design rules, while also making small improvements to the library where needed.',
-      'Implemented automated and unit tests using React Testing Library to comply with strict release standards, consistently hitting 90%+ coverage and ensuring stable deployments.',
-    ],
-  },
-]
+const EXPERIENCE = SITE_CONTENT.jobExperiences
 
 export default function Experience({
   show,
@@ -66,7 +34,7 @@ export default function Experience({
       else if (index === 1) return experience2InView || experience3InView
       else return experience3InView
     },
-    [experience2InView, experience3InView, show]
+    [experience2InView, experience3InView, show],
   )
 
   return (

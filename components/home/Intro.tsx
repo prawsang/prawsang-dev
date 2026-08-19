@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Chip from '@/components/common/Chip'
+import { SITE_CONTENT } from '@/constants/SiteContent'
 
 function yearsSinceJanuary2020(): number {
   const january2020 = new Date(2020, 0) // January is month 0 in Date objects
@@ -92,45 +93,34 @@ export default function Intro({
             <div className="intro-content flex flex-col gap-5">
               <div>
                 <h2 className="primary-header-text mb-3">Education</h2>
-                <h3>Chulalongkorn University</h3>
+                <h3>{SITE_CONTENT.bio.education.institution}</h3>
                 <p className="semi-bold primary-sub-header-text mb-3">
-                  Bachelor of Engineering (Computer Engineering)
+                  {SITE_CONTENT.bio.education.degree}
                 </p>
                 <p className="base-sub-header-text">
-                  Graduated in 2021 | GPA: 3.40 (2nd Class Honors)
+                  {SITE_CONTENT.bio.education.description}
                 </p>
               </div>
               <div>
                 <h2 className="primary-header-text mb-3">Languages</h2>
                 <div className="flex gap-3 flex-wrap">
                   <Chip className="whitespace-nowrap">
-                    English <span className="chip-sub-text">- Fluent</span>
+                    {SITE_CONTENT.bio.languages[0].name}{' '}
+                    <span className="chip-sub-text">
+                      - {SITE_CONTENT.bio.languages[0].level}
+                    </span>
                   </Chip>
                   <Chip className="whitespace-nowrap">
-                    Thai <span className="chip-sub-text">- Native</span>
+                    {SITE_CONTENT.bio.languages[1].name}{' '}
+                    <span className="chip-sub-text">
+                      - {SITE_CONTENT.bio.languages[1].level}
+                    </span>
                   </Chip>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-col md:flex-row gap-4">
-          <div className="md:basis-1/5 text-center">
-            <Image
-              className="m-auto w-3/5 md:w-fit"
-              unoptimized
-              src="/images/animoji-1.png"
-              alt="Prawsang Animoji"
-              width={313}
-              height={288}
-            ></Image>
-          </div>
-          <div className="md:basis-2/3 ">
-            
-            
-          </div>
-          <div className="hidden md:block md:basis-1/6"></div>
-        </div> */}
       </div>
     </section>
   )

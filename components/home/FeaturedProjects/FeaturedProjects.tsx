@@ -122,7 +122,7 @@ export default function FeaturedProjects({
             <div className="content-container">
               <div
                 className="flex justify-center md:justify-start gap-2 "
-                style={{ width: '100%' }}
+                style={{ width: '100%', marginTop: 16 }}
               >
                 <a
                   className={`chip button ${page === 0 && 'disabled'}`}

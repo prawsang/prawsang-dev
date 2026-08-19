@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Homepage />
-      <div className="hidden">
+      <div style={{ height: '0', overflow: 'hidden' }}>
         {/* preload content for bots */}
         <h1>{SITE_CONTENT.bio.title}</h1>
         <p>{SITE_CONTENT.bio.description}</p>
